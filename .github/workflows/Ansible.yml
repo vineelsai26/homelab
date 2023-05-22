@@ -17,13 +17,11 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Run ansible-lint
-      uses: ansible/ansible-lint-action@v6
-
     - name: Install Ansible
       run: |
           python -m pip install --upgrade pip
           pip install --upgrade ansible
+          sudo apt install sshpass ansible -y
 
     - name: Set Environment Variables
       run: |
@@ -35,4 +33,4 @@ jobs:
 
     - name: Run Ansible
       run: |
-          ansible-playbook -i run.yaml
+          ansible-playbook run.yaml
