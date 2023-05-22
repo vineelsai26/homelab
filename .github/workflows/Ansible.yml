@@ -1,0 +1,38 @@
+name: Python application
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+env: 
+    ANSIBLE_HOSTS_FILE: ${{ secrets.ANSIBLE_HOSTS_FILE }}
+    ANSIBLE_SSH_PRIVATE_KEY_FILE: ${{ secrets.ANSIBLE_SSH_PRIVATE_KEY_FILE }}
+
+jobs:
+  build:
+    runs-on: self-hosted
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Run ansible-lint
+      uses: ansible/ansible-lint-action@v6
+
+    - name: Install Ansible
+      run: |
+          python -m pip install --upgrade pip
+          pip install --upgrade ansible
+
+    - name: Set Environment Variables
+      run: |
+          mkdir inventory
+          echo $ANSIBLE_HOSTS_FILE | base64 -d > inventory/hosts
+          echo $ANSIBLE_SSH_PRIVATE_KEY_FILE > ansible_key
+          chmod 600 ansible_key
+          export ANSIBLE_SSH_PRIVATE_KEY=ansible_key
+
+    - name: Run Ansible
+      run: |
+          ansible-playbook -i run.yaml
