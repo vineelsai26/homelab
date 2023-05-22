@@ -1,0 +1,22 @@
+---
+- name: Update and Upgrade
+  ansible.builtin.package:
+    update_cache: true
+
+- name: Install packages
+  ansible.builtin.package:
+    name:
+      - git
+      - curl
+      - wget
+      - vim
+      - htop
+      - neovim
+      - neofetch
+      - zsh
+      - tmux
+      - gcc
+      - make
+      - python3
+      - python3-pip
+    state: present

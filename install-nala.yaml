@@ -1,0 +1,44 @@
+---
+- name: Download Nala keyring
+  when: ansible_distribution in ['Debian', 'Ubuntu']
+  ansible.builtin.get_url:
+    url: https://gitlab.com/volian/volian-archive/uploads/b20bd8237a9b20f5a82f461ed0704ad4/volian-archive-keyring_0.1.0_all.deb
+    mode: "0644"
+    dest: /tmp/volian-archive-keyring_0.1.0_all.deb
+
+- name: Download Nala repo
+  when: ansible_distribution in ['Debian', 'Ubuntu']
+  ansible.builtin.get_url:
+    url: https://gitlab.com/volian/volian-archive/uploads/d6b3a118de5384a0be2462905f7e4301/volian-archive-nala_0.1.0_all.deb
+    mode: "0644"
+    dest: /tmp/volian-archive-nala_0.1.0_all.deb
+
+- name: Install Nala keyring
+  when: ansible_distribution in ['Debian', 'Ubuntu']
+  ansible.builtin.apt:
+    deb: /tmp/volian-archive-keyring_0.1.0_all.deb
+    state: present
+
+- name: Install Repo
+  when: ansible_distribution in ['Debian', 'Ubuntu']
+  ansible.builtin.apt:
+    deb: /tmp/volian-archive-nala_0.1.0_all.deb
+    state: present
+
+- name: Install Nala
+  when: ansible_distribution in ['Debian', 'Ubuntu']
+  ansible.builtin.apt:
+    name: nala
+    state: present
+
+- name: Delete Nala keyring file
+  when: ansible_distribution in ['Debian', 'Ubuntu']
+  ansible.builtin.file:
+    path: /tmp/volian-archive-keyring_0.1.0_all.deb
+    state: absent
+
+- name: Delete Nala repo file
+  when: ansible_distribution in ['Debian', 'Ubuntu']
+  ansible.builtin.file:
+    path: /tmp/volian-archive-nala_0.1.0_all.deb
+    state: absent
