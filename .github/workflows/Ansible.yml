@@ -29,7 +29,6 @@ jobs:
           echo $ANSIBLE_HOSTS_FILE | base64 -d > inventory/hosts
           echo $ANSIBLE_SSH_PRIVATE_KEY_FILE | base64 -d > ansible_key
           chmod 600 ansible_key
-          export ANSIBLE_SSH_PRIVATE_KEY=ansible_key
 
     - name: Run Ansible
       run: |
