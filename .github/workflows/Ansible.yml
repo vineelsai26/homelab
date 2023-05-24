@@ -3,8 +3,6 @@ name: Python application
 on:
   push:
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
 
 env: 
     ANSIBLE_HOSTS_FILE: ${{ secrets.ANSIBLE_HOSTS_FILE }}
