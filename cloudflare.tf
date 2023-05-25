@@ -1,4 +1,4 @@
-resource "cloudflare_record" "terraform_managed_resource_a2f0a7d4c04428c495b2e13db3daa609" {
+resource "cloudflare_record" "catch_all_home" {
   name    = "*.home"
   proxied = false
   ttl     = 1
@@ -7,7 +7,7 @@ resource "cloudflare_record" "terraform_managed_resource_a2f0a7d4c04428c495b2e13
   zone_id = "774c57de3172a6220c23461a2992c3a8"
 }
 
-resource "cloudflare_record" "terraform_managed_resource_6044db247aaf933d922efe071f3d624b" {
+resource "cloudflare_record" "root" {
   name    = "vineelsai.com"
   proxied = true
   ttl     = 1
@@ -16,7 +16,7 @@ resource "cloudflare_record" "terraform_managed_resource_6044db247aaf933d922efe0
   zone_id = "774c57de3172a6220c23461a2992c3a8"
 }
 
-resource "cloudflare_record" "terraform_managed_resource_2360d96305514d26a4995f746c7438c5" {
+resource "cloudflare_record" "verify_bing" {
   name    = "73cbc6edc61fddc335a4765e56ec4d32"
   proxied = true
   ttl     = 1
@@ -34,7 +34,7 @@ resource "cloudflare_record" "terraform_managed_resource_8033576b34392d97a903426
   zone_id = "774c57de3172a6220c23461a2992c3a8"
 }
 
-resource "cloudflare_record" "terraform_managed_resource_e8c9eec5465b2bb95662d3d86276fe7f" {
+resource "cloudflare_record" "algo" {
   name    = "algo"
   proxied = false
   ttl     = 1
@@ -43,7 +43,7 @@ resource "cloudflare_record" "terraform_managed_resource_e8c9eec5465b2bb95662d3d
   zone_id = "774c57de3172a6220c23461a2992c3a8"
 }
 
-resource "cloudflare_record" "terraform_managed_resource_fd395230c757a03d3ea673122850a3bd" {
+resource "cloudflare_record" "api_collab" {
   name    = "api.collab"
   proxied = false
   ttl     = 1
@@ -52,7 +52,7 @@ resource "cloudflare_record" "terraform_managed_resource_fd395230c757a03d3ea6731
   zone_id = "774c57de3172a6220c23461a2992c3a8"
 }
 
-resource "cloudflare_record" "terraform_managed_resource_fab26b05fbbab5d0877f00c1a4875d5e" {
+resource "cloudflare_record" "archive1" {
   name    = "archive1"
   proxied = true
   ttl     = 1
@@ -61,7 +61,7 @@ resource "cloudflare_record" "terraform_managed_resource_fab26b05fbbab5d0877f00c
   zone_id = "774c57de3172a6220c23461a2992c3a8"
 }
 
-resource "cloudflare_record" "terraform_managed_resource_493b823814b7c78b7a73a646c8c0767d" {
+resource "cloudflare_record" "archive2" {
   name    = "archive2"
   proxied = true
   ttl     = 1
@@ -70,7 +70,7 @@ resource "cloudflare_record" "terraform_managed_resource_493b823814b7c78b7a73a64
   zone_id = "774c57de3172a6220c23461a2992c3a8"
 }
 
-resource "cloudflare_record" "terraform_managed_resource_da69913163365acee8352de846dc364d" {
+resource "cloudflare_record" "archive3" {
   name    = "archive3"
   proxied = true
   ttl     = 1
@@ -79,7 +79,7 @@ resource "cloudflare_record" "terraform_managed_resource_da69913163365acee8352de
   zone_id = "774c57de3172a6220c23461a2992c3a8"
 }
 
-resource "cloudflare_record" "terraform_managed_resource_dfc5505af01e2ae1604075c93922e70d" {
+resource "cloudflare_record" "archive4" {
   name    = "archive4"
   proxied = true
   ttl     = 1
@@ -88,7 +88,7 @@ resource "cloudflare_record" "terraform_managed_resource_dfc5505af01e2ae1604075c
   zone_id = "774c57de3172a6220c23461a2992c3a8"
 }
 
-resource "cloudflare_record" "terraform_managed_resource_e37010723ec5ff6a10ee120ed19fbfa3" {
+resource "cloudflare_record" "balance" {
   name    = "balance"
   proxied = true
   ttl     = 1
@@ -97,7 +97,7 @@ resource "cloudflare_record" "terraform_managed_resource_e37010723ec5ff6a10ee120
   zone_id = "774c57de3172a6220c23461a2992c3a8"
 }
 
-resource "cloudflare_record" "terraform_managed_resource_cf68a5ff8c67a9e8823cbd8391fc5f79" {
+resource "cloudflare_record" "blog" {
   name    = "blog"
   proxied = false
   ttl     = 1
@@ -106,7 +106,7 @@ resource "cloudflare_record" "terraform_managed_resource_cf68a5ff8c67a9e8823cbd8
   zone_id = "774c57de3172a6220c23461a2992c3a8"
 }
 
-resource "cloudflare_record" "terraform_managed_resource_72eb2a856e339dffc89d34095c918efb" {
+resource "cloudflare_record" "collab" {
   name    = "collab"
   proxied = false
   ttl     = 1
@@ -115,7 +115,7 @@ resource "cloudflare_record" "terraform_managed_resource_72eb2a856e339dffc89d340
   zone_id = "774c57de3172a6220c23461a2992c3a8"
 }
 
-resource "cloudflare_record" "terraform_managed_resource_35e212d0a974f661b0c646e9bb694720" {
+resource "cloudflare_record" "_domainconnect" {
   name    = "_domainconnect"
   proxied = true
   ttl     = 1
@@ -124,7 +124,7 @@ resource "cloudflare_record" "terraform_managed_resource_35e212d0a974f661b0c646e
   zone_id = "774c57de3172a6220c23461a2992c3a8"
 }
 
-resource "cloudflare_record" "terraform_managed_resource_844995eb0f56aeb2c4f2ff654aa2d17f" {
+resource "cloudflare_record" "gogs" {
   name    = "gogs"
   proxied = true
   ttl     = 1
@@ -133,7 +133,7 @@ resource "cloudflare_record" "terraform_managed_resource_844995eb0f56aeb2c4f2ff6
   zone_id = "774c57de3172a6220c23461a2992c3a8"
 }
 
-resource "cloudflare_record" "terraform_managed_resource_f096f8c96ef6fd2ab518795c74004a15" {
+resource "cloudflare_record" "material" {
   name    = "material"
   proxied = true
   ttl     = 1
@@ -142,7 +142,7 @@ resource "cloudflare_record" "terraform_managed_resource_f096f8c96ef6fd2ab518795
   zone_id = "774c57de3172a6220c23461a2992c3a8"
 }
 
-resource "cloudflare_record" "terraform_managed_resource_fcd8cc17fc576aa4bb6e78dc922c86ba" {
+resource "cloudflare_record" "nextcloud" {
   name    = "nextcloud"
   proxied = true
   ttl     = 1
@@ -151,25 +151,7 @@ resource "cloudflare_record" "terraform_managed_resource_fcd8cc17fc576aa4bb6e78d
   zone_id = "774c57de3172a6220c23461a2992c3a8"
 }
 
-resource "cloudflare_record" "terraform_managed_resource_a09d5712914cb51bcb69501b4a8a652a" {
-  name    = "oc1"
-  proxied = true
-  ttl     = 1
-  type    = "CNAME"
-  value   = "2436d395-7ce5-4f80-b4c9-39ff84c18df1.cfargotunnel.com"
-  zone_id = "774c57de3172a6220c23461a2992c3a8"
-}
-
-resource "cloudflare_record" "terraform_managed_resource_1a8ee1c69ccbf49a4191b5ecb2c06206" {
-  name    = "oc2"
-  proxied = true
-  ttl     = 1
-  type    = "CNAME"
-  value   = "8e675e40-6246-448d-a259-666b85d1ffb2.cfargotunnel.com"
-  zone_id = "774c57de3172a6220c23461a2992c3a8"
-}
-
-resource "cloudflare_record" "terraform_managed_resource_8ffb9d45d6edc22a76e7b5e3a402dd56" {
+resource "cloudflare_record" "portainer" {
   name    = "portainer"
   proxied = true
   ttl     = 1
@@ -178,16 +160,7 @@ resource "cloudflare_record" "terraform_managed_resource_8ffb9d45d6edc22a76e7b5e
   zone_id = "774c57de3172a6220c23461a2992c3a8"
 }
 
-resource "cloudflare_record" "terraform_managed_resource_e4d470a8ef1be0ab9db4bc27f6ce0032" {
-  name    = "portfolio"
-  proxied = false
-  ttl     = 1
-  type    = "CNAME"
-  value   = "cname.vercel-dns.com"
-  zone_id = "774c57de3172a6220c23461a2992c3a8"
-}
-
-resource "cloudflare_record" "terraform_managed_resource_a40aa8c50bb76474ddbd1b0608e54c7c" {
+resource "cloudflare_record" "privacy" {
   name    = "privacy"
   proxied = false
   ttl     = 1
@@ -196,7 +169,7 @@ resource "cloudflare_record" "terraform_managed_resource_a40aa8c50bb76474ddbd1b0
   zone_id = "774c57de3172a6220c23461a2992c3a8"
 }
 
-resource "cloudflare_record" "terraform_managed_resource_a08839656baa862af0e2666099fb82fb" {
+resource "cloudflare_record" "repo" {
   name    = "repo"
   proxied = false
   ttl     = 1
@@ -205,7 +178,7 @@ resource "cloudflare_record" "terraform_managed_resource_a08839656baa862af0e2666
   zone_id = "774c57de3172a6220c23461a2992c3a8"
 }
 
-resource "cloudflare_record" "terraform_managed_resource_1ae5b19a8486c5a26e544e376d6bf956" {
+resource "cloudflare_record" "s145" {
   name    = "s145"
   proxied = true
   ttl     = 1
@@ -214,7 +187,7 @@ resource "cloudflare_record" "terraform_managed_resource_1ae5b19a8486c5a26e544e3
   zone_id = "774c57de3172a6220c23461a2992c3a8"
 }
 
-resource "cloudflare_record" "terraform_managed_resource_a0769648915c4658b5b98f18c1ec4cea" {
+resource "cloudflare_record" "shortify" {
   name    = "shortify"
   proxied = true
   ttl     = 1
@@ -223,7 +196,7 @@ resource "cloudflare_record" "terraform_managed_resource_a0769648915c4658b5b98f1
   zone_id = "774c57de3172a6220c23461a2992c3a8"
 }
 
-resource "cloudflare_record" "terraform_managed_resource_4726bbc7eafac789ac2fd3536bc25f77" {
+resource "cloudflare_record" "amazonses_domainkey" {
   name    = "slg7cli4o536qdyhdphrvhivpas2ebfv._domainkey"
   proxied = false
   ttl     = 3600
@@ -232,7 +205,7 @@ resource "cloudflare_record" "terraform_managed_resource_4726bbc7eafac789ac2fd35
   zone_id = "774c57de3172a6220c23461a2992c3a8"
 }
 
-resource "cloudflare_record" "terraform_managed_resource_35f3c279d95ea53b6d173cbfeb1d4884" {
+resource "cloudflare_record" "amazonses_domainkey_1" {
   name    = "sn6cjudhadoldlhxvpgtqail76zucccs._domainkey"
   proxied = false
   ttl     = 3600
@@ -241,7 +214,7 @@ resource "cloudflare_record" "terraform_managed_resource_35f3c279d95ea53b6d173cb
   zone_id = "774c57de3172a6220c23461a2992c3a8"
 }
 
-resource "cloudflare_record" "terraform_managed_resource_89c99579192c728ef606769ce8c7bab3" {
+resource "cloudflare_record" "ssh" {
   name    = "ssh"
   proxied = true
   ttl     = 1
@@ -250,7 +223,7 @@ resource "cloudflare_record" "terraform_managed_resource_89c99579192c728ef606769
   zone_id = "774c57de3172a6220c23461a2992c3a8"
 }
 
-resource "cloudflare_record" "terraform_managed_resource_758b9601eb1c92595ad339de2d1a4311" {
+resource "cloudflare_record" "static" {
   name    = "static"
   proxied = true
   ttl     = 1
@@ -259,7 +232,7 @@ resource "cloudflare_record" "terraform_managed_resource_758b9601eb1c92595ad339d
   zone_id = "774c57de3172a6220c23461a2992c3a8"
 }
 
-resource "cloudflare_record" "terraform_managed_resource_27c85bc2bbc7da6a17fb20913e3830d8" {
+resource "cloudflare_record" "stats_github" {
   name    = "stats.github"
   proxied = false
   ttl     = 1
@@ -268,7 +241,7 @@ resource "cloudflare_record" "terraform_managed_resource_27c85bc2bbc7da6a17fb209
   zone_id = "774c57de3172a6220c23461a2992c3a8"
 }
 
-resource "cloudflare_record" "terraform_managed_resource_3f926ec630075a0943e89b87f9b93edd" {
+resource "cloudflare_record" "sudoku" {
   name    = "sudoku"
   proxied = false
   ttl     = 1
@@ -277,16 +250,7 @@ resource "cloudflare_record" "terraform_managed_resource_3f926ec630075a0943e89b8
   zone_id = "774c57de3172a6220c23461a2992c3a8"
 }
 
-resource "cloudflare_record" "terraform_managed_resource_2f1ffd4cecf620e5ff2d67abbe2d5cc0" {
-  name    = "teleport"
-  proxied = true
-  ttl     = 1
-  type    = "CNAME"
-  value   = "de33d9bd-e78f-400c-ab8a-51fd50a50311.cfargotunnel.com"
-  zone_id = "774c57de3172a6220c23461a2992c3a8"
-}
-
-resource "cloudflare_record" "terraform_managed_resource_7a826d457214c0459a736085e8f0463e" {
+resource "cloudflare_record" "tictactoe" {
   name    = "tictactoe"
   proxied = false
   ttl     = 1
@@ -295,16 +259,7 @@ resource "cloudflare_record" "terraform_managed_resource_7a826d457214c0459a73608
   zone_id = "774c57de3172a6220c23461a2992c3a8"
 }
 
-resource "cloudflare_record" "terraform_managed_resource_0945be8b1c1224d8c731f8a6d1e72986" {
-  name    = "truenas"
-  proxied = true
-  ttl     = 1
-  type    = "CNAME"
-  value   = "de33d9bd-e78f-400c-ab8a-51fd50a50311.cfargotunnel.com"
-  zone_id = "774c57de3172a6220c23461a2992c3a8"
-}
-
-resource "cloudflare_record" "terraform_managed_resource_68d38239770970751c89999983cfeaa5" {
+resource "cloudflare_record" "vnc" {
   name    = "vnc"
   proxied = true
   ttl     = 1
@@ -313,7 +268,7 @@ resource "cloudflare_record" "terraform_managed_resource_68d38239770970751c89999
   zone_id = "774c57de3172a6220c23461a2992c3a8"
 }
 
-resource "cloudflare_record" "terraform_managed_resource_dad5ebc81fe47a2bedb29f1a5ccd264e" {
+resource "cloudflare_record" "www" {
   name    = "www"
   proxied = false
   ttl     = 1
@@ -417,15 +372,6 @@ resource "cloudflare_record" "terraform_managed_resource_cd93abc259d847f50a981df
   zone_id = "774c57de3172a6220c23461a2992c3a8"
 }
 
-resource "cloudflare_record" "terraform_managed_resource_bb214b3ccad4f9961dfa62b69cd48fa0" {
-  name    = "_github-challenge-vsarchive-org"
-  proxied = false
-  ttl     = 3600
-  type    = "TXT"
-  value   = "ffe28bf4b9"
-  zone_id = "774c57de3172a6220c23461a2992c3a8"
-}
-
 resource "cloudflare_record" "terraform_managed_resource_21dc1fa4306fbf5ba5eed2303c4b6586" {
   name    = "_github-pages-challenge-vineelsai26"
   proxied = false
@@ -506,4 +452,3 @@ resource "cloudflare_record" "terraform_managed_resource_3df785b2667f1a84fcc0c59
   value   = "100::"
   zone_id = "774c57de3172a6220c23461a2992c3a8"
 }
-
