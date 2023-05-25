@@ -6,4 +6,15 @@ terraform {
             version = ">= 4.6.0"
         }
     }
+    cloud {
+        organization = "vineelsai"
+
+        workspaces {
+            name = "Cloudflare"
+        }
+    }
+}
+
+provider "cloudflare" {
+  api_token = var.cloudflare_api_token
 }
