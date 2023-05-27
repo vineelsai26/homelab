@@ -1,4 +1,4 @@
-resource "aws_s3_bucket" "backup" {
+resource "aws_s3_bucket" "github_backup" {
   bucket = "vineelsai-github-backup"
 
   tags = {
