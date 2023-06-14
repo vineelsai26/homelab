@@ -3,7 +3,7 @@ resource "cloudflare_record" "catch_all_home" {
   proxied = false
   ttl     = 1
   type    = "A"
-  value   = "10.0.0.145"
+  value   = "10.0.0.10"
   zone_id = "774c57de3172a6220c23461a2992c3a8"
 }
 
@@ -351,6 +351,15 @@ resource "cloudflare_record" "terraform_managed_resource_ed86d8055d9367904c1951b
   ttl     = 1
   type    = "TXT"
   value   = "cd1f1949-69dc-43b8-bb74-bcdb1eedabe7"
+  zone_id = "774c57de3172a6220c23461a2992c3a8"
+}
+
+resource "cloudflare_record" "github_vineelsai26_domain_verification" {
+  name    = "_github-pages-challenge-vineelsai26"
+  proxied = false
+  ttl     = 1
+  type    = "TXT"
+  value   = "66bb594c84008a9e1ee91a7798b052"
   zone_id = "774c57de3172a6220c23461a2992c3a8"
 }
 
