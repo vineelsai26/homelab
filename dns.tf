@@ -246,6 +246,16 @@ resource "cloudflare_record" "mx4" {
   zone_id  = "774c57de3172a6220c23461a2992c3a8"
 }
 
+resource "cloudflare_record" "bounces_mx" {
+  name     = "bounces"
+  priority = 10
+  proxied  = false
+  ttl      = 3600
+  type     = "MX"
+  value    = "feedback-smtp.us-east-1.amazonses.com"
+  zone_id  = "774c57de3172a6220c23461a2992c3a8"
+}
+
 resource "cloudflare_record" "netlify_ns1" {
   name    = "netlify"
   proxied = false
@@ -297,6 +307,24 @@ resource "cloudflare_record" "mail_domainkey" {
   ttl     = 1
   type    = "TXT"
   value   = "k=rsa;p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDeMVIzrCa3T14JsNY0IRv5/2V1/v2itlviLQBwXsa7shBD6TrBkswsFUToPyMRWC9tbR/5ey0nRBH0ZVxp+lsmTxid2Y2z+FApQ6ra2VsXfbJP3HE6wAO0YTVEJt1TmeczhEd2Jiz/fcabIISgXEdSpTYJhb0ct0VJRxcg4c8c7wIDAQAB"
+  zone_id = "774c57de3172a6220c23461a2992c3a8"
+}
+
+resource "cloudflare_record" "bounces_txt" {
+  name    = "bounces"
+  proxied = false
+  ttl     = 1
+  type    = "TXT"
+  value   = "v=spf1 include:amazonses.com ~all"
+  zone_id = "774c57de3172a6220c23461a2992c3a8"
+}
+
+resource "cloudflare_record" "resend_domainkey" {
+  name    = "resend._domainkey"
+  proxied = false
+  ttl     = 1
+  type    = "TXT"
+  value   = "p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCoAHnu+EG51z8b/980XwDfMayFHlDjxTR9YCnikzscJAWlEQL6nsIfGAK4H9YFSHajZrei8HTlLZDJuooiUpUfLaKpP9o719JbQPhrk7Vnxa7GkhOkmRZ8eiW5KIOombHKqOYiIowEOJgFUFpfnVlaKkh+EG7bio64KIabI1OnQQIDAQAB"
   zone_id = "774c57de3172a6220c23461a2992c3a8"
 }
 
