@@ -1,0 +1,16 @@
+version: '3'
+services:
+  app:
+    container_name: uptime-kuma
+    hostname: uptime-kuma
+    image: 'louislam/uptime-kuma:latest'
+    restart: unless-stopped
+    ports:
+      - '3001:3001'
+    volumes:
+      - ./data:/app/data
+
+networks:
+  default:
+    name: nginx
+    external: true
