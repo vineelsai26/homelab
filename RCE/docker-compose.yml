@@ -1,0 +1,12 @@
+version: '3'
+services:
+  app:
+    container_name: rce
+    hostname: rce
+    image: 'vineelsai/rce:latest'
+    restart: unless-stopped
+    ports:
+      - '3010:3000'
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /usr/src/app/runs:/usr/src/app/runs
