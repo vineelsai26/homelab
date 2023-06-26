@@ -3,7 +3,7 @@ resource "cloudflare_record" "catch_all_home" {
   proxied = false
   ttl     = 1
   type    = "A"
-  value   = "10.0.0.10"
+  value   = "10.0.0.80"
   zone_id = "774c57de3172a6220c23461a2992c3a8"
 }
 
@@ -147,7 +147,7 @@ resource "cloudflare_record" "shortify" {
   proxied = true
   ttl     = 1
   type    = "CNAME"
-  value   = "shortify-vs.up.railway.app"
+  value   = "de33d9bd-e78f-400c-ab8a-51fd50a50311.cfargotunnel.com"
   zone_id = "774c57de3172a6220c23461a2992c3a8"
 }
 
@@ -297,7 +297,7 @@ resource "cloudflare_record" "_dmarc" {
   proxied = false
   ttl     = 1
   type    = "TXT"
-  value   = "v=DMARC1; p=reject; sp=none; rua=mailto:5b5054640aef433192a0894df2245896@dmarc-reports.cloudflare.net,mailto:vineelsai26@gmail.com; rua=mailto:dmarc@mailinblue.com!10m; ruf=mailto:dmarc@mailinblue.com!10m; rf=afrf; pct=100; ri=86400"
+  value   = "v=DMARC1; p=reject; sp=none; rua=mailto:5b5054640aef433192a0894df2245896@dmarc-reports.cloudflare.net; rf=afrf; pct=100; ri=86400"
   zone_id = "774c57de3172a6220c23461a2992c3a8"
 }
 
