@@ -13,3 +13,8 @@ services:
 secrets:
   mongodb_url:
     file: ./secrets/mongodb_url.txt
+
+networks:
+  default:
+    name: nginx
+    external: true
