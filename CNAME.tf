@@ -170,28 +170,31 @@ resource "cloudflare_record" "www" {
 }
 
 resource "cloudflare_record" "amazonses_domainkey_1" {
-  name    = "acloled2losoaiyn3zxjxinf6qclsjvr._domainkey.vineelsai.com"
-  proxied = true
-  ttl     = 1
-  type    = "CNAME"
-  value   = "acloled2losoaiyn3zxjxinf6qclsjvr.dkim.amazonses.com"
-  zone_id = "774c57de3172a6220c23461a2992c3a8"
+  name            = "acloled2losoaiyn3zxjxinf6qclsjvr._domainkey"
+  proxied         = true
+  allow_overwrite = true
+  ttl             = 1
+  type            = "CNAME"
+  value           = "acloled2losoaiyn3zxjxinf6qclsjvr.dkim.amazonses.com"
+  zone_id         = "774c57de3172a6220c23461a2992c3a8"
 }
 
 resource "cloudflare_record" "amazonses_domainkey_2" {
-  name    = "sn6cjudhadoldlhxvpgtqail76zucccs._domainkey.vineelsai.com"
-  proxied = true
-  ttl     = 1
-  type    = "CNAME"
-  value   = "sn6cjudhadoldlhxvpgtqail76zucccs.dkim.amazonses.com"
-  zone_id = "774c57de3172a6220c23461a2992c3a8"
+  name            = "sn6cjudhadoldlhxvpgtqail76zucccs._domainkey"
+  proxied         = true
+  allow_overwrite = true
+  ttl             = 1
+  type            = "CNAME"
+  value           = "sn6cjudhadoldlhxvpgtqail76zucccs.dkim.amazonses.com"
+  zone_id         = "774c57de3172a6220c23461a2992c3a8"
 }
 
 resource "cloudflare_record" "amazonses_domainkey_3" {
-  name    = "slg7cli4o536qdyhdphrvhivpas2ebfv._domainkey.vineelsai.com"
-  proxied = true
-  ttl     = 1
-  type    = "CNAME"
-  value   = "slg7cli4o536qdyhdphrvhivpas2ebfv.dkim.amazonses.com"
-  zone_id = "774c57de3172a6220c23461a2992c3a8"
+  name            = "slg7cli4o536qdyhdphrvhivpas2ebfv._domainkey"
+  proxied         = true
+  allow_overwrite = true
+  ttl             = 1
+  type            = "CNAME"
+  value           = "slg7cli4o536qdyhdphrvhivpas2ebfv.dkim.amazonses.com"
+  zone_id         = "774c57de3172a6220c23461a2992c3a8"
 }
