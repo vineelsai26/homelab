@@ -9,7 +9,7 @@ resource "cloudflare_record" "verify_bing" {
 
 resource "cloudflare_record" "algo" {
   name    = "algo"
-  proxied = false
+  proxied = true
   ttl     = 1
   type    = "CNAME"
   value   = "algo-47m.pages.dev"
@@ -144,7 +144,7 @@ resource "cloudflare_record" "stats_github" {
 
 resource "cloudflare_record" "sudoku" {
   name    = "sudoku"
-  proxied = false
+  proxied = true
   ttl     = 1
   type    = "CNAME"
   value   = "sudoku-web.pages.dev"
@@ -153,7 +153,7 @@ resource "cloudflare_record" "sudoku" {
 
 resource "cloudflare_record" "tictactoe" {
   name    = "tictactoe"
-  proxied = false
+  proxied = true
   ttl     = 1
   type    = "CNAME"
   value   = "tic-tac-toe-web.pages.dev"
@@ -171,8 +171,7 @@ resource "cloudflare_record" "www" {
 
 resource "cloudflare_record" "amazonses_domainkey_1" {
   name            = "acloled2losoaiyn3zxjxinf6qclsjvr._domainkey"
-  proxied         = true
-  allow_overwrite = true
+  proxied         = false
   ttl             = 1
   type            = "CNAME"
   value           = "acloled2losoaiyn3zxjxinf6qclsjvr.dkim.amazonses.com"
@@ -181,8 +180,7 @@ resource "cloudflare_record" "amazonses_domainkey_1" {
 
 resource "cloudflare_record" "amazonses_domainkey_2" {
   name            = "sn6cjudhadoldlhxvpgtqail76zucccs._domainkey"
-  proxied         = true
-  allow_overwrite = true
+  proxied         = false
   ttl             = 1
   type            = "CNAME"
   value           = "sn6cjudhadoldlhxvpgtqail76zucccs.dkim.amazonses.com"
@@ -191,8 +189,7 @@ resource "cloudflare_record" "amazonses_domainkey_2" {
 
 resource "cloudflare_record" "amazonses_domainkey_3" {
   name            = "slg7cli4o536qdyhdphrvhivpas2ebfv._domainkey"
-  proxied         = true
-  allow_overwrite = true
+  proxied         = false
   ttl             = 1
   type            = "CNAME"
   value           = "slg7cli4o536qdyhdphrvhivpas2ebfv.dkim.amazonses.com"
