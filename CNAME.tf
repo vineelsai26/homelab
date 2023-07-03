@@ -12,7 +12,7 @@ resource "cloudflare_record" "algo" {
   proxied = false
   ttl     = 1
   type    = "CNAME"
-  value   = "cname.vercel-dns.com"
+  value   = "algo-47m.pages.dev"
   zone_id = "774c57de3172a6220c23461a2992c3a8"
 }
 
@@ -67,15 +67,6 @@ resource "cloudflare_record" "balance" {
   ttl     = 1
   type    = "CNAME"
   value   = "balance-sheet-generator.pages.dev"
-  zone_id = "774c57de3172a6220c23461a2992c3a8"
-}
-
-resource "cloudflare_record" "blog" {
-  name    = "blog"
-  proxied = false
-  ttl     = 1
-  type    = "CNAME"
-  value   = "cname.vercel-dns.com"
   zone_id = "774c57de3172a6220c23461a2992c3a8"
 }
 
@@ -156,7 +147,7 @@ resource "cloudflare_record" "sudoku" {
   proxied = false
   ttl     = 1
   type    = "CNAME"
-  value   = "cname.vercel-dns.com"
+  value   = "sudoku-web.pages.dev"
   zone_id = "774c57de3172a6220c23461a2992c3a8"
 }
 
@@ -165,7 +156,7 @@ resource "cloudflare_record" "tictactoe" {
   proxied = false
   ttl     = 1
   type    = "CNAME"
-  value   = "cname.vercel-dns.com"
+  value   = "tic-tac-toe-web.pages.dev"
   zone_id = "774c57de3172a6220c23461a2992c3a8"
 }
 
