@@ -9,6 +9,18 @@ services:
       - '5000:5000'
     secrets:
       - mongodb_url
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.shortify.entrypoints=http"
+      - "traefik.http.routers.shortify.rule=Host(`shortify.home.vineelsai.com`)"
+      - "traefik.http.middlewares.shortify-https-redirect.redirectscheme.scheme=https"
+      - "traefik.http.routers.shortify.middlewares=shortify-https-redirect"
+      - "traefik.http.routers.shortify-secure.entrypoints=https"
+      - "traefik.http.routers.shortify-secure.rule=Host(`shortify.home.vineelsai.com`)"
+      - "traefik.http.routers.shortify-secure.tls=true"
+      - "traefik.http.routers.shortify-secure.service=shortify"
+      - "traefik.http.services.shortify.loadbalancer.server.port=5000"
+      - "traefik.docker.network=proxy"
 
 secrets:
   mongodb_url:
@@ -16,5 +28,5 @@ secrets:
 
 networks:
   default:
-    name: nginx
+    name: traefik_proxy
     external: true

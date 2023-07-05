@@ -9,8 +9,20 @@ services:
       - '3001:3001'
     volumes:
       - ./data:/app/data
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.uptime.entrypoints=http"
+      - "traefik.http.routers.uptime.rule=Host(`uptime.home.vineelsai.com`)"
+      - "traefik.http.middlewares.uptime-https-redirect.redirectscheme.scheme=https"
+      - "traefik.http.routers.uptime.middlewares=uptime-https-redirect"
+      - "traefik.http.routers.uptime-secure.entrypoints=https"
+      - "traefik.http.routers.uptime-secure.rule=Host(`uptime.home.vineelsai.com`)"
+      - "traefik.http.routers.uptime-secure.tls=true"
+      - "traefik.http.routers.uptime-secure.service=uptime"
+      - "traefik.http.services.uptime.loadbalancer.server.port=3001"
+      - "traefik.docker.network=proxy"
 
 networks:
   default:
-    name: nginx
+    name: traefik_proxy
     external: true
