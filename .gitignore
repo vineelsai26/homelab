@@ -3,5 +3,6 @@
 !.gitignore
 !docker-compose.yml
 !run.sh
+!stop.sh
 
 !/*/
