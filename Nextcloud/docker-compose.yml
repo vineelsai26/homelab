@@ -1,0 +1,61 @@
+version: '3'
+
+services:
+  nextcloud:
+    container_name: nextcloud
+    image: nextcloud:latest
+    restart: always
+    ports:
+      - 1080:80
+    volumes:
+      - ./code:/var/www/html
+      - ./config:/var/www/html/config
+      - ./data:/var/www/html/data
+    environment:
+      - POSTGRES_HOST=postgres
+      - POSTGRES_DB_FILE=/run/secrets/postgres_db
+      - POSTGRES_USER_FILE=/run/secrets/postgres_user
+      - POSTGRES_PASSWORD_FILE=/run/secrets/postgres_password
+      - NEXTCLOUD_ADMIN_PASSWORD_FILE=/run/secrets/nextcloud_admin_password
+      - NEXTCLOUD_ADMIN_USER_FILE=/run/secrets/nextcloud_admin_user
+      - NEXTCLOUD_TRUSTED_DOMAINS=nextcloud.home.vineelsai.com
+      - OVERWRITEPROTOCOL=https
+    secrets:
+      - nextcloud_admin_password
+      - nextcloud_admin_user
+      - postgres_db
+      - postgres_password
+      - postgres_user
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.nextcloud.entrypoints=http"
+      - "traefik.http.routers.nextcloud.rule=Host(`nextcloud.home.vineelsai.com`)"
+      - "traefik.http.middlewares.nextcloud-https-redirect.redirectscheme.scheme=https"
+      - "traefik.http.routers.nextcloud.middlewares=nextcloud-https-redirect"
+      - "traefik.http.routers.nextcloud-secure.entrypoints=https"
+      - "traefik.http.routers.nextcloud-secure.rule=Host(`nextcloud.home.vineelsai.com`)"
+      - "traefik.http.routers.nextcloud-secure.tls=true"
+      - "traefik.http.routers.nextcloud-secure.middlewares=nextcloud_redirectregex"
+      - "traefik.http.middlewares.nextcloud_redirectregex.redirectregex.permanent=true"
+      - "traefik.http.middlewares.nextcloud_redirectregex.redirectregex.regex='https://(.*)/.well-known/(?:card|cal)dav"
+      - "traefik.http.middlewares.nextcloud_redirectregex.redirectregex.replacement='https://$${1}/remote.php/dav'"
+      - "traefik.http.routers.nextcloud-secure.service=nextcloud"
+      - "traefik.http.services.nextcloud.loadbalancer.server.port=80"
+      - "traefik.docker.network=proxy"
+
+secrets:
+  nextcloud_admin_password:
+    file: ./secretes/nextcloud_admin_password.txt # put admin password in this file
+  nextcloud_admin_user:
+    file: ./secretes/nextcloud_admin_user.txt # put admin username in this file
+  postgres_db:
+    file: ../Postgres/secretes/postgres_db.txt # put postgresql db name in this file
+  postgres_password:
+    file: ../Postgres/secretes/postgres_password.txt # put postgresql password in this file
+  postgres_user:
+    file: ../Postgres/secretes/postgres_user.txt # put postgresql username in this file
+
+networks:
+  default:
+    name: traefik_proxy
+    external: true
