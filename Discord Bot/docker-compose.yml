@@ -1,6 +1,6 @@
 version: '3'
 services:
-  app:
+  discord_bot:
     container_name: discord-bot
     hostname: discord-bot
     image: 'vineelsai/discord-bot:latest'

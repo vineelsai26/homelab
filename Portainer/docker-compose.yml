@@ -1,6 +1,6 @@
 version: '3'
 services:
-  app:
+  portainer:
     container_name: portainer
     hostname: portainer
     image: 'portainer/portainer-ee:latest'
