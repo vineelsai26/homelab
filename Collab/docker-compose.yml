@@ -1,0 +1,28 @@
+version: '3'
+services:
+  collab:
+    container_name: collab-server
+    hostname: collab-server
+    image: 'vineelsai/collab-server:latest'
+    restart: unless-stopped
+    ports:
+      - '4000:4000'
+    env_file:
+      - .env
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.collab.entrypoints=http"
+      - "traefik.http.routers.collab.rule=Host(`api.collab.home.vineelsai.com`)"
+      - "traefik.http.middlewares.collab-https-redirect.redirectscheme.scheme=https"
+      - "traefik.http.routers.collab.middlewares=collab-https-redirect"
+      - "traefik.http.routers.collab-secure.entrypoints=https"
+      - "traefik.http.routers.collab-secure.rule=Host(`api.collab.home.vineelsai.com`)"
+      - "traefik.http.routers.collab-secure.tls=true"
+      - "traefik.http.routers.collab-secure.service=collab"
+      - "traefik.http.services.collab.loadbalancer.server.port=4000"
+      - "traefik.docker.network=proxy"
+
+networks:
+  default:
+    name: traefik_proxy
+    external: true
