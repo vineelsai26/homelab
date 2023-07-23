@@ -16,15 +16,6 @@ resource "cloudflare_record" "algo" {
   zone_id = "774c57de3172a6220c23461a2992c3a8"
 }
 
-resource "cloudflare_record" "api_collab" {
-  name    = "api.collab"
-  proxied = false
-  ttl     = 1
-  type    = "CNAME"
-  value   = "collab.up.railway.app"
-  zone_id = "774c57de3172a6220c23461a2992c3a8"
-}
-
 resource "cloudflare_record" "archive1" {
   name    = "archive1"
   proxied = true
@@ -70,15 +61,6 @@ resource "cloudflare_record" "balance" {
   zone_id = "774c57de3172a6220c23461a2992c3a8"
 }
 
-resource "cloudflare_record" "collab" {
-  name    = "collab"
-  proxied = false
-  ttl     = 1
-  type    = "CNAME"
-  value   = "cname.vercel-dns.com"
-  zone_id = "774c57de3172a6220c23461a2992c3a8"
-}
-
 resource "cloudflare_record" "_domainconnect" {
   name    = "_domainconnect"
   proxied = true
@@ -97,30 +79,12 @@ resource "cloudflare_record" "material" {
   zone_id = "774c57de3172a6220c23461a2992c3a8"
 }
 
-resource "cloudflare_record" "privacy" {
-  name    = "privacy"
-  proxied = false
-  ttl     = 1
-  type    = "CNAME"
-  value   = "cname.vercel-dns.com"
-  zone_id = "774c57de3172a6220c23461a2992c3a8"
-}
-
 resource "cloudflare_record" "repo" {
   name    = "repo"
   proxied = false
   ttl     = 1
   type    = "CNAME"
   value   = "cname.vercel-dns.com"
-  zone_id = "774c57de3172a6220c23461a2992c3a8"
-}
-
-resource "cloudflare_record" "shortify" {
-  name    = "shortify"
-  proxied = true
-  ttl     = 1
-  type    = "CNAME"
-  value   = "de33d9bd-e78f-400c-ab8a-51fd50a50311.cfargotunnel.com"
   zone_id = "774c57de3172a6220c23461a2992c3a8"
 }
 
