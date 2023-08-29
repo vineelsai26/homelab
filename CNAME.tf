@@ -133,6 +133,24 @@ resource "cloudflare_record" "www" {
   zone_id = "774c57de3172a6220c23461a2992c3a8"
 }
 
+resource "cloudflare_record" "icons" {
+  name    = "icons"
+  proxied = false
+  ttl     = 1
+  type    = "CNAME"
+  value   = "skill-icons.pages.dev"
+  zone_id = "774c57de3172a6220c23461a2992c3a8"
+}
+
+resource "cloudflare_record" "collab" {
+  name    = "collab"
+  proxied = false
+  ttl     = 1
+  type    = "CNAME"
+  value   = "collab-aem.pages.dev"
+  zone_id = "774c57de3172a6220c23461a2992c3a8"
+}
+
 resource "cloudflare_record" "amazonses_domainkey_1" {
   name            = "acloled2losoaiyn3zxjxinf6qclsjvr._domainkey"
   proxied         = false
