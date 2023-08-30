@@ -9,7 +9,7 @@ resource "cloudflare_record" "root" {
 
 resource "cloudflare_record" "api_collab" {
   name    = "api.collab"
-  proxied = true
+  proxied = false
   ttl     = 1
   type    = "A"
   value   = "144.24.141.117"
