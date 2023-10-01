@@ -10,5 +10,5 @@ services:
 
 networks:
   default:
-    name: nginx
+    name: traefik_proxy
     external: true

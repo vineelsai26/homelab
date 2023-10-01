@@ -7,8 +7,8 @@ services:
     restart: unless-stopped
     ports:
       - '5000:5000'
-    secrets:
-      - mongodb_url
+    env_file:
+      - .env
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.shortify.entrypoints=http"
@@ -21,10 +21,6 @@ services:
       - "traefik.http.routers.shortify-secure.service=shortify"
       - "traefik.http.services.shortify.loadbalancer.server.port=5000"
       - "traefik.docker.network=proxy"
-
-secrets:
-  mongodb_url:
-    file: ./secrets/mongodb_url.txt
 
 networks:
   default:

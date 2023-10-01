@@ -8,22 +8,8 @@ services:
     restart: always
     volumes:
       - ./data:/var/lib/postgresql/data
-    environment:
-      - POSTGRES_DB_FILE=/run/secrets/postgres_db
-      - POSTGRES_USER_FILE=/run/secrets/postgres_user
-      - POSTGRES_PASSWORD_FILE=/run/secrets/postgres_password
-    secrets:
-      - postgres_db
-      - postgres_password
-      - postgres_user
-
-secrets:
-  postgres_db:
-    file: ./secretes/postgres_db.txt # put postgresql db name in this file
-  postgres_password:
-    file: ./secretes/postgres_password.txt # put postgresql password in this file
-  postgres_user:
-    file: ./secretes/postgres_user.txt # put postgresql username in this file
+    env_file:
+      - .env
 
 networks:
   default:
