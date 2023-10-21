@@ -34,7 +34,7 @@ resource "cloudflare_record" "resend_domainkey" {
   zone_id = "774c57de3172a6220c23461a2992c3a8"
 }
 
-resource "cloudflare_record" "terraform_managed_resource_bf75d5b10818503aca1c2eb544ba5abe" {
+resource "cloudflare_record" "spf1" {
   name    = "vineelsai.com"
   proxied = false
   ttl     = 3600
