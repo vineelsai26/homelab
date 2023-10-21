@@ -34,39 +34,12 @@ resource "cloudflare_record" "resend_domainkey" {
   zone_id = "774c57de3172a6220c23461a2992c3a8"
 }
 
-resource "cloudflare_record" "terraform_managed_resource_8fa6a0a42e889c6027b24ae806077f0d" {
-  name    = "vineelsai.com"
-  proxied = false
-  ttl     = 3600
-  type    = "TXT"
-  value   = "google-site-verification=aDfG0Czr2aQh58x5KksuTjJ7N9HLUdriy2N76_C6_VE"
-  zone_id = "774c57de3172a6220c23461a2992c3a8"
-}
-
 resource "cloudflare_record" "terraform_managed_resource_bf75d5b10818503aca1c2eb544ba5abe" {
   name    = "vineelsai.com"
   proxied = false
   ttl     = 3600
   type    = "TXT"
-  value   = "v=spf1 include:_spf.google.com -all"
-  zone_id = "774c57de3172a6220c23461a2992c3a8"
-}
-
-resource "cloudflare_record" "terraform_managed_resource_6a2f55fb1a3c515e87a82a6283ff35e7" {
-  name    = "vineelsai.com"
-  proxied = false
-  ttl     = 3600
-  type    = "TXT"
-  value   = "google-site-verification=Dd177Dg0CMT4hcRRmPdketoAzQ-kZAdbQ5SYwENPVQU"
-  zone_id = "774c57de3172a6220c23461a2992c3a8"
-}
-
-resource "cloudflare_record" "terraform_managed_resource_0794bc0970864084e158e0536006d31d" {
-  name    = "vineelsai.com"
-  proxied = false
-  ttl     = 3600
-  type    = "TXT"
-  value   = "google-site-verification=iKocTEO41AehGKbLEgO_LaepDR6Zd2LKvRN77OVK2Xs"
+  value   = "v=spf1 include:icloud.com ~all"
   zone_id = "774c57de3172a6220c23461a2992c3a8"
 }
 

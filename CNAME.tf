@@ -135,7 +135,7 @@ resource "cloudflare_record" "www" {
 
 resource "cloudflare_record" "icons" {
   name    = "icons"
-  proxied = false
+  proxied = true
   ttl     = 1
   type    = "CNAME"
   value   = "skill-icons.pages.dev"
@@ -144,7 +144,7 @@ resource "cloudflare_record" "icons" {
 
 resource "cloudflare_record" "collab" {
   name    = "collab"
-  proxied = false
+  proxied = true
   ttl     = 1
   type    = "CNAME"
   value   = "collab-aem.pages.dev"
