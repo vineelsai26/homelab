@@ -6,9 +6,12 @@ services:
     image: 'vineelsai/shortify:latest'
     restart: unless-stopped
     ports:
-      - '5000:5000'
+      - '3000:3000'
     env_file:
       - .env
+    volumes:
+      - ./.env:/usr/src/app/.env
+    command: ./shortify
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.shortify.entrypoints=http"
@@ -19,7 +22,7 @@ services:
       - "traefik.http.routers.shortify-secure.rule=Host(`shortify.home.vineelsai.com`)"
       - "traefik.http.routers.shortify-secure.tls=true"
       - "traefik.http.routers.shortify-secure.service=shortify"
-      - "traefik.http.services.shortify.loadbalancer.server.port=5000"
+      - "traefik.http.services.shortify.loadbalancer.server.port=3000"
       - "traefik.docker.network=proxy"
 
 networks:
