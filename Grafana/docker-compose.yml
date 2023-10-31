@@ -1,6 +1,6 @@
 services:
   prometheus:
-    image: prom/prometheus:latest
+    image: prom/prometheus:v2.47.2
     container_name: prometheus
     ports:
       - 9090:9090
@@ -23,7 +23,7 @@ services:
       - "traefik.docker.network=proxy"
 
   node_exporter:
-    image: quay.io/prometheus/node-exporter:v1.5.0
+    image: quay.io/prometheus/node-exporter:v1.6.1
     container_name: node_exporter
     command: "--path.rootfs=/host"
     pid: host
@@ -32,7 +32,7 @@ services:
     restart: unless-stopped
 
   cadvisor:
-    image: gcr.io/cadvisor/cadvisor:v0.47.0
+    image: gcr.io/cadvisor/cadvisor:v0.47.2
     container_name: cadvisor
     ports:
       - 8080:8080
@@ -60,10 +60,10 @@ services:
       - "traefik.docker.network=proxy"
 
   grafana:
-    image: grafana/grafana-oss:latest
+    image: grafana/grafana-oss:10.2.0
     container_name: grafana
     ports:
-      - "3000:3000"
+      - "3080:3000"
     volumes:
       - ./data/grafana:/var/lib/grafana
     restart: unless-stopped

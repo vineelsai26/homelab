@@ -13,11 +13,11 @@ services:
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.rce.entrypoints=http"
-      - "traefik.http.routers.rce.rule=Host(`rce.home.vineelsai.com`)"
+      - "traefik.http.routers.rce.rule=Host(`rce.home.vineelsai.com`)||Host(`rce.vineelsai.com`)"
       - "traefik.http.middlewares.rce-https-redirect.redirectscheme.scheme=https"
       - "traefik.http.routers.rce.middlewares=rce-https-redirect"
       - "traefik.http.routers.rce-secure.entrypoints=https"
-      - "traefik.http.routers.rce-secure.rule=Host(`rce.home.vineelsai.com`)"
+      - "traefik.http.routers.rce-secure.rule=Host(`rce.home.vineelsai.com`)||Host(`rce.vineelsai.com`)"
       - "traefik.http.routers.rce-secure.tls=true"
       - "traefik.http.routers.rce-secure.service=rce"
       - "traefik.http.services.rce.loadbalancer.server.port=3000"

@@ -1,0 +1,13 @@
+services:
+  cloudflare:
+    image: cloudflare/cloudflared:latest
+    container_name: cloudflared
+    command: tunnel --no-autoupdate run
+    restart: unless-stopped
+    env_file:
+      - .env
+
+networks:
+  default:
+    name: traefik_proxy
+    external: true

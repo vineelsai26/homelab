@@ -16,11 +16,11 @@ services:
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.nextcloud.entrypoints=http"
-      - "traefik.http.routers.nextcloud.rule=Host(`nextcloud.home.vineelsai.com`)"
+      - "traefik.http.routers.nextcloud.rule=Host(`nextcloud.home.vineelsai.com`)||Host(`nextcloud.vineelsai.com`)"
       - "traefik.http.middlewares.nextcloud-https-redirect.redirectscheme.scheme=https"
       - "traefik.http.routers.nextcloud.middlewares=nextcloud-https-redirect"
       - "traefik.http.routers.nextcloud-secure.entrypoints=https"
-      - "traefik.http.routers.nextcloud-secure.rule=Host(`nextcloud.home.vineelsai.com`)"
+      - "traefik.http.routers.nextcloud-secure.rule=Host(`nextcloud.home.vineelsai.com`)||Host(`nextcloud.vineelsai.com`)"
       - "traefik.http.routers.nextcloud-secure.tls=true"
       - "traefik.http.routers.nextcloud-secure.middlewares=nextcloud_redirectregex"
       - "traefik.http.middlewares.nextcloud_redirectregex.redirectregex.permanent=true"
