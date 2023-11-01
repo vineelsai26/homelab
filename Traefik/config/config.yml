@@ -1,0 +1,94 @@
+http:
+  routers:
+    proxmox:
+      entryPoints:
+        - "https"
+      rule: "Host(`proxmox.home.vineelsai.com`)"
+      middlewares:
+        - default-headers
+        - https-redirectscheme
+      tls: {}
+      service: proxmox
+    pihole:
+      entryPoints:
+        - "https"
+      rule: "Host(`pihole.home.vineelsai.com`)"
+      middlewares:
+        - redirectregex-pihole
+        - default-headers
+        - addprefix-pihole
+        - https-redirectscheme
+      tls: {}
+      service: pihole
+    adguard:
+      entryPoints:
+        - "https"
+      rule: "Host(`adguard.home.vineelsai.com`)"
+      middlewares:
+        - default-headers
+        - https-redirectscheme
+      tls: {}
+      service: adguard
+
+  services:
+    proxmox:
+      loadBalancer:
+        servers:
+          - url: "https://10.0.0.81:8006"
+        passHostHeader: true
+    pihole:
+      loadBalancer:
+        servers:
+          - url: "http://10.0.0.53:80"
+        passHostHeader: true
+    adguard:
+      loadBalancer:
+        servers:
+          - url: "http://10.0.0.54:80"
+        passHostHeader: true
+
+  middlewares:
+    https-redirectscheme:
+      redirectScheme:
+        scheme: https
+        permanent: true
+    addprefix-pihole:
+      addPrefix:
+        prefix: "/admin"
+    redirectregex-pihole:
+      redirectRegex:
+        regex: /admin/$
+        replacement: /
+
+    cloudflarewarp:
+        plugin:
+            cloudflarewarp:
+                disableDefault: "false"
+                trustip:
+                    - 2400:cb00::/32
+
+    default-headers:
+      headers:
+        frameDeny: true
+        browserXssFilter: true
+        contentTypeNosniff: true
+        forceSTSHeader: true
+        stsIncludeSubdomains: true
+        stsPreload: true
+        stsSeconds: 15552000
+        customFrameOptionsValue: SAMEORIGIN
+        customRequestHeaders:
+          X-Forwarded-Proto: https
+
+    default-whitelist:
+      ipWhiteList:
+        sourceRange:
+        - "10.0.0.0/8"
+        - "192.168.0.0/16"
+        - "172.16.0.0/12"
+
+    secured:
+      chain:
+        middlewares:
+        - default-whitelist
+        - default-headers

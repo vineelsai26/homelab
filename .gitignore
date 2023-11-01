@@ -1,4 +1,6 @@
-*
+*.*
+/*/data/*
+/*/code/*
 
 !.gitignore
 !docker-compose.yml
@@ -6,5 +8,7 @@
 !stop.sh
 !backup.sh
 !update.sh
-
-!/*/
+!traefik.yml
+!config.yml
+!prometheus.yml
+!.env.example
