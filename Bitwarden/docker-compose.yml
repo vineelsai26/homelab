@@ -3,7 +3,7 @@ services:
   vaultwarden:
     container_name: vaultwarden
     hostname: vaultwarden
-    image: 'vaultwarden/server:latest'
+    image: 'vaultwarden/server:1.29.2'
     restart: unless-stopped
     ports:
       - '2080:80'

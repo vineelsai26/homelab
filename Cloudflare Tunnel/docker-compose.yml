@@ -1,6 +1,6 @@
 services:
   cloudflare:
-    image: cloudflare/cloudflared:latest
+    image: 'cloudflare/cloudflared:2023.10.0'
     container_name: cloudflared
     command: tunnel --no-autoupdate run
     restart: unless-stopped

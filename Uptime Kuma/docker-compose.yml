@@ -3,7 +3,7 @@ services:
   uptime_kuma:
     container_name: uptime-kuma
     hostname: uptime-kuma
-    image: 'louislam/uptime-kuma:latest'
+    image: 'louislam/uptime-kuma:1'
     restart: unless-stopped
     ports:
       - '3001:3001'
