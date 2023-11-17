@@ -1,2 +1,3 @@
 inventory
 .DS_Store
+ansible*key

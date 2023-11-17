@@ -3,15 +3,19 @@
   become: true
   hosts: all
   tasks:
-    - name: Basic setup
-      ansible.builtin.include_tasks:
-        file: basic-setup.yaml
+      - name: Basic setup
+        ansible.builtin.include_tasks:
+            file: basic-setup.yaml
 
-    - name: Install Docker
-      ansible.builtin.include_tasks:
-        file: install-docker-{{ ansible_os_family | lower }}.yaml
+      - name: Install Docker
+        ansible.builtin.include_tasks:
+            file: install-docker-{{ ansible_os_family | lower }}.yaml
 
-    - name: Install Nala
-      when: ansible_os_family == 'Debian'
-      ansible.builtin.include_tasks:
-        file: install-nala.yaml
+      - name: Setup Repo
+        when: ansible_os_family == 'Debian'
+        ansible.builtin.include_tasks:
+            file: repo-setup-debain.yaml
+
+      - name: Setup dotfiles
+        ansible.builtin.include_tasks:
+            file: dotfiles-setup.yaml

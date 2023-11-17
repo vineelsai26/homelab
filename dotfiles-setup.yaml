@@ -1,0 +1,24 @@
+---
+- name: Clone bare dotfiles repo
+  remote_user: vineel
+  become: false
+  ansible.builtin.git:
+    repo: https://github.com/vineelsai26/dotfiles.git
+    bare: true
+    clone: true
+    recursive: true
+    dest: ~/.cfg
+
+- name: stash any local changes in home directory
+  remote_user: vineel
+  become: false
+  ansible.builtin.shell:
+    chdir: ~
+    cmd: git --git-dir=$HOME/.cfg/ --work-tree=$HOME stash
+
+- name: checkout to dotfiles
+  remote_user: vineel
+  become: false
+  ansible.builtin.shell:
+    chdir: ~
+    cmd: git --git-dir=$HOME/.cfg/ --work-tree=$HOME reset --soft
