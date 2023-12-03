@@ -22,3 +22,34 @@
   ansible.builtin.shell:
     chdir: ~
     cmd: git --git-dir=$HOME/.cfg/ --work-tree=$HOME reset --soft
+
+- name: init submodules
+  remote_user: vineel
+  become: false
+  ansible.builtin.shell:
+    chdir: ~
+    cmd: git --git-dir=$HOME/.cfg/ --work-tree=$HOME submodule update --init --recursive
+
+- name: Clone zsh-autosuggestions
+  remote_user: vineel
+  become: false
+  ansible.builtin.git:
+    repo: https://github.com/zsh-users/zsh-autosuggestions
+    clone: true
+    dest: ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+
+- name: Clone zsh-completions
+  remote_user: vineel
+  become: false
+  ansible.builtin.git:
+    repo: https://github.com/zsh-users/zsh-completions
+    clone: true
+    dest: ~/.oh-my-zsh/custom/plugins/zsh-completions
+
+- name: Clone zsh-syntax-highlighting
+  remote_user: vineel
+  become: false
+  ansible.builtin.git:
+    repo: https://github.com/zsh-users/zsh-syntax-highlighting
+    clone: true
+    dest: ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting

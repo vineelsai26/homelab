@@ -10,3 +10,9 @@
   ansible.builtin.apt_repository:
     repo: deb https://repo.vineelsai.com/linux/debian stable main
     state: present
+
+- name: Install Vineel's Packages
+  when: ansible_distribution in ['Ubuntu', 'Debian']
+  ansible.builtin.apt:
+    name:
+      - vmn
