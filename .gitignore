@@ -1,3 +1,6 @@
 inventory
 .DS_Store
 ansible*key
+.hypothesis
+.vscode
+.pytest_cache

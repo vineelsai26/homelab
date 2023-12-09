@@ -16,6 +16,11 @@
         ansible.builtin.include_tasks:
             file: repo-setup-debain.yaml
 
+      - name: Install Node & Python
+        when: ansible_os_family == 'Debian'
+        ansible.builtin.include_tasks:
+            file: node-python-setup.yaml
+
       - name: Setup dotfiles
         ansible.builtin.include_tasks:
             file: dotfiles-setup.yaml
