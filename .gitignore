@@ -1,6 +1,7 @@
 *.*
 /*/data/*
 /*/code/*
+/*/html/*
 
 !.gitignore
 !docker-compose.yml
@@ -12,3 +13,4 @@
 !config.yml
 !prometheus.yml
 !.env.example
+!nginx.conf

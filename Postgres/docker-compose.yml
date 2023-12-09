@@ -1,15 +1,25 @@
 version: '3'
 
 services:
-  postgres:
-    container_name: postgres
-    hostname: postgres
+  postgres_nextcloud:
+    container_name: postgres_nextcloud
+    hostname: postgres_nextcloud
     image: postgres:16.0
     restart: always
     volumes:
-      - ./data:/var/lib/postgresql/data
+      - ./data/postgres_nextcloud:/var/lib/postgresql/data
     env_file:
-      - .env
+      - nextcloud.env
+
+  postgres_gitea:
+    container_name: postgres_gitea
+    hostname: postgres_gitea
+    image: postgres:14.0
+    restart: always
+    volumes:
+      - ./data/postgres_gitea:/var/lib/postgresql/data
+    env_file:
+      - gitea.env
 
 networks:
   default:
