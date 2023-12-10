@@ -1,0 +1,30 @@
+version: '3'
+services:
+  rancher:
+    container_name: rancher
+    hostname: rancher
+    image: 'rancher/rancher:v2.8.0'
+    restart: unless-stopped
+    privileged: true
+    ports:
+      - '10080:80'
+      - '10443:443'
+    volumes:
+      - "./data:/var/lib/rancher"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.rancher.entrypoints=http"
+      - "traefik.http.routers.rancher.rule=Host(`rancher.home.vineelsai.com`)"
+      - "traefik.http.middlewares.rancher-https-redirect.redirectscheme.scheme=https"
+      - "traefik.http.routers.rancher.middlewares=rancher-https-redirect"
+      - "traefik.http.routers.rancher-secure.entrypoints=https"
+      - "traefik.http.routers.rancher-secure.rule=Host(`rancher.home.vineelsai.com`)"
+      - "traefik.http.routers.rancher-secure.tls=true"
+      - "traefik.http.routers.rancher-secure.service=rancher"
+      - "traefik.http.services.rancher.loadbalancer.server.port=443"
+      - "traefik.docker.network=proxy"
+
+networks:
+  default:
+    name: traefik_proxy
+    external: true
