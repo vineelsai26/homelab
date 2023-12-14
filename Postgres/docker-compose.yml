@@ -6,6 +6,7 @@ services:
     hostname: postgres_nextcloud
     image: postgres:16.0
     restart: always
+    user: "1000:1000"
     volumes:
       - ./data/postgres_nextcloud:/var/lib/postgresql/data
     env_file:
@@ -16,6 +17,7 @@ services:
     hostname: postgres_gitea
     image: postgres:14.0
     restart: always
+    user: "1000:1000"
     volumes:
       - ./data/postgres_gitea:/var/lib/postgresql/data
     env_file:

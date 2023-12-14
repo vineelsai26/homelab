@@ -1,0 +1,30 @@
+version: "2.1"
+services:
+  filebrowser:
+    image: filebrowser/filebrowser
+    container_name: filebrowser
+    volumes:
+      - /home/vineel:/srv
+      - ./filebrowser/database.db:/database.db
+      - ./filebrowser/config/settings.json:/.filebrowser.json
+    ports:
+      - 8011:80
+    restart: unless-stopped
+    user: "1000:1000"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.filebrowser.entrypoints=http"
+      - "traefik.http.routers.filebrowser.rule=Host(`files.home.vineelsai.com`)||Host(`files.vineelsai.com`)"
+      - "traefik.http.middlewares.filebrowser-https-redirect.redirectscheme.scheme=https"
+      - "traefik.http.routers.filebrowser.middlewares=filebrowser-https-redirect"
+      - "traefik.http.routers.filebrowser-secure.entrypoints=https"
+      - "traefik.http.routers.filebrowser-secure.rule=Host(`files.home.vineelsai.com`)||Host(`files.vineelsai.com`)"
+      - "traefik.http.routers.filebrowser-secure.tls=true"
+      - "traefik.http.routers.filebrowser-secure.service=filebrowser"
+      - "traefik.http.services.filebrowser.loadbalancer.server.port=80"
+      - "traefik.docker.network=proxy"
+
+networks:
+  default:
+    name: traefik_proxy
+    external: true

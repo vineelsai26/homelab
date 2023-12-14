@@ -5,6 +5,7 @@ services:
     container_name: nextcloud
     image: nextcloud:27.1.4-fpm-alpine
     restart: always
+    user: "1000:1000"
     volumes:
       - ./html:/var/www/html
     env_file:
