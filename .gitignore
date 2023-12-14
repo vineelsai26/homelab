@@ -2,6 +2,7 @@
 /*/data/*
 /*/code/*
 /*/html/*
+/*/letsencrypt/*
 
 !.gitignore
 !docker-compose.yml
