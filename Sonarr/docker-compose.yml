@@ -10,7 +10,7 @@ services:
     volumes:
       - ./sonarr/data:/config
       - ./sonarr/tv:/tv #optional
-      - ./sonarr/downloads:/downloads #optional
+      - ../Transmission/transmission/downloads:/downloads #optional
     ports:
       - 8989:8989
     restart: unless-stopped
