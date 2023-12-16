@@ -4,11 +4,10 @@ services:
     image: ghcr.io/home-assistant/home-assistant:stable
     container_name: homeassistant
     privileged: true
-    environment:
-      - TZ=Asia/Kolkata
     volumes:
       - ./config:/config
       - /run/dbus:/run/dbus:ro
+      - /etc/localtime:/etc/localtime:ro
     network_mode: host
     restart: unless-stopped
     labels:
