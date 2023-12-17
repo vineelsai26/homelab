@@ -21,6 +21,10 @@
         ansible.builtin.include_tasks:
             file: node-python-setup.yaml
 
+      - name: Install eza
+        ansible.builtin.include_tasks:
+            file: install-eza-debian.yaml
+
       - name: Setup dotfiles
         ansible.builtin.include_tasks:
             file: dotfiles-setup.yaml

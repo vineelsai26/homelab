@@ -1,6 +1,6 @@
 ---
 - name: Install Node.js
-  remote_user: vineel
+  remote_user: "{{ ansible_user }}"
   become: false
   ansible.builtin.shell:
     chdir: ~
@@ -8,11 +8,11 @@
       vmn node install lts
       vmn node use lts
 
-- name: Install Python
-  remote_user: vineel
-  become: false
-  ansible.builtin.shell:
-    chdir: ~
-    cmd: |
-      vmn python install 3.12
-      vmn python use 3.12
+# - name: Install Python # Taking too long
+#   remote_user: "{{ ansible_user }}"
+#   become: false
+#   ansible.builtin.shell:
+#     chdir: ~
+#     cmd: |
+#       vmn python install 3.12
+#       vmn python use 3.12

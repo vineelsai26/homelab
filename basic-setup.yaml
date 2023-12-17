@@ -1,7 +1,7 @@
 ---
 - name: User setup
   ansible.builtin.user:
-    name: vineel
+    name: "{{ ansible_user }}"
     shell: /bin/zsh
     createhome: true
     state: present

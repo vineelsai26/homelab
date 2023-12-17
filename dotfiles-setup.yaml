@@ -1,6 +1,6 @@
 ---
 - name: Clone bare dotfiles repo
-  remote_user: vineel
+  remote_user: "{{ ansible_user }}"
   become: false
   ansible.builtin.git:
     repo: https://github.com/vineelsai26/dotfiles.git
@@ -9,29 +9,29 @@
     recursive: true
     dest: ~/.cfg
 
-- name: stash any local changes in home directory
-  remote_user: vineel
+- name: Stash any local changes in home directory
+  remote_user: "{{ ansible_user }}"
   become: false
   ansible.builtin.shell:
     chdir: ~
     cmd: git --git-dir=$HOME/.cfg/ --work-tree=$HOME stash
 
-- name: checkout to dotfiles
-  remote_user: vineel
+- name: Checkout to dotfiles
+  remote_user: "{{ ansible_user }}"
   become: false
   ansible.builtin.shell:
     chdir: ~
     cmd: git --git-dir=$HOME/.cfg/ --work-tree=$HOME reset --soft
 
-- name: init submodules
-  remote_user: vineel
+- name: Init Submodules
+  remote_user: "{{ ansible_user }}"
   become: false
   ansible.builtin.shell:
     chdir: ~
     cmd: git --git-dir=$HOME/.cfg/ --work-tree=$HOME submodule update --init --recursive
 
 - name: Clone zsh-autosuggestions
-  remote_user: vineel
+  remote_user: "{{ ansible_user }}"
   become: false
   ansible.builtin.git:
     repo: https://github.com/zsh-users/zsh-autosuggestions
@@ -39,7 +39,7 @@
     dest: ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 
 - name: Clone zsh-completions
-  remote_user: vineel
+  remote_user: "{{ ansible_user }}"
   become: false
   ansible.builtin.git:
     repo: https://github.com/zsh-users/zsh-completions
@@ -47,7 +47,7 @@
     dest: ~/.oh-my-zsh/custom/plugins/zsh-completions
 
 - name: Clone zsh-syntax-highlighting
-  remote_user: vineel
+  remote_user: "{{ ansible_user }}"
   become: false
   ansible.builtin.git:
     repo: https://github.com/zsh-users/zsh-syntax-highlighting
