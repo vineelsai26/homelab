@@ -1,0 +1,29 @@
+services:
+  semaphore:
+    container_name: ansiblesemaphore
+    image: semaphoreui/semaphore:v2.9.37
+    ports:
+      - 3011:3000
+    env_file:
+      - .env
+    volumes:
+      - ./inventory/:/inventory:ro
+      - ./authorized-keys/:/authorized-keys:ro
+    restart: unless-stopped
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.semaphore.entrypoints=http"
+      - "traefik.http.routers.semaphore.rule=Host(`semaphore.home.vineelsai.com`)||Host(`semaphore.vineelsai.com`)"
+      - "traefik.http.middlewares.semaphore-https-redirect.redirectscheme.scheme=https"
+      - "traefik.http.routers.semaphore.middlewares=semaphore-https-redirect"
+      - "traefik.http.routers.semaphore-secure.entrypoints=https"
+      - "traefik.http.routers.semaphore-secure.rule=Host(`semaphore.home.vineelsai.com`)||Host(`semaphore.vineelsai.com`)"
+      - "traefik.http.routers.semaphore-secure.tls=true"
+      - "traefik.http.routers.semaphore-secure.service=semaphore"
+      - "traefik.http.services.semaphore.loadbalancer.server.port=3000"
+      - "traefik.docker.network=proxy"
+
+networks:
+  default:
+    name: traefik_proxy
+    external: true

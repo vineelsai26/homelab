@@ -15,13 +15,24 @@ services:
   postgres_gitea:
     container_name: postgres_gitea
     hostname: postgres_gitea
-    image: postgres:14.0
+    image: postgres:14
     restart: always
     user: "1000:1000"
     volumes:
       - ./data/postgres_gitea:/var/lib/postgresql/data
     env_file:
       - gitea.env
+
+  postgres_semaphore:
+    container_name: postgres_semaphore
+    hostname: postgres_semaphore
+    image: postgres:14
+    restart: always
+    user: "1000:1000"
+    volumes:
+      - ./data/postgres_semaphore:/var/lib/postgresql/data
+    env_file:
+      - semaphore.env
 
 networks:
   default:

@@ -3,6 +3,7 @@
 /*/code/*
 /*/html/*
 /*/letsencrypt/*
+/*/duplicati/*
 
 !.gitignore
 !docker-compose.yml
@@ -15,3 +16,4 @@
 !prometheus.yml
 !.env.example
 !nginx.conf
+!default.json
