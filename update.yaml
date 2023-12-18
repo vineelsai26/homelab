@@ -1,0 +1,9 @@
+---
+- name: Update and Upgrade all packages on Debian based systems
+  become: true
+  hosts: all
+  tasks:
+      - name: Basic setup
+        when: ansible_os_family == "Debian"
+        ansible.builtin.include_tasks:
+            file: modules/update-debian.yaml

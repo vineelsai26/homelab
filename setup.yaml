@@ -5,26 +5,27 @@
   tasks:
       - name: Basic setup
         ansible.builtin.include_tasks:
-            file: basic-setup.yaml
+            file: modules/basic-setup.yaml
 
       - name: Install Docker
         ansible.builtin.include_tasks:
-            file: install-docker-{{ ansible_os_family | lower }}.yaml
+            file: modules/install-docker-{{ ansible_os_family | lower }}.yaml
 
       - name: Setup Repo
         when: ansible_os_family == 'Debian'
         ansible.builtin.include_tasks:
-            file: repo-setup-debain.yaml
+            file: modules/repo-setup-debain.yaml
 
       - name: Install Node & Python
         when: ansible_os_family == 'Debian'
         ansible.builtin.include_tasks:
-            file: node-python-setup.yaml
+            file: modules/node-python-setup.yaml
 
       - name: Install eza
+        when: ansible_os_family == 'Debian'
         ansible.builtin.include_tasks:
-            file: install-eza-debian.yaml
+            file: modules/install-eza-debian.yaml
 
       - name: Setup dotfiles
         ansible.builtin.include_tasks:
-            file: dotfiles-setup.yaml
+            file: modules/dotfiles-setup.yaml
