@@ -3,7 +3,7 @@
   become: true
   hosts: all
   tasks:
-      - name: Basic setup
+      - name: Update & Upgrade all packages
         when: ansible_os_family == "Debian"
         ansible.builtin.include_tasks:
             file: modules/update-debian.yaml
