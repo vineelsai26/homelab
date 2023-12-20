@@ -20,17 +20,6 @@ providers:
   file:
     directory: /etc/traefik
     watch: true
-accessLog:
-  filePath: "/etc/traefik/access.log"
-  bufferingSize: 100
-  format: json
-  filters:
-    minDuration: "10ms"
-experimental:
-  plugins:
-    cloudflarewarp:
-      moduleName: "github.com/BetterCorp/cloudflarewarp"
-      version: "v1.3.3"
 certificatesResolvers:
   cloudflare:
     acme:

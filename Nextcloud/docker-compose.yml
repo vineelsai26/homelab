@@ -3,7 +3,7 @@ version: '3'
 services:
   nextcloud:
     container_name: nextcloud
-    image: nextcloud:27.1.4-fpm-alpine
+    image: nextcloud:28.0.0-fpm-alpine
     restart: always
     user: "1000:1000"
     volumes:
@@ -32,6 +32,10 @@ services:
       - "traefik.http.routers.nextcloud-secure.rule=Host(`nextcloud.home.vineelsai.com`)||Host(`nextcloud.vineelsai.com`)"
       - "traefik.http.routers.nextcloud-secure.tls=true"
       - "traefik.http.routers.nextcloud-secure.service=nextcloud"
+      - "traefik.http.middlewares.nextcloud-https-redirect.redirectregex.permanent=true"
+      - "traefik.http.middlewares.nextcloud-https-redirect.redirectregex.regex='https://(.*)/.well-known/(?:card|cal)dav'"
+      - "traefik.http.middlewares.nextcloud-https-redirect.redirectregex.replacement='https://$${1}/remote.php/dav'"
+      - "traefik.http.middlewares.nextcloud-https-redirect.headers.stsSeconds=15552000"
       - "traefik.http.services.nextcloud.loadbalancer.server.port=80"
       - "traefik.docker.network=proxy"
 
