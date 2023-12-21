@@ -1,9 +1,9 @@
 *.*
 /*/data/*
-/*/code/*
-/*/html/*
 /*/letsencrypt/*
 /*/duplicati/*
+/*/syncthing/*
+/*/nextcloud/*
 
 !.gitignore
 !docker-compose.yml

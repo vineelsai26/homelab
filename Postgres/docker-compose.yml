@@ -1,16 +1,16 @@
 version: '3'
 
 services:
-  # postgres_nextcloud:
-  #   container_name: postgres_nextcloud
-  #   hostname: postgres_nextcloud
-  #   image: postgres:16.0
-  #   restart: always
-  #   user: "1000:1000"
-  #   volumes:
-  #     - ./data/postgres_nextcloud:/var/lib/postgresql/data
-  #   env_file:
-  #     - nextcloud.env
+  postgres_nextcloud:
+    container_name: postgres_nextcloud
+    hostname: postgres_nextcloud
+    image: postgres:16.0
+    restart: always
+    user: "1000:1000"
+    volumes:
+      - ./data/postgres_nextcloud:/var/lib/postgresql/data
+    env_file:
+      - nextcloud.env
 
   postgres_gitea:
     container_name: postgres_gitea
