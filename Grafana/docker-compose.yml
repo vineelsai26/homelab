@@ -2,6 +2,7 @@ services:
   prometheus:
     image: prom/prometheus:v2.47.2
     container_name: prometheus
+    hostname: prometheus
     ports:
       - 9090:9090
     volumes:
@@ -26,6 +27,7 @@ services:
   node_exporter:
     image: quay.io/prometheus/node-exporter:v1.6.1
     container_name: node_exporter
+    hostname: node_exporter
     command: "--path.rootfs=/host"
     pid: host
     volumes:
@@ -35,6 +37,7 @@ services:
   cadvisor:
     image: gcr.io/cadvisor/cadvisor:v0.47.2
     container_name: cadvisor
+    hostname: cadvisor
     ports:
       - 8180:8080
     volumes:
@@ -66,6 +69,7 @@ services:
   grafana:
     image: grafana/grafana-oss:10.2.0
     container_name: grafana
+    hostname: grafana
     ports:
       - "3080:3000"
     volumes:

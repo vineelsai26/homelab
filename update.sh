@@ -1,9 +1,8 @@
 for dir in *; do
     if [ -d "$dir" ]; then
         cd "$dir"
-        docker compose down --remove-orphans
         docker compose pull
-        docker compose up -d
+        docker compose up -d --force-recreate
         cd ..
     fi
 done

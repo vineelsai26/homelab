@@ -4,6 +4,7 @@ services:
   transmission:
     image: lscr.io/linuxserver/transmission:latest
     container_name: transmission
+    hostname: transmission
     environment:
       - PUID=1000
       - PGID=1000

@@ -3,8 +3,9 @@ services:
   filebrowser:
     image: filebrowser/filebrowser
     container_name: filebrowser
+    hostname: filebrowser
     volumes:
-      - /home/vineel:/srv
+      # - /home/vineel:/srv
       - ./filebrowser/database.db:/database.db
       - ./filebrowser/config/settings.json:/.filebrowser.json
     ports:

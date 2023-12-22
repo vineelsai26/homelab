@@ -3,6 +3,7 @@ services:
   home_assistant:
     image: ghcr.io/home-assistant/home-assistant:stable
     container_name: homeassistant
+    hostname: homeassistant
     privileged: true
     volumes:
       - ./config:/config

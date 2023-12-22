@@ -3,6 +3,7 @@ services:
   prowlarr:
     image: lscr.io/linuxserver/prowlarr:latest
     container_name: prowlarr
+    hostname: prowlarr
     environment:
       - PUID=1000
       - PGID=1000

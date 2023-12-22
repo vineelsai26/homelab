@@ -1,5 +1,6 @@
 *.*
 /*/data/*
+/*/config/*
 /*/letsencrypt/*
 /*/duplicati/*
 /*/syncthing/*
