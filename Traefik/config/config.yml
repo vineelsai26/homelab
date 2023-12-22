@@ -20,6 +20,15 @@ http:
         - https-redirectscheme
       tls: {}
       service: pihole
+    adguard:
+      entryPoints:
+        - "https"
+      rule: "Host(`adguard.home.vineelsai.com`)"
+      middlewares:
+        - default-headers
+        - https-redirectscheme
+      tls: {}
+      service: adguard
 
   services:
     proxmox:
@@ -31,6 +40,11 @@ http:
       loadBalancer:
         servers:
           - url: "http://10.0.0.2:80"
+        passHostHeader: true
+    adguard:
+      loadBalancer:
+        servers:
+          - url: "https://10.0.0.53:443"
         passHostHeader: true
 
   middlewares:
