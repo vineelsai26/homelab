@@ -5,6 +5,8 @@ services:
     image: lscr.io/linuxserver/transmission:latest
     container_name: transmission
     hostname: transmission
+    storage_opt:
+        size: '100G'
     environment:
       - PUID=1000
       - PGID=1000

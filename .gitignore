@@ -5,6 +5,8 @@
 /*/duplicati/*
 /*/syncthing/*
 /*/nextcloud/*
+/*/jellyfin/*
+/*/tdarr/*
 
 !.gitignore
 !docker-compose.yml
