@@ -3,6 +3,10 @@
   become: true
   hosts: all
   tasks:
+      - name: Update & Upgrade
+        ansible.builtin.include_tasks:
+            file: update.yaml
+
       - name: Basic setup
         ansible.builtin.include_tasks:
             file: modules/basic-setup.yaml

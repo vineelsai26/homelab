@@ -7,11 +7,15 @@
     bare: true
     clone: true
     recursive: true
+    single_branch: true
+    version: main
+    track_submodules: true
     dest: ~/.cfg
 
 - name: Stash any local changes in home directory
   remote_user: "{{ ansible_user }}"
   become: false
+  changed_when: true
   ansible.builtin.shell:
     chdir: ~
     cmd: git --git-dir=$HOME/.cfg/ --work-tree=$HOME stash
@@ -19,6 +23,7 @@
 - name: Checkout to dotfiles
   remote_user: "{{ ansible_user }}"
   become: false
+  changed_when: true
   ansible.builtin.shell:
     chdir: ~
     cmd: git --git-dir=$HOME/.cfg/ --work-tree=$HOME reset --soft
@@ -26,6 +31,7 @@
 - name: Init Submodules
   remote_user: "{{ ansible_user }}"
   become: false
+  changed_when: true
   ansible.builtin.shell:
     chdir: ~
     cmd: git --git-dir=$HOME/.cfg/ --work-tree=$HOME submodule update --init --recursive
@@ -33,6 +39,7 @@
 - name: Clone zsh-autosuggestions
   remote_user: "{{ ansible_user }}"
   become: false
+  changed_when: true
   ansible.builtin.git:
     repo: https://github.com/zsh-users/zsh-autosuggestions
     clone: true
@@ -41,6 +48,7 @@
 - name: Clone zsh-completions
   remote_user: "{{ ansible_user }}"
   become: false
+  changed_when: true
   ansible.builtin.git:
     repo: https://github.com/zsh-users/zsh-completions
     clone: true
@@ -49,6 +57,7 @@
 - name: Clone zsh-syntax-highlighting
   remote_user: "{{ ansible_user }}"
   become: false
+  changed_when: true
   ansible.builtin.git:
     repo: https://github.com/zsh-users/zsh-syntax-highlighting
     clone: true

@@ -1,9 +1,6 @@
 ---
-- name: Update cache
-  ansible.builtin.package:
-    update_cache: true
-
 - name: Upgrade all packages
+  when: ansible_os_family == "Debian"
   ansible.builtin.apt:
     upgrade: dist
     autoremove: true
