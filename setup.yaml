@@ -3,9 +3,14 @@
   become: true
   hosts: all
   tasks:
-      - name: Update & Upgrade
+      - name: Update cache
+        ansible.builtin.package:
+            update_cache: true
+
+      - name: Update & Upgrade all packages
+        when: ansible_os_family == "Debian"
         ansible.builtin.include_tasks:
-            file: update.yaml
+            file: modules/update-debian.yaml
 
       - name: Basic setup
         ansible.builtin.include_tasks:
@@ -24,11 +29,6 @@
         when: ansible_os_family == 'Debian'
         ansible.builtin.include_tasks:
             file: modules/node-python-setup.yaml
-
-      - name: Install eza
-        when: ansible_os_family == 'Debian'
-        ansible.builtin.include_tasks:
-            file: modules/install-eza-debian.yaml
 
       - name: Setup dotfiles
         ansible.builtin.include_tasks:
