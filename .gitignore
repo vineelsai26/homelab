@@ -20,3 +20,7 @@
 !.env.example
 !nginx.conf
 !default.json
+
+!ansible/**
+ansible*key
+inventory
