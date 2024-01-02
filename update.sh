@@ -1,3 +1,5 @@
+cd docker-compose
+
 for dir in *; do
     if [ -d "$dir" ]; then
         cd "$dir"
@@ -6,3 +8,5 @@ for dir in *; do
         cd ..
     fi
 done
+
+cd ..

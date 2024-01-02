@@ -1,12 +1,12 @@
 *.*
-/*/data/*
-/*/config/*
-/*/letsencrypt/*
-/*/duplicati/*
-/*/syncthing/*
-/*/nextcloud/*
-/*/jellyfin/*
-/*/tdarr/*
+/**/data/*
+/**/config/*
+/**/letsencrypt/*
+/**/duplicati/*
+/**/syncthing/*
+/**/nextcloud/*
+/**/jellyfin/*
+/**/tdarr/*
 
 !.gitignore
 !docker-compose.yml
