@@ -8,9 +8,9 @@ services:
     ports:
       - '3100:3000'
     env_file:
-      - .env
+      - env/shortify.env
     volumes:
-      - ./.env:/usr/src/app/.env
+      - ./env/shortify.env:/usr/src/app/.env
     command: ./shortify
     labels:
       - "traefik.enable=true"

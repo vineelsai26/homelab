@@ -6,33 +6,33 @@ services:
     hostname: postgres_nextcloud
     image: postgres:16.0
     restart: always
-    user: "1000:1000"
     volumes:
       - ./data/postgres_nextcloud:/var/lib/postgresql/data
     env_file:
-      - nextcloud.env
+      - env/nextcloud.env
+      - env/creds.env
 
   postgres_gitea:
     container_name: postgres_gitea
     hostname: postgres_gitea
     image: postgres:14
     restart: always
-    user: "1000:1000"
     volumes:
       - ./data/postgres_gitea:/var/lib/postgresql/data
     env_file:
-      - gitea.env
+      - env/gitea.env
+      - env/creds.env
 
   postgres_semaphore:
     container_name: postgres_semaphore
     hostname: postgres_semaphore
     image: postgres:14
     restart: always
-    user: "1000:1000"
     volumes:
       - ./data/postgres_semaphore:/var/lib/postgresql/data
     env_file:
-      - semaphore.env
+      - env/semaphore.env
+      - env/creds.env
 
 networks:
   default:

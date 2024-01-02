@@ -9,6 +9,7 @@ services:
       - PGID=1000
       - DOMAIN=syncthing.home.vineelsai.com
       - HOME=/var/syncthing/home
+      - STGUIADDRESS=0.0.0.0:8384
     volumes:
       - ./syncthing/config:/var/syncthing/config
       - ./syncthing/home:/var/syncthing/home

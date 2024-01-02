@@ -6,22 +6,20 @@ services:
     hostname: nextcloud
     image: nextcloud:28.0.0
     restart: always
-    user: "1000:1000"
     volumes:
       - ./nextcloud/html:/var/www/html
       - ./nextcloud/config:/var/www/html/config
       - ./nextcloud/data:/var/www/html/data
-      - ./nextcloud/redis-session.ini:/usr/local/etc/php/conf.d/redis-session.ini # workaround
     env_file:
-      - .env
+      - env/nextcloud.env
+      - ../Postgres/env/creds.env
+      - ../Postgres/env/nextcloud.env
     environment:
       - REDIS_HOST=redis_nextcloud
       - REDIS_HOST_PORT=6379
       - OVERWRITEPROTOCOL=https
       - NEXTCLOUD_TRUSTED_DOMAINS="nextcloud.home.vineelsai.com nextcloud.vineelsai.com"
       - NEXTCLOUD_INIT_HTACCESS=true
-      - APACHE_RUN_USER=#1000
-      - APACHE_RUN_GROUP=#1000
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.nextcloud.entrypoints=http"
@@ -40,6 +38,7 @@ services:
       - "traefik.docker.network=proxy"
   redis:
     container_name: redis_nextcloud
+    hostname: redis_nextcloud
     image: redis
     restart: unless-stopped
     volumes:
