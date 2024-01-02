@@ -1,0 +1,25 @@
+---
+- name: User setup
+  ansible.builtin.user:
+      name: '{{ ansible_user }}'
+      shell: /bin/zsh
+      createhome: true
+      state: present
+
+- name: Install basic packages
+  ansible.builtin.package:
+      name:
+          - git
+          - curl
+          - wget
+          - vim
+          - htop
+          - neofetch
+          - zsh
+          - tmux
+          - gcc
+          - make
+          - python3
+          - python3-pip
+          - nala
+      state: present

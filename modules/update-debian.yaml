@@ -1,0 +1,8 @@
+---
+- name: Upgrade all packages
+  when: ansible_os_family == "Debian"
+  ansible.builtin.apt:
+    upgrade: dist
+    autoremove: true
+    autoclean: true
+    force_apt_get: true

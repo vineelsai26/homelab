@@ -1,0 +1,32 @@
+---
+- name: Check if Node.js is installed
+  changed_when: false
+  failed_when: false
+  register: node_version
+  ansible.builtin.command: "node --version"
+
+- name: Install Node.js
+  changed_when: node_version.rc == 0
+  remote_user: "{{ ansible_user }}"
+  become: false
+  ansible.builtin.shell:
+    chdir: ~
+    cmd: |
+      vmn node install lts
+      vmn node use lts
+
+- name: Check if Python is installed
+  changed_when: false
+  failed_when: false
+  register: python_version
+  ansible.builtin.command: "python --version"
+
+- name: Install Python # Taking too long
+  remote_user: "{{ ansible_user }}"
+  become: false
+  changed_when: python_version.rc == 0
+  ansible.builtin.shell:
+    chdir: ~
+    cmd: |
+      vmn python install 3.12
+      vmn python use 3.12

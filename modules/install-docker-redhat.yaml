@@ -1,0 +1,32 @@
+---
+- name: Add Docker GPG Key
+  when: ansible_distribution in ["CentOS", "RedHat", "Fedora"]
+  ansible.builtin.rpm_key:
+    key: https://download.docker.com/linux/{{ ansible_distribution | lower }}/gpg
+    state: present
+
+- name: Add Docker Repository
+  when: ansible_distribution in ["CentOS", "RedHat", "Fedora"]
+  ansible.builtin.yum_repository:
+    name: docker-ce
+    description: Docker CE Stable - $basearch
+    baseurl: https://download.docker.com/linux/{{ ansible_distribution | lower }}/$releasever/$basearch/stable
+    enabled: true
+    gpgcheck: true
+    gpgkey: https://download.docker.com/linux/{{ ansible_distribution | lower }}/gpg
+
+- name: Install Docker
+  when: ansible_distribution in ["CentOS", "RedHat", "Fedora"]
+  ansible.builtin.dnf:
+    name:
+      - docker-ce
+      - docker-ce-cli
+      - containerd.io
+    state: present
+
+- name: Start Docker Service
+  when: ansible_distribution in ["CentOS", "RedHat", "Fedora"]
+  ansible.builtin.service:
+    name: docker
+    state: started
+    enabled: true

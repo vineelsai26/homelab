@@ -1,0 +1,35 @@
+---
+- name: Setup Linux system
+  become: true
+  hosts: all
+  tasks:
+      - name: Update cache
+        ansible.builtin.package:
+            update_cache: true
+
+      - name: Update & Upgrade all packages
+        when: ansible_os_family == "Debian"
+        ansible.builtin.include_tasks:
+            file: modules/update-debian.yaml
+
+      - name: Basic setup
+        ansible.builtin.include_tasks:
+            file: modules/basic-setup.yaml
+
+      - name: Install Docker
+        ansible.builtin.include_tasks:
+            file: modules/install-docker-{{ ansible_os_family | lower }}.yaml
+
+      - name: Setup Repo
+        when: ansible_os_family == 'Debian'
+        ansible.builtin.include_tasks:
+            file: modules/repo-setup-debain.yaml
+
+      - name: Install Node & Python
+        when: ansible_os_family == 'Debian'
+        ansible.builtin.include_tasks:
+            file: modules/node-python-setup.yaml
+
+      - name: Setup dotfiles
+        ansible.builtin.include_tasks:
+            file: modules/dotfiles-setup.yaml

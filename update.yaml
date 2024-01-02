@@ -1,0 +1,13 @@
+---
+- name: Update and Upgrade all packages on Debian based systems
+  become: true
+  hosts: all
+  tasks:
+      - name: Update cache
+        ansible.builtin.package:
+            update_cache: true
+
+      - name: Update & Upgrade all packages
+        when: ansible_os_family == "Debian"
+        ansible.builtin.include_tasks:
+            file: modules/update-debian.yaml
