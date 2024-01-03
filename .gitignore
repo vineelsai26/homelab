@@ -21,6 +21,11 @@
 !nginx.conf
 !default.json
 
+!terraform/**
 !ansible/**
+
 ansible*key
 inventory
+.terraform*
+.env
+.DS_Store
