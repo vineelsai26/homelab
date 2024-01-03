@@ -5,7 +5,8 @@ resource "cloudflare_record" "mx1" {
   ttl      = 3600
   type     = "MX"
   value    = "mx01.mail.icloud.com"
-  zone_id  = "774c57de3172a6220c23461a2992c3a8"
+  zone_id  = var.zone_id
+  tags     = [var.default_tag]
 }
 
 resource "cloudflare_record" "mx2" {
@@ -15,7 +16,8 @@ resource "cloudflare_record" "mx2" {
   ttl      = 3600
   type     = "MX"
   value    = "mx02.mail.icloud.com"
-  zone_id  = "774c57de3172a6220c23461a2992c3a8"
+  zone_id  = var.zone_id
+  tags     = [var.default_tag]
 }
 
 resource "cloudflare_record" "bounces_mx" {
@@ -25,5 +27,6 @@ resource "cloudflare_record" "bounces_mx" {
   ttl      = 3600
   type     = "MX"
   value    = "feedback-smtp.us-east-1.amazonses.com"
-  zone_id  = "774c57de3172a6220c23461a2992c3a8"
+  zone_id  = var.zone_id
+  tags     = [var.default_tag]
 }

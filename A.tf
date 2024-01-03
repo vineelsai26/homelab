@@ -4,41 +4,56 @@ resource "cloudflare_record" "root" {
   ttl     = 1
   type    = "A"
   value   = "76.76.21.21"
-  zone_id = "774c57de3172a6220c23461a2992c3a8"
+  zone_id = var.zone_id
+  tags    = [var.default_tag]
 }
 
-resource "cloudflare_record" "api_collab" {
-  name    = "api.collab"
+resource "cloudflare_record" "blog_1" {
+  name    = "blog"
+  proxied = true
+  ttl     = 1
+  type    = "A"
+  value   = "162.159.153.4"
+  zone_id = var.zone_id
+  tags    = [var.default_tag]
+}
+
+resource "cloudflare_record" "blog_2" {
+  name    = "blog"
+  proxied = true
+  ttl     = 1
+  type    = "A"
+  value   = "162.159.152.4"
+  zone_id = var.zone_id
+  tags    = [var.default_tag]
+}
+
+resource "cloudflare_record" "home" {
+  name    = "*.home"
   proxied = false
   ttl     = 1
   type    = "A"
-  value   = "144.24.141.117"
-  zone_id = "774c57de3172a6220c23461a2992c3a8"
+  value   = "10.0.0.4"
+  zone_id = var.zone_id
+  tags    = [var.default_tag]
 }
 
-resource "cloudflare_record" "rce" {
-  name    = "rce"
-  proxied = true
+resource "cloudflare_record" "oc" {
+  name    = "*.oc"
+  proxied = false
   ttl     = 1
   type    = "A"
-  value   = "144.24.141.117"
-  zone_id = "774c57de3172a6220c23461a2992c3a8"
+  value   = "100.84.60.101"
+  zone_id = var.zone_id
+  tags    = [var.default_tag]
 }
 
-resource "cloudflare_record" "shortify" {
-  name    = "shortify"
-  proxied = true
+resource "cloudflare_record" "api_collab_home" {
+  name    = "api.collab.home"
+  proxied = false
   ttl     = 1
   type    = "A"
-  value   = "144.24.141.117"
-  zone_id = "774c57de3172a6220c23461a2992c3a8"
-}
-
-resource "cloudflare_record" "uptime" {
-  name    = "uptime"
-  proxied = true
-  ttl     = 1
-  type    = "A"
-  value   = "144.24.141.117"
-  zone_id = "774c57de3172a6220c23461a2992c3a8"
+  value   = "10.0.0.4"
+  zone_id = var.zone_id
+  tags    = [var.default_tag]
 }

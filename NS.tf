@@ -4,7 +4,8 @@ resource "cloudflare_record" "netlify_ns1" {
   ttl     = 3600
   type    = "NS"
   value   = "dns1.p01.nsone.net"
-  zone_id = "774c57de3172a6220c23461a2992c3a8"
+  zone_id = var.zone_id
+  tags    = [var.default_tag]
 }
 
 resource "cloudflare_record" "netlify_ns2" {
@@ -13,7 +14,8 @@ resource "cloudflare_record" "netlify_ns2" {
   ttl     = 3600
   type    = "NS"
   value   = "dns2.p01.nsone.net"
-  zone_id = "774c57de3172a6220c23461a2992c3a8"
+  zone_id = var.zone_id
+  tags    = [var.default_tag]
 }
 
 resource "cloudflare_record" "netlify_ns3" {
@@ -22,7 +24,8 @@ resource "cloudflare_record" "netlify_ns3" {
   ttl     = 3600
   type    = "NS"
   value   = "dns3.p01.nsone.net"
-  zone_id = "774c57de3172a6220c23461a2992c3a8"
+  zone_id = var.zone_id
+  tags    = [var.default_tag]
 }
 
 resource "cloudflare_record" "netlify_ns4" {
@@ -31,5 +34,6 @@ resource "cloudflare_record" "netlify_ns4" {
   ttl     = 3600
   type    = "NS"
   value   = "dns4.p01.nsone.net"
-  zone_id = "774c57de3172a6220c23461a2992c3a8"
+  zone_id = var.zone_id
+  tags    = [var.default_tag]
 }

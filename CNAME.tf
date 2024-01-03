@@ -4,7 +4,8 @@ resource "cloudflare_record" "verify_bing" {
   ttl     = 1
   type    = "CNAME"
   value   = "verify.bing.com"
-  zone_id = "774c57de3172a6220c23461a2992c3a8"
+  zone_id = var.zone_id
+  tags    = [var.default_tag]
 }
 
 resource "cloudflare_record" "algo" {
@@ -13,7 +14,8 @@ resource "cloudflare_record" "algo" {
   ttl     = 1
   type    = "CNAME"
   value   = "algo-47m.pages.dev"
-  zone_id = "774c57de3172a6220c23461a2992c3a8"
+  zone_id = var.zone_id
+  tags    = [var.default_tag]
 }
 
 resource "cloudflare_record" "archive1" {
@@ -22,7 +24,8 @@ resource "cloudflare_record" "archive1" {
   ttl     = 1
   type    = "CNAME"
   value   = "portfolio-archive-1.pages.dev"
-  zone_id = "774c57de3172a6220c23461a2992c3a8"
+  zone_id = var.zone_id
+  tags    = [var.default_tag]
 }
 
 resource "cloudflare_record" "archive2" {
@@ -31,7 +34,8 @@ resource "cloudflare_record" "archive2" {
   ttl     = 1
   type    = "CNAME"
   value   = "portfolio-archive-2.pages.dev"
-  zone_id = "774c57de3172a6220c23461a2992c3a8"
+  zone_id = var.zone_id
+  tags    = [var.default_tag]
 }
 
 resource "cloudflare_record" "archive3" {
@@ -40,7 +44,8 @@ resource "cloudflare_record" "archive3" {
   ttl     = 1
   type    = "CNAME"
   value   = "portfolio-archive-3.pages.dev"
-  zone_id = "774c57de3172a6220c23461a2992c3a8"
+  zone_id = var.zone_id
+  tags    = [var.default_tag]
 }
 
 resource "cloudflare_record" "archive4" {
@@ -49,7 +54,8 @@ resource "cloudflare_record" "archive4" {
   ttl     = 1
   type    = "CNAME"
   value   = "portfolio-archive-4.pages.dev"
-  zone_id = "774c57de3172a6220c23461a2992c3a8"
+  zone_id = var.zone_id
+  tags    = [var.default_tag]
 }
 
 resource "cloudflare_record" "balance" {
@@ -58,7 +64,8 @@ resource "cloudflare_record" "balance" {
   ttl     = 1
   type    = "CNAME"
   value   = "balance-sheet-generator.pages.dev"
-  zone_id = "774c57de3172a6220c23461a2992c3a8"
+  zone_id = var.zone_id
+  tags    = [var.default_tag]
 }
 
 resource "cloudflare_record" "_domainconnect" {
@@ -67,7 +74,8 @@ resource "cloudflare_record" "_domainconnect" {
   ttl     = 1
   type    = "CNAME"
   value   = "connect.domains.google.com"
-  zone_id = "774c57de3172a6220c23461a2992c3a8"
+  zone_id = var.zone_id
+  tags    = [var.default_tag]
 }
 
 resource "cloudflare_record" "material" {
@@ -76,7 +84,8 @@ resource "cloudflare_record" "material" {
   ttl     = 1
   type    = "CNAME"
   value   = "material-design-icons.pages.dev"
-  zone_id = "774c57de3172a6220c23461a2992c3a8"
+  zone_id = var.zone_id
+  tags    = [var.default_tag]
 }
 
 resource "cloudflare_record" "repo" {
@@ -85,7 +94,8 @@ resource "cloudflare_record" "repo" {
   ttl     = 1
   type    = "CNAME"
   value   = "cname.vercel-dns.com"
-  zone_id = "774c57de3172a6220c23461a2992c3a8"
+  zone_id = var.zone_id
+  tags    = [var.default_tag]
 }
 
 resource "cloudflare_record" "stats_github" {
@@ -94,7 +104,8 @@ resource "cloudflare_record" "stats_github" {
   ttl     = 1
   type    = "CNAME"
   value   = "cname.vercel-dns.com"
-  zone_id = "774c57de3172a6220c23461a2992c3a8"
+  zone_id = var.zone_id
+  tags    = [var.default_tag]
 }
 
 resource "cloudflare_record" "sudoku" {
@@ -103,7 +114,8 @@ resource "cloudflare_record" "sudoku" {
   ttl     = 1
   type    = "CNAME"
   value   = "sudoku-web.pages.dev"
-  zone_id = "774c57de3172a6220c23461a2992c3a8"
+  zone_id = var.zone_id
+  tags    = [var.default_tag]
 }
 
 resource "cloudflare_record" "tictactoe" {
@@ -112,16 +124,18 @@ resource "cloudflare_record" "tictactoe" {
   ttl     = 1
   type    = "CNAME"
   value   = "tic-tac-toe-web.pages.dev"
-  zone_id = "774c57de3172a6220c23461a2992c3a8"
+  zone_id = var.zone_id
+  tags    = [var.default_tag]
 }
 
 resource "cloudflare_record" "www" {
   name    = "www"
-  proxied = false
+  proxied = true
   ttl     = 1
   type    = "CNAME"
   value   = "cname.vercel-dns.com"
-  zone_id = "774c57de3172a6220c23461a2992c3a8"
+  zone_id = var.zone_id
+  tags    = [var.default_tag]
 }
 
 resource "cloudflare_record" "icons" {
@@ -130,7 +144,8 @@ resource "cloudflare_record" "icons" {
   ttl     = 1
   type    = "CNAME"
   value   = "skill-icons.pages.dev"
-  zone_id = "774c57de3172a6220c23461a2992c3a8"
+  zone_id = var.zone_id
+  tags    = [var.default_tag]
 }
 
 resource "cloudflare_record" "collab" {
@@ -139,32 +154,36 @@ resource "cloudflare_record" "collab" {
   ttl     = 1
   type    = "CNAME"
   value   = "collab-aem.pages.dev"
-  zone_id = "774c57de3172a6220c23461a2992c3a8"
+  zone_id = var.zone_id
+  tags    = [var.default_tag]
 }
 
 resource "cloudflare_record" "amazonses_domainkey_1" {
-  name            = "acloled2losoaiyn3zxjxinf6qclsjvr._domainkey"
-  proxied         = false
-  ttl             = 1
-  type            = "CNAME"
-  value           = "acloled2losoaiyn3zxjxinf6qclsjvr.dkim.amazonses.com"
-  zone_id         = "774c57de3172a6220c23461a2992c3a8"
+  name    = "acloled2losoaiyn3zxjxinf6qclsjvr._domainkey"
+  proxied = false
+  ttl     = 1
+  type    = "CNAME"
+  value   = "acloled2losoaiyn3zxjxinf6qclsjvr.dkim.amazonses.com"
+  zone_id = var.zone_id
+  tags    = [var.default_tag]
 }
 
 resource "cloudflare_record" "amazonses_domainkey_2" {
-  name            = "sn6cjudhadoldlhxvpgtqail76zucccs._domainkey"
-  proxied         = false
-  ttl             = 1
-  type            = "CNAME"
-  value           = "sn6cjudhadoldlhxvpgtqail76zucccs.dkim.amazonses.com"
-  zone_id         = "774c57de3172a6220c23461a2992c3a8"
+  name    = "sn6cjudhadoldlhxvpgtqail76zucccs._domainkey"
+  proxied = false
+  ttl     = 1
+  type    = "CNAME"
+  value   = "sn6cjudhadoldlhxvpgtqail76zucccs.dkim.amazonses.com"
+  zone_id = var.zone_id
+  tags    = [var.default_tag]
 }
 
 resource "cloudflare_record" "amazonses_domainkey_3" {
-  name            = "slg7cli4o536qdyhdphrvhivpas2ebfv._domainkey"
-  proxied         = false
-  ttl             = 1
-  type            = "CNAME"
-  value           = "slg7cli4o536qdyhdphrvhivpas2ebfv.dkim.amazonses.com"
-  zone_id         = "774c57de3172a6220c23461a2992c3a8"
+  name    = "slg7cli4o536qdyhdphrvhivpas2ebfv._domainkey"
+  proxied = false
+  ttl     = 1
+  type    = "CNAME"
+  value   = "slg7cli4o536qdyhdphrvhivpas2ebfv.dkim.amazonses.com"
+  zone_id = var.zone_id
+  tags    = [var.default_tag]
 }
