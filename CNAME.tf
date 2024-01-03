@@ -5,7 +5,7 @@ resource "cloudflare_record" "verify_bing" {
   type    = "CNAME"
   value   = "verify.bing.com"
   zone_id = var.zone_id
-  tags    = [var.default_tag]
+  comment = var.default_comment
 }
 
 resource "cloudflare_record" "algo" {
@@ -15,7 +15,7 @@ resource "cloudflare_record" "algo" {
   type    = "CNAME"
   value   = "algo-47m.pages.dev"
   zone_id = var.zone_id
-  tags    = [var.default_tag]
+  comment = var.default_comment
 }
 
 resource "cloudflare_record" "archive1" {
@@ -25,7 +25,7 @@ resource "cloudflare_record" "archive1" {
   type    = "CNAME"
   value   = "portfolio-archive-1.pages.dev"
   zone_id = var.zone_id
-  tags    = [var.default_tag]
+  comment = var.default_comment
 }
 
 resource "cloudflare_record" "archive2" {
@@ -35,7 +35,7 @@ resource "cloudflare_record" "archive2" {
   type    = "CNAME"
   value   = "portfolio-archive-2.pages.dev"
   zone_id = var.zone_id
-  tags    = [var.default_tag]
+  comment = var.default_comment
 }
 
 resource "cloudflare_record" "archive3" {
@@ -45,7 +45,7 @@ resource "cloudflare_record" "archive3" {
   type    = "CNAME"
   value   = "portfolio-archive-3.pages.dev"
   zone_id = var.zone_id
-  tags    = [var.default_tag]
+  comment = var.default_comment
 }
 
 resource "cloudflare_record" "archive4" {
@@ -55,7 +55,7 @@ resource "cloudflare_record" "archive4" {
   type    = "CNAME"
   value   = "portfolio-archive-4.pages.dev"
   zone_id = var.zone_id
-  tags    = [var.default_tag]
+  comment = var.default_comment
 }
 
 resource "cloudflare_record" "balance" {
@@ -65,7 +65,7 @@ resource "cloudflare_record" "balance" {
   type    = "CNAME"
   value   = "balance-sheet-generator.pages.dev"
   zone_id = var.zone_id
-  tags    = [var.default_tag]
+  comment = var.default_comment
 }
 
 resource "cloudflare_record" "_domainconnect" {
@@ -75,7 +75,7 @@ resource "cloudflare_record" "_domainconnect" {
   type    = "CNAME"
   value   = "connect.domains.google.com"
   zone_id = var.zone_id
-  tags    = [var.default_tag]
+  comment = var.default_comment
 }
 
 resource "cloudflare_record" "material" {
@@ -85,7 +85,7 @@ resource "cloudflare_record" "material" {
   type    = "CNAME"
   value   = "material-design-icons.pages.dev"
   zone_id = var.zone_id
-  tags    = [var.default_tag]
+  comment = var.default_comment
 }
 
 resource "cloudflare_record" "repo" {
@@ -95,7 +95,7 @@ resource "cloudflare_record" "repo" {
   type    = "CNAME"
   value   = "cname.vercel-dns.com"
   zone_id = var.zone_id
-  tags    = [var.default_tag]
+  comment = var.default_comment
 }
 
 resource "cloudflare_record" "stats_github" {
@@ -105,7 +105,7 @@ resource "cloudflare_record" "stats_github" {
   type    = "CNAME"
   value   = "cname.vercel-dns.com"
   zone_id = var.zone_id
-  tags    = [var.default_tag]
+  comment = var.default_comment
 }
 
 resource "cloudflare_record" "sudoku" {
@@ -115,7 +115,7 @@ resource "cloudflare_record" "sudoku" {
   type    = "CNAME"
   value   = "sudoku-web.pages.dev"
   zone_id = var.zone_id
-  tags    = [var.default_tag]
+  comment = var.default_comment
 }
 
 resource "cloudflare_record" "tictactoe" {
@@ -125,7 +125,7 @@ resource "cloudflare_record" "tictactoe" {
   type    = "CNAME"
   value   = "tic-tac-toe-web.pages.dev"
   zone_id = var.zone_id
-  tags    = [var.default_tag]
+  comment = var.default_comment
 }
 
 resource "cloudflare_record" "www" {
@@ -135,7 +135,7 @@ resource "cloudflare_record" "www" {
   type    = "CNAME"
   value   = "cname.vercel-dns.com"
   zone_id = var.zone_id
-  tags    = [var.default_tag]
+  comment = var.default_comment
 }
 
 resource "cloudflare_record" "icons" {
@@ -145,7 +145,7 @@ resource "cloudflare_record" "icons" {
   type    = "CNAME"
   value   = "skill-icons.pages.dev"
   zone_id = var.zone_id
-  tags    = [var.default_tag]
+  comment = var.default_comment
 }
 
 resource "cloudflare_record" "collab" {
@@ -155,7 +155,7 @@ resource "cloudflare_record" "collab" {
   type    = "CNAME"
   value   = "collab-aem.pages.dev"
   zone_id = var.zone_id
-  tags    = [var.default_tag]
+  comment = var.default_comment
 }
 
 resource "cloudflare_record" "amazonses_domainkey_1" {
@@ -165,7 +165,7 @@ resource "cloudflare_record" "amazonses_domainkey_1" {
   type    = "CNAME"
   value   = "acloled2losoaiyn3zxjxinf6qclsjvr.dkim.amazonses.com"
   zone_id = var.zone_id
-  tags    = [var.default_tag]
+  comment = var.default_comment
 }
 
 resource "cloudflare_record" "amazonses_domainkey_2" {
@@ -175,7 +175,7 @@ resource "cloudflare_record" "amazonses_domainkey_2" {
   type    = "CNAME"
   value   = "sn6cjudhadoldlhxvpgtqail76zucccs.dkim.amazonses.com"
   zone_id = var.zone_id
-  tags    = [var.default_tag]
+  comment = var.default_comment
 }
 
 resource "cloudflare_record" "amazonses_domainkey_3" {
@@ -185,5 +185,5 @@ resource "cloudflare_record" "amazonses_domainkey_3" {
   type    = "CNAME"
   value   = "slg7cli4o536qdyhdphrvhivpas2ebfv.dkim.amazonses.com"
   zone_id = var.zone_id
-  tags    = [var.default_tag]
+  comment = var.default_comment
 }

@@ -5,7 +5,7 @@ resource "cloudflare_record" "root" {
   type    = "A"
   value   = "76.76.21.21"
   zone_id = var.zone_id
-  tags    = [var.default_tag]
+  comment = var.default_comment
 }
 
 resource "cloudflare_record" "blog_1" {
@@ -15,7 +15,7 @@ resource "cloudflare_record" "blog_1" {
   type    = "A"
   value   = "162.159.153.4"
   zone_id = var.zone_id
-  tags    = [var.default_tag]
+  comment = var.default_comment
 }
 
 resource "cloudflare_record" "blog_2" {
@@ -25,7 +25,7 @@ resource "cloudflare_record" "blog_2" {
   type    = "A"
   value   = "162.159.152.4"
   zone_id = var.zone_id
-  tags    = [var.default_tag]
+  comment = var.default_comment
 }
 
 resource "cloudflare_record" "home" {
@@ -35,7 +35,7 @@ resource "cloudflare_record" "home" {
   type    = "A"
   value   = "10.0.0.4"
   zone_id = var.zone_id
-  tags    = [var.default_tag]
+  comment = var.default_comment
 }
 
 resource "cloudflare_record" "oc" {
@@ -45,7 +45,7 @@ resource "cloudflare_record" "oc" {
   type    = "A"
   value   = "100.84.60.101"
   zone_id = var.zone_id
-  tags    = [var.default_tag]
+  comment = var.default_comment
 }
 
 resource "cloudflare_record" "api_collab_home" {
@@ -55,5 +55,5 @@ resource "cloudflare_record" "api_collab_home" {
   type    = "A"
   value   = "10.0.0.4"
   zone_id = var.zone_id
-  tags    = [var.default_tag]
+  comment = var.default_comment
 }

@@ -9,8 +9,8 @@ variable "zone_id" {
     default = "774c57de3172a6220c23461a2992c3a8"
 }
 
-variable "default_tag" {
+variable "default_comment" {
     type = string
-    description = "Default tag for the Cloudflare account"
+    description = "Default comment for the Cloudflare account"
     default = "Managed by Terraform"
 }
