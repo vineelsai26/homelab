@@ -16,15 +16,3 @@ services:
       - /home/vineel:/var/syncthing/vineel:ro
     network_mode: host
     restart: unless-stopped
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.syncthing.entrypoints=http"
-      - "traefik.http.routers.syncthing.rule=Host(`syncthing.home.vineelsai.com`)"
-      - "traefik.http.middlewares.syncthing-https-redirect.redirectscheme.scheme=https"
-      - "traefik.http.routers.syncthing.middlewares=syncthing-https-redirect"
-      - "traefik.http.routers.syncthing-secure.entrypoints=https"
-      - "traefik.http.routers.syncthing-secure.rule=Host(`syncthing.home.vineelsai.com`)"
-      - "traefik.http.routers.syncthing-secure.tls=true"
-      - "traefik.http.routers.syncthing-secure.service=syncthing"
-      - "traefik.http.services.syncthing.loadbalancer.server.port=8384"
-      - "traefik.docker.network=host"

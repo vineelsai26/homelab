@@ -22,6 +22,16 @@ http:
       tls: {}
       service: homeassistant
 
+    syncthing:
+      entryPoints:
+        - "https"
+      rule: "Host(`syncthing.home.vineelsai.com`)"
+      middlewares:
+        - default-headers
+        - https-redirectscheme
+      tls: {}
+      service: syncthing
+
   services:
     pihole:
       loadBalancer:
@@ -33,6 +43,12 @@ http:
       loadBalancer:
         servers:
           - url: "http://10.0.0.4:8123"
+        passHostHeader: true
+
+    syncthing:
+      loadBalancer:
+        servers:
+          - url: "http://10.0.0.4:8384"
         passHostHeader: true
 
   middlewares:
