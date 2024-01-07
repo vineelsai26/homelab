@@ -23,7 +23,7 @@ services:
       - "traefik.http.routers.filebrowser-secure.tls=true"
       - "traefik.http.routers.filebrowser-secure.service=filebrowser"
       - "traefik.http.services.filebrowser.loadbalancer.server.port=80"
-      - "traefik.docker.network=proxy"
+      - "traefik.docker.network=traefik_proxy"
 
 networks:
   default:

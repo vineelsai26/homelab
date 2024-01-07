@@ -20,7 +20,7 @@ services:
       - "traefik.http.routers.collab-secure.tls=true"
       - "traefik.http.routers.collab-secure.service=collab"
       - "traefik.http.services.collab.loadbalancer.server.port=4000"
-      - "traefik.docker.network=proxy"
+      - "traefik.docker.network=traefik_proxy"
 
 networks:
   default:

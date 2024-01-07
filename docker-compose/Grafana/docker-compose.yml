@@ -22,7 +22,7 @@ services:
       - "traefik.http.routers.prometheus-secure.tls=true"
       - "traefik.http.routers.prometheus-secure.service=prometheus"
       - "traefik.http.services.prometheus.loadbalancer.server.port=9090"
-      - "traefik.docker.network=proxy"
+      - "traefik.docker.network=traefik_proxy"
 
   node_exporter:
     image: quay.io/prometheus/node-exporter:v1.6.1
@@ -64,7 +64,7 @@ services:
       - "traefik.http.routers.cadvisor-secure.tls=true"
       - "traefik.http.routers.cadvisor-secure.service=cadvisor"
       - "traefik.http.services.cadvisor.loadbalancer.server.port=8080"
-      - "traefik.docker.network=proxy"
+      - "traefik.docker.network=traefik_proxy"
 
   grafana:
     image: grafana/grafana-oss:10.2.0
@@ -87,7 +87,7 @@ services:
       - "traefik.http.routers.grafana-secure.tls=true"
       - "traefik.http.routers.grafana-secure.service=grafana"
       - "traefik.http.services.grafana.loadbalancer.server.port=3000"
-      - "traefik.docker.network=proxy"
+      - "traefik.docker.network=traefik_proxy"
 
 networks:
   default:

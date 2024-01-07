@@ -21,7 +21,7 @@ services:
       - "traefik.http.routers.portainer-secure.tls=true"
       - "traefik.http.routers.portainer-secure.service=portainer"
       - "traefik.http.services.portainer.loadbalancer.server.port=9000"
-      - "traefik.docker.network=proxy"
+      - "traefik.docker.network=traefik_proxy"
 
 networks:
   default:

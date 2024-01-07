@@ -13,12 +13,16 @@ entryPoints:
     address: ":443"
 serversTransport:
   insecureSkipVerify: true
+log:
+  level: INFO
 providers:
   docker:
     endpoint: "unix:///var/run/docker.sock"
     exposedByDefault: false
+  swarm:
+    endpoint: "unix:///var/run/docker.sock"
   file:
-    directory: /etc/traefik
+    filename: /etc/traefik/config.yml
     watch: true
 certificatesResolvers:
   cloudflare:

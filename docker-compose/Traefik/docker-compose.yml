@@ -1,6 +1,6 @@
 services:
   traefik:
-    image: traefik:2.10
+    image: traefik:v3.0.0-beta5
     container_name: traefik
     hostname: traefik
     ports:
@@ -26,8 +26,7 @@ services:
       - "traefik.http.routers.traefik-secure.tls.certresolver=cloudflare"
       - "traefik.http.routers.traefik-secure.tls.domains[0].main=home.vineelsai.com"
       - "traefik.http.routers.traefik-secure.tls.domains[0].sans=*.home.vineelsai.com"
-      - "traefik.http.routers.traefik-secure.tls.domains[1].main=collab.home.vineelsai.com"
-      - "traefik.http.routers.traefik-secure.tls.domains[1].sans=*.collab.home.vineelsai.com"
+      - "traefik.http.routers.traefik-secure.tls.domains[1].main=*.collab.home.vineelsai.com"
       - "traefik.http.routers.traefik-secure.service=api@internal"
     restart: unless-stopped
 

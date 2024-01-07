@@ -5,10 +5,13 @@ services:
     hostname: uptime-kuma
     image: 'louislam/uptime-kuma:1'
     restart: unless-stopped
+    environment:
+      - TZ=Asia/Kolkata
     ports:
       - '3001:3001'
     volumes:
       - ./data:/app/data
+      - /var/run/docker.sock:/var/run/docker.sock
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.uptime.entrypoints=http"
@@ -20,7 +23,7 @@ services:
       - "traefik.http.routers.uptime-secure.tls=true"
       - "traefik.http.routers.uptime-secure.service=uptime"
       - "traefik.http.services.uptime.loadbalancer.server.port=3001"
-      - "traefik.docker.network=proxy"
+      - "traefik.docker.network=traefik_proxy"
 
 networks:
   default:

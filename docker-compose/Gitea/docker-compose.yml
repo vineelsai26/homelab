@@ -29,7 +29,7 @@ services:
       - "traefik.http.routers.gitea-secure.tls=true"
       - "traefik.http.routers.gitea-secure.service=gitea"
       - "traefik.http.services.gitea.loadbalancer.server.port=3000"
-      - "traefik.docker.network=proxy"
+      - "traefik.docker.network=traefik_proxy"
 
 networks:
   default:

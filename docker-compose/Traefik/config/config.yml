@@ -1,14 +1,5 @@
 http:
   routers:
-    proxmox:
-      entryPoints:
-        - "https"
-      rule: "Host(`proxmox.home.vineelsai.com`)"
-      middlewares:
-        - default-headers
-        - https-redirectscheme
-      tls: {}
-      service: proxmox
     pihole:
       entryPoints:
         - "https"
@@ -20,31 +11,28 @@ http:
         - https-redirectscheme
       tls: {}
       service: pihole
-    adguard:
+
+    homeassistant:
       entryPoints:
         - "https"
-      rule: "Host(`adguard.home.vineelsai.com`)"
+      rule: "Host(`homeassistant.home.vineelsai.com`)"
       middlewares:
         - default-headers
         - https-redirectscheme
       tls: {}
-      service: adguard
+      service: homeassistant
 
   services:
-    proxmox:
-      loadBalancer:
-        servers:
-          - url: "https://10.0.0.81:8006"
-        passHostHeader: true
     pihole:
       loadBalancer:
         servers:
           - url: "http://10.0.0.2:80"
         passHostHeader: true
-    adguard:
+
+    homeassistant:
       loadBalancer:
         servers:
-          - url: "https://10.0.0.53:443"
+          - url: "http://10.0.0.4:8123"
         passHostHeader: true
 
   middlewares:
@@ -52,9 +40,11 @@ http:
       redirectScheme:
         scheme: https
         permanent: true
+
     addprefix-pihole:
       addPrefix:
         prefix: "/admin"
+
     redirectregex-pihole:
       redirectRegex:
         regex: /admin/$
@@ -73,15 +63,7 @@ http:
         customRequestHeaders:
           X-Forwarded-Proto: https
 
-    default-whitelist:
-      ipWhiteList:
-        sourceRange:
-        - "10.0.0.0/8"
-        - "192.168.0.0/16"
-        - "172.16.0.0/12"
-
     secured:
       chain:
         middlewares:
-        - default-whitelist
-        - default-headers
+          - default-headers
