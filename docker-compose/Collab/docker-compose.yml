@@ -1,10 +1,8 @@
 version: '3'
 services:
   collab:
-    container_name: collab-server
-    hostname: collab-server
+    hostname: collab_server
     image: 'vineelsai/collab-server:latest'
-    restart: unless-stopped
     ports:
       - '4000:4000'
     env_file:
@@ -20,9 +18,13 @@ services:
       - "traefik.http.routers.collab-secure.tls=true"
       - "traefik.http.routers.collab-secure.service=collab"
       - "traefik.http.services.collab.loadbalancer.server.port=4000"
-      - "traefik.docker.network=traefik_proxy"
+      - "traefik.docker.network=traefik_overlay_proxy"
+    deploy:
+      placement:
+        constraints:
+          - node.role==worker
 
 networks:
   default:
-    name: traefik_proxy
+    name: traefik_overlay_proxy
     external: true

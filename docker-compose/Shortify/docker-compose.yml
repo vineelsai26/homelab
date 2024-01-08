@@ -1,31 +1,19 @@
 version: '3'
 services:
   shortify:
-    container_name: shortify
     hostname: shortify
     image: 'vineelsai/shortify:latest'
-    restart: unless-stopped
     ports:
       - '3100:3000'
     env_file:
       - env/shortify.env
-    volumes:
-      - ./env/shortify.env:/usr/src/app/.env
     command: ./shortify
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.shortify.entrypoints=http"
-      - "traefik.http.routers.shortify.rule=Host(`shortify.home.vineelsai.com`)||Host(`shortify.vineelsai.com`)"
-      - "traefik.http.middlewares.shortify-https-redirect.redirectscheme.scheme=https"
-      - "traefik.http.routers.shortify.middlewares=shortify-https-redirect"
-      - "traefik.http.routers.shortify-secure.entrypoints=https"
-      - "traefik.http.routers.shortify-secure.rule=Host(`shortify.home.vineelsai.com`)||Host(`shortify.vineelsai.com`)"
-      - "traefik.http.routers.shortify-secure.tls=true"
-      - "traefik.http.routers.shortify-secure.service=shortify"
-      - "traefik.http.services.shortify.loadbalancer.server.port=3000"
-      - "traefik.docker.network=traefik_proxy"
+    deploy:
+      placement:
+        constraints:
+          - node.role==worker
 
 networks:
   default:
-    name: traefik_proxy
+    name: traefik_overlay_proxy
     external: true

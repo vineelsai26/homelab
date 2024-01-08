@@ -1,14 +1,14 @@
 version: "3"
 services:
   watchtower:
-    container_name: watchtower
     hostname: watchtower
     image: containrrr/watchtower:1.7.1
-    restart: unless-stopped
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
+    deploy:
+      mode: replicated
+      replicas: 2
 
 networks:
   default:
-    name: traefik_proxy
-    external: true
+    name: watchtower_network
