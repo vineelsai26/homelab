@@ -187,3 +187,13 @@ resource "cloudflare_record" "amazonses_domainkey_3" {
   zone_id = var.zone_id
   comment = var.default_comment
 }
+
+resource "cloudflare_record" "acm_repo" {
+  name    = "_fd66a403f90a22294e4ca519c0bf7cc1.repo.vineelsai.com"
+  proxied = false
+  ttl     = 1
+  type    = "CNAME"
+  value   = "_68c18959a185f3c94c74581203567fa0.mhbtsbpdnt.acm-validations.aws"
+  zone_id = var.zone_id
+  comment = var.default_comment
+}
