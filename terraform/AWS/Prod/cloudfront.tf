@@ -10,7 +10,7 @@ locals {
   s3_origin_id = "S3Origin"
 }
 
-resource "aws_cloudfront_distribution" "s3_distribution" {
+resource "aws_cloudfront_distribution" "repo_s3_distribution" {
   origin {
     domain_name              = aws_s3_bucket.repo.bucket_regional_domain_name
     origin_access_control_id = aws_cloudfront_origin_access_control.repo.id
@@ -45,7 +45,6 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
   }
 
   viewer_certificate {
-    cloudfront_default_certificate = true
     acm_certificate_arn            = module.repo_acm.arn
     minimum_protocol_version       = "TLSv1.2_2019"
     ssl_support_method             = "sni-only"

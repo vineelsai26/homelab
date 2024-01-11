@@ -93,7 +93,7 @@ resource "cloudflare_record" "repo" {
   proxied = false
   ttl     = 1
   type    = "CNAME"
-  value   = "cname.vercel-dns.com"
+  value   = data.terraform_remote_state.aws_prod.outputs.repo_cloudfront_distribution_domain_name
   zone_id = var.zone_id
   comment = var.default_comment
 }
@@ -189,11 +189,11 @@ resource "cloudflare_record" "amazonses_domainkey_3" {
 }
 
 resource "cloudflare_record" "acm_repo" {
-  name    = "_fd66a403f90a22294e4ca519c0bf7cc1.repo.vineelsai.com"
+  name    = data.terraform_remote_state.aws_prod.outputs.repo_acm_resource_record_name
   proxied = false
   ttl     = 1
-  type    = "CNAME"
-  value   = "_68c18959a185f3c94c74581203567fa0.mhbtsbpdnt.acm-validations.aws"
+  type    = data.terraform_remote_state.aws_prod.outputs.repo_acm_resource_record_type
+  value   = data.terraform_remote_state.aws_prod.outputs.repo_acm_resource_record_value
   zone_id = var.zone_id
   comment = var.default_comment
 }

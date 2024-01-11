@@ -1,20 +1,31 @@
 terraform {
-    required_version = ">= 1.4.6"
-    required_providers {
-        cloudflare = {
-            source = "cloudflare/cloudflare"
-            version = ">= 4.6.0"
-        }
+  required_version = ">= 1.4.6"
+  required_providers {
+    cloudflare = {
+      source  = "cloudflare/cloudflare"
+      version = ">= 4.6.0"
     }
-    cloud {
-        organization = "vineelsai"
+  }
+  cloud {
+    organization = "vineelsai"
 
-        workspaces {
-            name = "Cloudflare"
-        }
+    workspaces {
+      name = "Cloudflare"
     }
+  }
 }
 
 provider "cloudflare" {
   api_token = var.cloudflare_api_token
+}
+
+data "terraform_remote_state" "aws_prod" {
+  backend = "remote"
+
+  config = {
+    organization = "vineelsai"
+    workspaces = {
+      name = "AWS-Prod"
+    }
+  }
 }
