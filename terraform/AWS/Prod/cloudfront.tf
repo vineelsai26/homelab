@@ -17,9 +17,9 @@ resource "aws_cloudfront_distribution" "repo_s3_distribution" {
     origin_id                = local.s3_origin_id
   }
 
-  enabled             = true
-  is_ipv6_enabled     = true
-  comment             = "Repo Distribution"
+  enabled         = true
+  is_ipv6_enabled = true
+  comment         = "Repo Distribution"
 
   aliases = ["repo.vineelsai.com"]
 
@@ -45,8 +45,8 @@ resource "aws_cloudfront_distribution" "repo_s3_distribution" {
   }
 
   viewer_certificate {
-    acm_certificate_arn            = module.repo_acm.arn
-    minimum_protocol_version       = "TLSv1.2_2019"
-    ssl_support_method             = "sni-only"
+    acm_certificate_arn      = module.repo_acm.arn
+    minimum_protocol_version = "TLSv1.2_2019"
+    ssl_support_method       = "sni-only"
   }
 }
