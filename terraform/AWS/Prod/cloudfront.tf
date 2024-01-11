@@ -33,7 +33,6 @@ resource "aws_cloudfront_distribution" "repo_s3_distribution" {
     viewer_protocol_policy = "redirect-to-https"
   }
 
-
   restrictions {
     geo_restriction {
       restriction_type = "none"
@@ -41,7 +40,7 @@ resource "aws_cloudfront_distribution" "repo_s3_distribution" {
   }
 
   tags = {
-    Environment = "production"
+    Environment = "Terraform"
   }
 
   viewer_certificate {
