@@ -31,6 +31,11 @@ resource "aws_cloudfront_distribution" "repo_s3_distribution" {
     allowed_methods        = ["GET", "HEAD", "OPTIONS"]
     target_origin_id       = local.s3_origin_id
     viewer_protocol_policy = "redirect-to-https"
+
+	lambda_function_association {
+	  event_type   = "viewer-request"
+	  lambda_arn   = module.dl_viewer_request_lambda.qualified_arn
+	}
   }
 
   restrictions {
