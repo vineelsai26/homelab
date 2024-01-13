@@ -1,5 +1,5 @@
 ---
-- name: Update and Upgrade all packages on Debian based systems
+- name: Update and Upgrade all packages on Linux based systems
   become: true
   hosts: all
   tasks:

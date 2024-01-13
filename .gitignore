@@ -10,5 +10,5 @@
 ansible*key
 inventory
 .terraform*
-.env
+*.env
 .DS_Store

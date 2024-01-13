@@ -1,0 +1,35 @@
+version: "3.8"
+services:
+  dockge:
+    image: louislam/dockge:1
+    restart: unless-stopped
+    ports:
+      - 5001:5001
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./data:/app/data
+      # Stacks Directory
+      # ⚠️ READ IT CAREFULLY. If you did it wrong, your data could end up writing into a WRONG PATH.
+      # ⚠️ 1. FULL path only. No relative path (MUST)
+      # ⚠️ 2. Left Stacks Path === Right Stacks Path (MUST)
+      - /home/vineel/homelab/docker-compose:/home/vineel/homelab/docker-compose
+    environment:
+      # Tell Dockge where to find the stacks
+      - DOCKGE_STACKS_DIR=/home/vineel/homelab/docker-compose
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.dockge.entrypoints=http"
+      - "traefik.http.routers.dockge.rule=Host(`dockge.home.vineelsai.com`)||Host(`dockge.vineelsai.com`)"
+      - "traefik.http.middlewares.dockge-https-redirect.redirectscheme.scheme=https"
+      - "traefik.http.routers.dockge.middlewares=dockge-https-redirect"
+      - "traefik.http.routers.dockge-secure.entrypoints=https"
+      - "traefik.http.routers.dockge-secure.rule=Host(`dockge.home.vineelsai.com`)||Host(`dockge.vineelsai.com`)"
+      - "traefik.http.routers.dockge-secure.tls=true"
+      - "traefik.http.routers.dockge-secure.service=dockge"
+      - "traefik.http.services.dockge.loadbalancer.server.port=5001"
+      - "traefik.docker.network=traefik_proxy"
+
+networks:
+  default:
+    name: traefik_proxy
+    external: true
