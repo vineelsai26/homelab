@@ -1,4 +1,3 @@
-*.*
 /**/data/*
 /**/config/*
 /**/letsencrypt/*
@@ -7,22 +6,6 @@
 /**/nextcloud/*
 /**/jellyfin/*
 /**/tdarr/*
-
-!.gitignore
-!docker-compose.yml
-!run.sh
-!stop.sh
-!backup.sh
-!update.sh
-!traefik.yml
-!config.yml
-!prometheus.yml
-!.env.example
-!nginx.conf
-!default.json
-
-!terraform/**
-!ansible/**
 
 ansible*key
 inventory
