@@ -1,34 +1,35 @@
 name: Ansible Playbook Weekly Update Servers
 
 on:
-    push:
-        branches: ["main"]
-        paths:
-            - "ansible/**"
-            - ".github/workflows/**"
-    schedule:
-        - cron: "0 0 * * 6"
+  push:
+    branches: ["main"]
+    paths:
+      - "ansible/**"
+      - ".github/workflows/**"
+  schedule:
+      - cron: "0 0 * * 6"
 
 env:
-    ANSIBLE_HOSTS_FILE: ${{ secrets.ANSIBLE_HOSTS_FILE }}
-    ANSIBLE_SSH_PRIVATE_KEY_FILE: ${{ secrets.ANSIBLE_SSH_PRIVATE_KEY_FILE }}
+  ANSIBLE_HOSTS_FILE: ${{ secrets.ANSIBLE_HOSTS_FILE }}
+  ANSIBLE_SSH_PRIVATE_KEY_FILE: ${{ secrets.ANSIBLE_SSH_PRIVATE_KEY_FILE }}
 
 jobs:
-    update-servers:
-        name: Update Servers
-        runs-on: self-hosted
+  update-servers:
+    name: Update Servers
+    runs-on: self-hosted
 
-        steps:
-            - uses: actions/checkout@v3
+    steps:
+      - uses: actions/checkout@v3
 
-            - name: Set Environment Variables
-              working-directory: ansible
-              run: |
-                  mkdir inventory
-                  echo $ANSIBLE_HOSTS_FILE | base64 -d > inventory/hosts
-                  echo $ANSIBLE_SSH_PRIVATE_KEY_FILE | base64 -d > ansible_key
-                  chmod 600 ansible_key
+      - name: Set Environment Variables
+        working-directory: ansible
+        run: |
+          mkdir inventory
+          echo $ANSIBLE_HOSTS_FILE | base64 -d > inventory/hosts
+          echo $ANSIBLE_SSH_PRIVATE_KEY_FILE | base64 -d > ansible_key
+          chmod 600 ansible_key
 
-            - name: Run Ansible Playbook
-              run: |
-                  ansible-playbook update.yaml
+      - name: Run Ansible Playbook
+        working-directory: ansible
+        run: |
+            ansible-playbook update.yaml
