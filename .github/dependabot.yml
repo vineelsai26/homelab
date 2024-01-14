@@ -6,13 +6,31 @@
 version: 2
 updates:
   - package-ecosystem: "terraform"
-    directory: "/"
+    directory: "/terraform/cloudflare"
     schedule:
       interval: "weekly"
     assignees:
       - "vineelsai26"
     commit-message:
-      prefix: "terraform"
+      prefix: "terraform-cloudflare"
+
+  - package-ecosystem: "terraform"
+    directory: "/terraform/AWS/Prod"
+    schedule:
+      interval: "weekly"
+    assignees:
+      - "vineelsai26"
+    commit-message:
+      prefix: "terraform-aws-prod"
+
+  - package-ecosystem: "terraform"
+    directory: "/terraform/AWS/Backup"
+    schedule:
+      interval: "weekly"
+    assignees:
+      - "vineelsai26"
+    commit-message:
+      prefix: "terraform-aws-backup"
 
   - package-ecosystem: "github-actions"
     directory: "/"
