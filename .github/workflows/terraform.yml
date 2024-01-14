@@ -5,12 +5,14 @@ on:
     branches: ["main"]
     paths:
       - "terraform/AWS/**"
+      - ".github/workflows/**"
 
 jobs:
   plan:
     strategy:
       matrix:
-        path: ["terraform/AWS/Prod", "terraform/AWS/Backup"]
+        path:
+          ["terraform/AWS/Prod", "terraform/AWS/Backup", "terraform/cloudflare"]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -31,7 +33,8 @@ jobs:
   apply:
     strategy:
       matrix:
-        path: ["terraform/AWS/Prod", "terraform/AWS/Backup"]
+        path:
+          ["terraform/AWS/Prod", "terraform/AWS/Backup", "terraform/cloudflare"]
     runs-on: ubuntu-latest
     environment: terraform_apply
     needs: plan
