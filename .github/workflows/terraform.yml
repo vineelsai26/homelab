@@ -1,4 +1,4 @@
-name: Ansible Playbook Weekly Update Servers
+name: Terraform Plan and Apply
 
 on:
   push:
