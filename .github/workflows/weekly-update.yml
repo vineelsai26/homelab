@@ -7,7 +7,7 @@ on:
       - "ansible/**"
       - ".github/workflows/**"
   schedule:
-      - cron: "0 0 * * 6"
+    - cron: "0 0 * * 6"
 
 env:
   ANSIBLE_HOSTS_FILE: ${{ secrets.ANSIBLE_HOSTS_FILE }}
@@ -32,4 +32,4 @@ jobs:
       - name: Run Ansible Playbook
         working-directory: ansible
         run: |
-            ansible-playbook update.yaml
+          ansible-playbook update.yaml
