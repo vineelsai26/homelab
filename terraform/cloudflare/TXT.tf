@@ -3,7 +3,7 @@ resource "cloudflare_record" "_dmarc" {
   proxied = false
   ttl     = 1
   type    = "TXT"
-  value   = "v=DMARC1; p=reject; sp=none; rua=mailto:5b5054640aef433192a0894df2245896@dmarc-reports.cloudflare.net; rf=afrf; pct=100; ri=86400"
+  value   = "v=DMARC1; p=reject; sp=reject; rua=mailto:5b5054640aef433192a0894df2245896@dmarc-reports.cloudflare.net; rf=afrf; pct=100; ri=86400"
   zone_id = var.zone_id
   comment = var.default_comment
 }
@@ -18,26 +18,6 @@ resource "cloudflare_record" "mail_domainkey" {
   comment = var.default_comment
 }
 
-resource "cloudflare_record" "bounces_txt" {
-  name    = "bounces"
-  proxied = false
-  ttl     = 1
-  type    = "TXT"
-  value   = "v=spf1 include:amazonses.com ~all"
-  zone_id = var.zone_id
-  comment = var.default_comment
-}
-
-resource "cloudflare_record" "resend_domainkey" {
-  name    = "resend._domainkey"
-  proxied = false
-  ttl     = 1
-  type    = "TXT"
-  value   = "p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCoAHnu+EG51z8b/980XwDfMayFHlDjxTR9YCnikzscJAWlEQL6nsIfGAK4H9YFSHajZrei8HTlLZDJuooiUpUfLaKpP9o719JbQPhrk7Vnxa7GkhOkmRZ8eiW5KIOombHKqOYiIowEOJgFUFpfnVlaKkh+EG7bio64KIabI1OnQQIDAQAB"
-  zone_id = var.zone_id
-  comment = var.default_comment
-}
-
 resource "cloudflare_record" "spf1" {
   name    = "vineelsai.com"
   proxied = false
@@ -48,17 +28,7 @@ resource "cloudflare_record" "spf1" {
   comment = var.default_comment
 }
 
-resource "cloudflare_record" "terraform_managed_resource_53847af078f45ab162fbfc10ef082f66" {
-  name    = "vineelsai.com"
-  proxied = false
-  ttl     = 1
-  type    = "TXT"
-  value   = "have-i-been-pwned-verification=6ca260fac504238160cc8fc87c81f628"
-  zone_id = var.zone_id
-  comment = var.default_comment
-}
-
-resource "cloudflare_record" "terraform_managed_resource_ed86d8055d9367904c1951b0c7581d89" {
+resource "cloudflare_record" "_visual_studio_marketplace_vineelsai" {
   name    = "_visual-studio-marketplace-vineelsai"
   proxied = false
   ttl     = 1

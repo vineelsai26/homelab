@@ -28,42 +28,12 @@ resource "cloudflare_record" "blog_2" {
   comment = var.default_comment
 }
 
-resource "cloudflare_record" "adguard_home" {
-  name    = "adguard.home"
-  proxied = false
-  ttl     = 1
-  type    = "A"
-  value   = "10.0.0.2"
-  zone_id = var.zone_id
-  comment = var.default_comment
-}
-
-resource "cloudflare_record" "home" {
-  name    = "*.home"
-  proxied = false
-  ttl     = 1
-  type    = "A"
-  value   = "10.0.0.4"
-  zone_id = var.zone_id
-  comment = var.default_comment
-}
-
 resource "cloudflare_record" "oc" {
   name    = "*.oc"
   proxied = false
   ttl     = 1
   type    = "A"
   value   = "100.84.60.101"
-  zone_id = var.zone_id
-  comment = var.default_comment
-}
-
-resource "cloudflare_record" "api_collab_home" {
-  name    = "api.collab.home"
-  proxied = false
-  ttl     = 1
-  type    = "A"
-  value   = "10.0.0.4"
   zone_id = var.zone_id
   comment = var.default_comment
 }
