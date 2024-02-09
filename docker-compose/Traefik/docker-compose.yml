@@ -29,14 +29,7 @@ services:
       - "traefik.http.routers.traefik-secure.tls.domains[1].main=*.collab.home.vineelsai.com"
       - "traefik.http.routers.traefik-secure.service=api@internal"
     restart: unless-stopped
-    networks:
-      - default
-      - default_overlay
 
 networks:
   default:
     name: traefik_proxy
-  default_overlay:
-    name: traefik_overlay_proxy
-    driver: overlay
-    attachable: true
