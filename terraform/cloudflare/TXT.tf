@@ -18,16 +18,6 @@ resource "cloudflare_record" "mail_domainkey" {
   comment = var.default_comment
 }
 
-resource "cloudflare_record" "spf1" {
-  name    = "vineelsai.com"
-  proxied = false
-  ttl     = 3600
-  type    = "TXT"
-  value   = "v=spf1 include:icloud.com ~all"
-  zone_id = var.zone_id
-  comment = var.default_comment
-}
-
 resource "cloudflare_record" "_visual_studio_marketplace_vineelsai" {
   name    = "_visual-studio-marketplace-vineelsai"
   proxied = false

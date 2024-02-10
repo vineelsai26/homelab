@@ -1,102 +1,20 @@
 http:
   routers:
-    pihole:
+    nextcloud:
       entryPoints:
         - "https"
-      rule: "Host(`pihole.home.vineelsai.com`)"
-      middlewares:
-        - redirectregex-pihole
-        - default-headers
-        - addprefix-pihole
-        - https-redirectscheme
-      tls: {}
-      service: pihole
-
-    homeassistant:
-      entryPoints:
-        - "https"
-      rule: "Host(`homeassistant.home.vineelsai.com`)"
+      rule: "Host(`nextcloud.home.vineelsai.com`)"
       middlewares:
         - default-headers
         - https-redirectscheme
       tls: {}
-      service: homeassistant
-
-    syncthing:
-      entryPoints:
-        - "https"
-      rule: "Host(`syncthing.home.vineelsai.com`)"
-      middlewares:
-        - default-headers
-        - https-redirectscheme
-      tls: {}
-      service: syncthing
-
-    collab_api:
-      entryPoints:
-        - "https"
-      rule: "Host(`api.collab.home.vineelsai.com`)||Host(`api-collab.vineelsai.com`)"
-      middlewares:
-        - default-headers
-        - https-redirectscheme
-      tls: {}
-      service: collab_api
-
-    rce:
-      entryPoints:
-        - "https"
-      rule: "Host(`rce.home.vineelsai.com`)||Host(`rce.vineelsai.com`)"
-      middlewares:
-        - default-headers
-        - https-redirectscheme
-      tls: {}
-      service: rce
-
-    shortify:
-      entryPoints:
-        - "https"
-      rule: "Host(`shortify.home.vineelsai.com`)||Host(`shortify.vineelsai.com`)"
-      middlewares:
-        - default-headers
-        - https-redirectscheme
-      tls: {}
-      service: shortify
+      service: nextcloud
 
   services:
-    pihole:
+    nextcloud:
       loadBalancer:
         servers:
-          - url: "http://10.0.0.2:80"
-        passHostHeader: true
-
-    homeassistant:
-      loadBalancer:
-        servers:
-          - url: "http://10.0.0.4:8123"
-        passHostHeader: true
-
-    syncthing:
-      loadBalancer:
-        servers:
-          - url: "http://10.0.0.4:8384"
-        passHostHeader: true
-
-    collab_api:
-      loadBalancer:
-        servers:
-          - url: "http://100.84.60.101:4000"
-        passHostHeader: true
-
-    rce:
-      loadBalancer:
-        servers:
-          - url: "http://100.84.60.101:3010"
-        passHostHeader: true
-
-    shortify:
-      loadBalancer:
-        servers:
-          - url: "http://100.84.60.101:3100"
+          - url: "http://10.0.0.10:8080"
         passHostHeader: true
 
   middlewares:
