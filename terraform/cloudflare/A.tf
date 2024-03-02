@@ -33,7 +33,7 @@ resource "cloudflare_record" "home" {
   proxied = false
   ttl     = 1
   type    = "A"
-  value   = "10.0.0.10"
+  value   = "10.0.10.4"
   zone_id = var.zone_id
   comment = var.default_comment
 }
