@@ -1,6 +1,6 @@
 services:
   traefik:
-    image: traefik:v3.0.0-beta5
+    image: traefik:v2.11
     container_name: traefik
     hostname: traefik
     ports:
@@ -11,6 +11,7 @@ services:
       - env/traefik.env
     volumes:
       - ./config:/etc/traefik
+      - cert_storage:/cert_storage
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - /etc/localtime:/etc/localtime:ro
     labels:
@@ -33,3 +34,7 @@ services:
 networks:
   default:
     name: traefik_proxy
+
+volumes:
+  cert_storage:
+    name: cert_storage

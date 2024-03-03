@@ -6,8 +6,12 @@ services:
     hostname: homeassistant
     privileged: true
     volumes:
-      - ./config:/config
+      - homeassistant_config:/config
       - /run/dbus:/run/dbus:ro
       - /etc/localtime:/etc/localtime:ro
     network_mode: host
     restart: unless-stopped
+
+volumes:
+  homeassistant_config:
+    name: homeassistant_config

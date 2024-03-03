@@ -9,7 +9,7 @@ services:
       - '9443:9443'
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock"
-      - "./data:/data"
+      - "portainer_data:/data"
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.portainer.entrypoints=http"
@@ -27,3 +27,7 @@ networks:
   default:
     name: traefik_proxy
     external: true
+
+volumes:
+  portainer_data:
+    name: portainer_data

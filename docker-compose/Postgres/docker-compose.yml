@@ -12,13 +12,13 @@ services:
       - env/gitea.env
       - env/creds.env
 
-  postgres_semaphore:
-    container_name: postgres_semaphore
-    hostname: postgres_semaphore
-    image: postgres:14
+  postgres:
+    container_name: postgres
+    hostname: postgres
+    image: postgres:16
     restart: always
     volumes:
-      - ./data/postgres_semaphore:/var/lib/postgresql/data
+      - ./data/postgres:/var/lib/postgresql/data
     env_file:
       - env/semaphore.env
       - env/creds.env
