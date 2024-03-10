@@ -11,24 +11,24 @@ http:
         - https-redirectscheme
       tls: {}
       service: pihole
-    homeassistant:
+    pve:
       entryPoints:
         - "https"
-      rule: "Host(`homeassistant.home.vineelsai.com`)"
+      rule: "Host(`pve.home.vineelsai.com`)"
       middlewares:
         - default-headers
         - https-redirectscheme
       tls: {}
-      service: homeassistant
-    fedora:
+      service: pve
+    truenas:
       entryPoints:
         - "https"
-      rule: "Host(`fedora.home.vineelsai.com`)"
+      rule: "Host(`truenas.home.vineelsai.com`)"
       middlewares:
         - default-headers
         - https-redirectscheme
       tls: {}
-      service: fedora
+      service: truenas
     pi4:
       entryPoints:
         - "https"
@@ -50,10 +50,15 @@ http:
         servers:
           - url: "http://10.0.10.4:8123"
         passHostHeader: true
-    fedora:
+    pve:
       loadBalancer:
         servers:
-          - url: "https://10.0.10.10:9090"
+          - url: "https://10.0.10.10:8006"
+        passHostHeader: true
+    truenas:
+      loadBalancer:
+        servers:
+          - url: "https://10.0.10.20"
         passHostHeader: true
     pi4:
       loadBalancer:
