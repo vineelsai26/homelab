@@ -1,26 +1,28 @@
 version: '3'
 
 services:
-  postgres_gitea:
-    container_name: postgres_gitea
-    hostname: postgres_gitea
+  postgres_14:
+    container_name: postgres_14
+    hostname: postgres_14
     image: postgres:14
     restart: always
+    ports:
+      - '5414:5432'
     volumes:
-      - ./data/postgres_gitea:/var/lib/postgresql/data
+      - ./data/postgres_14:/var/lib/postgresql/data
     env_file:
-      - env/gitea.env
       - env/creds.env
 
-  postgres:
-    container_name: postgres
-    hostname: postgres
+  postgres_16:
+    container_name: postgres_16
+    hostname: postgres_16
     image: postgres:16
     restart: always
+    ports:
+      - '5416:5432'
     volumes:
-      - ./data/postgres:/var/lib/postgresql/data
+      - ./data/postgres_16:/var/lib/postgresql/data
     env_file:
-      - env/semaphore.env
       - env/creds.env
 
 networks:

@@ -40,6 +40,130 @@
   ],
   "apps": [
     {
+      "id": "47cdd95a-4763-4ca7-b576-4b552b035ce3",
+      "name": "Portainer",
+      "url": "https://portainer.home.vineelsai.com",
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/portainer.svg",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "301",
+          "302",
+          "304",
+          "307",
+          "308"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "https://portainer.home.vineelsai.com"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "b06667e9-f7fa-4158-ac30-095ef08604fc"
+        }
+      },
+      "shape": {
+        "lg": {
+          "location": {
+            "x": 5,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        },
+        "md": {
+          "location": {
+            "x": 1,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      }
+    },
+    {
+      "id": "ee0ef13b-29b1-4f1c-a4b9-42ad43bbe5a9",
+      "name": "PiHole",
+      "url": "http://10.0.10.4:5353/admin",
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/loganmarchione/homelab-svg-assets/assets/pihole.svg",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "301",
+          "302",
+          "304",
+          "307",
+          "308"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "https://pihole.home.vineelsai.com"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "b06667e9-f7fa-4158-ac30-095ef08604fc"
+        }
+      },
+      "shape": {
+        "lg": {
+          "location": {
+            "x": 4,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        },
+        "md": {
+          "location": {
+            "x": 2,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": "pihole",
+        "properties": [
+          {
+            "field": "apiKey",
+            "type": "private",
+            "value": "c14d843649968cd08bb54e82acbb947e9bc620d31c6142fc5999263e00b964a2"
+          }
+        ]
+      }
+    },
+    {
       "id": "5d6fc185-3ecb-4237-bf8f-9e5fedefa734",
       "name": "Nextcloud",
       "url": "https://nextcloud.home.vineelsai.com",
@@ -272,6 +396,55 @@
       }
     },
     {
+      "id": "dfcad657-da21-4e91-819b-4508f976d62b",
+      "name": "Algo",
+      "url": "https://algo.vineelsai.com",
+      "appearance": {
+        "iconUrl": "https://algo.vineelsai.com/logo-dark.png",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "301",
+          "302",
+          "304",
+          "307",
+          "308"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "https://algo.vineelsai.com"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "f8f30341-1912-4a20-84e7-50d4c3a87cf2"
+        }
+      },
+      "shape": {
+        "lg": {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      }
+    },
+    {
       "id": "d7b322de-8e22-4d25-9216-856aef2b501e",
       "name": "Uptime Kuma",
       "url": "https://uptime.home.vineelsai.com",
@@ -317,6 +490,104 @@
         "md": {
           "location": {
             "x": 3,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      }
+    },
+    {
+      "id": "7b602d2c-38f0-4e83-badf-7e40da56b95a",
+      "name": "Tic Tac Toe",
+      "url": "https://tictactoe.vineelsai.com",
+      "appearance": {
+        "iconUrl": "https://tictactoe.vineelsai.com/img/img.png",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "301",
+          "302",
+          "304",
+          "307",
+          "308"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "https://tictactoe.vineelsai.com"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "f8f30341-1912-4a20-84e7-50d4c3a87cf2"
+        }
+      },
+      "shape": {
+        "lg": {
+          "location": {
+            "x": 3,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      }
+    },
+    {
+      "id": "b99fc090-94d2-49bb-b97e-942df746a098",
+      "name": "Repo",
+      "url": "https://repo.vineelsai.com",
+      "appearance": {
+        "iconUrl": "https://vineelsai.com/logo-dark.png",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "301",
+          "302",
+          "304",
+          "307",
+          "308"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "https://repo.vineelsai.com"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "04dc64f0-c346-442a-8f0f-47ef4fd766df"
+        }
+      },
+      "shape": {
+        "lg": {
+          "location": {
+            "x": 2,
             "y": 0
           },
           "size": {
@@ -390,163 +661,6 @@
       }
     },
     {
-      "id": "aae8292d-22f6-4848-a78c-603014018eaa",
-      "name": "Syncthing",
-      "url": "https://syncthing.home.vineelsai.com",
-      "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/syncthing.svg",
-        "appNameStatus": "normal",
-        "positionAppName": "column",
-        "lineClampAppName": 1,
-        "appNameFontSize": 16
-      },
-      "network": {
-        "enabledStatusChecker": true,
-        "statusCodes": [
-          "200",
-          "301",
-          "302",
-          "304",
-          "307",
-          "308"
-        ]
-      },
-      "behaviour": {
-        "isOpeningNewTab": true,
-        "externalUrl": "https://syncthing.home.vineelsai.com"
-      },
-      "area": {
-        "type": "category",
-        "properties": {
-          "id": "b06667e9-f7fa-4158-ac30-095ef08604fc"
-        }
-      },
-      "shape": {
-        "lg": {
-          "location": {
-            "x": 7,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        }
-      },
-      "integration": {
-        "type": null,
-        "properties": []
-      }
-    },
-    {
-      "id": "7b602d2c-38f0-4e83-badf-7e40da56b95a",
-      "name": "Tic Tac Toe",
-      "url": "https://tictactoe.vineelsai.com",
-      "appearance": {
-        "iconUrl": "https://tictactoe.vineelsai.com/img/img.png",
-        "appNameStatus": "normal",
-        "positionAppName": "column",
-        "lineClampAppName": 1,
-        "appNameFontSize": 16
-      },
-      "network": {
-        "enabledStatusChecker": true,
-        "statusCodes": [
-          "200",
-          "301",
-          "302",
-          "304",
-          "307",
-          "308"
-        ]
-      },
-      "behaviour": {
-        "isOpeningNewTab": true,
-        "externalUrl": "https://tictactoe.vineelsai.com"
-      },
-      "area": {
-        "type": "category",
-        "properties": {
-          "id": "f8f30341-1912-4a20-84e7-50d4c3a87cf2"
-        }
-      },
-      "shape": {
-        "lg": {
-          "location": {
-            "x": 3,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        }
-      },
-      "integration": {
-        "type": null,
-        "properties": []
-      }
-    },
-    {
-      "id": "3d5dc8e5-dcf7-42f6-a475-17464a97d76a",
-      "name": "Shortify",
-      "url": "https://shortify.home.vineelsai.com",
-      "appearance": {
-        "iconUrl": "https://unpkg.com/@tabler/icons-png@2.0.0-beta/icons/external-link.png",
-        "appNameStatus": "normal",
-        "positionAppName": "column",
-        "lineClampAppName": 1,
-        "appNameFontSize": 16
-      },
-      "network": {
-        "enabledStatusChecker": true,
-        "statusCodes": [
-          "200",
-          "301",
-          "302",
-          "304",
-          "307",
-          "308"
-        ]
-      },
-      "behaviour": {
-        "isOpeningNewTab": true,
-        "externalUrl": "https://shortify.vineelsai.com"
-      },
-      "area": {
-        "type": "category",
-        "properties": {
-          "id": "b06667e9-f7fa-4158-ac30-095ef08604fc"
-        }
-      },
-      "shape": {
-        "lg": {
-          "location": {
-            "x": 6,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        },
-        "md": {
-          "location": {
-            "x": 1,
-            "y": 1
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        }
-      },
-      "integration": {
-        "type": null,
-        "properties": []
-      }
-    },
-    {
       "id": "da5f4831-a202-44d5-8aed-18ced830f48a",
       "name": "Collab",
       "url": "https://collab.vineelsai.com",
@@ -592,326 +706,6 @@
         "lg": {
           "location": {
             "x": 1,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        }
-      },
-      "integration": {
-        "type": null,
-        "properties": []
-      }
-    },
-    {
-      "id": "6c1497b9-1322-44a3-bb10-4f0f14dd3b1d",
-      "name": "Blog",
-      "url": "https://vineelsai.com/blog",
-      "appearance": {
-        "iconUrl": "https://vineelsai.com/logo-dark.png",
-        "appNameStatus": "normal",
-        "positionAppName": "column",
-        "lineClampAppName": 1,
-        "appNameFontSize": 16
-      },
-      "network": {
-        "enabledStatusChecker": true,
-        "statusCodes": [
-          "200",
-          "301",
-          "302",
-          "304",
-          "307",
-          "308"
-        ]
-      },
-      "behaviour": {
-        "isOpeningNewTab": true,
-        "externalUrl": "https://vineelsai.com/blog"
-      },
-      "area": {
-        "type": "category",
-        "properties": {
-          "id": "04dc64f0-c346-442a-8f0f-47ef4fd766df"
-        }
-      },
-      "shape": {
-        "lg": {
-          "location": {
-            "x": 0,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        }
-      },
-      "integration": {
-        "type": null,
-        "properties": []
-      }
-    },
-    {
-      "id": "47cdd95a-4763-4ca7-b576-4b552b035ce3",
-      "name": "Portainer",
-      "url": "https://portainer.home.vineelsai.com",
-      "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/portainer.svg",
-        "appNameStatus": "normal",
-        "positionAppName": "column",
-        "lineClampAppName": 1,
-        "appNameFontSize": 16
-      },
-      "network": {
-        "enabledStatusChecker": true,
-        "statusCodes": [
-          "200",
-          "301",
-          "302",
-          "304",
-          "307",
-          "308"
-        ]
-      },
-      "behaviour": {
-        "isOpeningNewTab": true,
-        "externalUrl": "https://portainer.home.vineelsai.com"
-      },
-      "area": {
-        "type": "category",
-        "properties": {
-          "id": "b06667e9-f7fa-4158-ac30-095ef08604fc"
-        }
-      },
-      "shape": {
-        "lg": {
-          "location": {
-            "x": 5,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        },
-        "md": {
-          "location": {
-            "x": 1,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        }
-      },
-      "integration": {
-        "type": null,
-        "properties": []
-      }
-    },
-    {
-      "id": "24b53c5b-b122-4451-91f6-1eb1072cef2c",
-      "name": "Sudoku",
-      "url": "https://sudoku.vineelsai.com",
-      "appearance": {
-        "iconUrl": "https://sudoku.vineelsai.com/img/logo.png",
-        "appNameStatus": "normal",
-        "positionAppName": "column",
-        "lineClampAppName": 1,
-        "appNameFontSize": 16
-      },
-      "network": {
-        "enabledStatusChecker": true,
-        "statusCodes": [
-          "200",
-          "301",
-          "302",
-          "304",
-          "307",
-          "308"
-        ]
-      },
-      "behaviour": {
-        "isOpeningNewTab": true,
-        "externalUrl": "https://sudoku.vineelsai.com"
-      },
-      "area": {
-        "type": "category",
-        "properties": {
-          "id": "f8f30341-1912-4a20-84e7-50d4c3a87cf2"
-        }
-      },
-      "shape": {
-        "lg": {
-          "location": {
-            "x": 2,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        }
-      },
-      "integration": {
-        "type": null,
-        "properties": []
-      }
-    },
-    {
-      "id": "b99fc090-94d2-49bb-b97e-942df746a098",
-      "name": "Repo",
-      "url": "https://repo.vineelsai.com",
-      "appearance": {
-        "iconUrl": "https://vineelsai.com/logo-dark.png",
-        "appNameStatus": "normal",
-        "positionAppName": "column",
-        "lineClampAppName": 1,
-        "appNameFontSize": 16
-      },
-      "network": {
-        "enabledStatusChecker": true,
-        "statusCodes": [
-          "200",
-          "301",
-          "302",
-          "304",
-          "307",
-          "308"
-        ]
-      },
-      "behaviour": {
-        "isOpeningNewTab": true,
-        "externalUrl": "https://repo.vineelsai.com"
-      },
-      "area": {
-        "type": "category",
-        "properties": {
-          "id": "04dc64f0-c346-442a-8f0f-47ef4fd766df"
-        }
-      },
-      "shape": {
-        "lg": {
-          "location": {
-            "x": 2,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        }
-      },
-      "integration": {
-        "type": null,
-        "properties": []
-      }
-    },
-    {
-      "id": "ee0ef13b-29b1-4f1c-a4b9-42ad43bbe5a9",
-      "name": "PiHole",
-      "url": "http://10.0.0.2:80/admin",
-      "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/loganmarchione/homelab-svg-assets/assets/pihole.svg",
-        "appNameStatus": "normal",
-        "positionAppName": "column",
-        "lineClampAppName": 1,
-        "appNameFontSize": 16
-      },
-      "network": {
-        "enabledStatusChecker": true,
-        "statusCodes": [
-          "200",
-          "301",
-          "302",
-          "304",
-          "307",
-          "308"
-        ]
-      },
-      "behaviour": {
-        "isOpeningNewTab": true,
-        "externalUrl": "https://pihole.home.vineelsai.com"
-      },
-      "area": {
-        "type": "category",
-        "properties": {
-          "id": "b06667e9-f7fa-4158-ac30-095ef08604fc"
-        }
-      },
-      "shape": {
-        "lg": {
-          "location": {
-            "x": 4,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        },
-        "md": {
-          "location": {
-            "x": 2,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        }
-      },
-      "integration": {
-        "type": "pihole",
-        "properties": [
-          {
-            "field": "apiKey",
-            "type": "private",
-            "value": "c14d843649968cd08bb54e82acbb947e9bc620d31c6142fc5999263e00b964a2"
-          }
-        ]
-      }
-    },
-    {
-      "id": "dfcad657-da21-4e91-819b-4508f976d62b",
-      "name": "Algo",
-      "url": "https://algo.vineelsai.com",
-      "appearance": {
-        "iconUrl": "https://algo.vineelsai.com/logo-dark.png",
-        "appNameStatus": "normal",
-        "positionAppName": "column",
-        "lineClampAppName": 1,
-        "appNameFontSize": 16
-      },
-      "network": {
-        "enabledStatusChecker": true,
-        "statusCodes": [
-          "200",
-          "301",
-          "302",
-          "304",
-          "307",
-          "308"
-        ]
-      },
-      "behaviour": {
-        "isOpeningNewTab": true,
-        "externalUrl": "https://algo.vineelsai.com"
-      },
-      "area": {
-        "type": "category",
-        "properties": {
-          "id": "f8f30341-1912-4a20-84e7-50d4c3a87cf2"
-        }
-      },
-      "shape": {
-        "lg": {
-          "location": {
-            "x": 0,
             "y": 0
           },
           "size": {
@@ -983,39 +777,149 @@
         "type": null,
         "properties": []
       }
-    }
-  ],
-  "widgets": [
+    },
     {
-      "id": "e3004052-6b83-480e-b458-56e8ccdca5f0",
-      "type": "weather",
-      "properties": {
-        "displayInFahrenheit": false,
-        "location": {
-          "name": "Thenali",
-          "latitude": 16.24253,
-          "longitude": 80.63982
-        },
-        "displayCityName": true
+      "id": "3d5dc8e5-dcf7-42f6-a475-17464a97d76a",
+      "name": "Shortify",
+      "url": "https://shortify.home.vineelsai.com",
+      "appearance": {
+        "iconUrl": "https://unpkg.com/@tabler/icons-png@2.0.0-beta/icons/external-link.png",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "301",
+          "302",
+          "304",
+          "307",
+          "308"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "https://shortify.home.vineelsai.com"
       },
       "area": {
-        "type": "wrapper",
+        "type": "category",
         "properties": {
-          "id": "default"
+          "id": "b06667e9-f7fa-4158-ac30-095ef08604fc"
         }
       },
       "shape": {
-        "md": {
+        "lg": {
           "location": {
-            "x": 4,
-            "y": 1
+            "x": 6,
+            "y": 0
           },
           "size": {
-            "width": 2,
+            "width": 1,
             "height": 1
           }
         },
-        "sm": {
+        "md": {
+          "location": {
+            "x": 1,
+            "y": 1
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      }
+    },
+    {
+      "id": "aae8292d-22f6-4848-a78c-603014018eaa",
+      "name": "Syncthing",
+      "url": "https://syncthing.home.vineelsai.com",
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/syncthing.svg",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "301",
+          "302",
+          "304",
+          "307",
+          "308"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "https://syncthing.home.vineelsai.com"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "b06667e9-f7fa-4158-ac30-095ef08604fc"
+        }
+      },
+      "shape": {
+        "lg": {
+          "location": {
+            "x": 7,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      }
+    },
+    {
+      "id": "24b53c5b-b122-4451-91f6-1eb1072cef2c",
+      "name": "Sudoku",
+      "url": "https://sudoku.vineelsai.com",
+      "appearance": {
+        "iconUrl": "https://sudoku.vineelsai.com/img/logo.png",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "301",
+          "302",
+          "304",
+          "307",
+          "308"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "https://sudoku.vineelsai.com"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "f8f30341-1912-4a20-84e7-50d4c3a87cf2"
+        }
+      },
+      "shape": {
+        "lg": {
           "location": {
             "x": 2,
             "y": 0
@@ -1024,11 +928,154 @@
             "width": 1,
             "height": 1
           }
+        }
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      }
+    },
+    {
+      "id": "6c1497b9-1322-44a3-bb10-4f0f14dd3b1d",
+      "name": "Blog",
+      "url": "https://vineelsai.com/blog",
+      "appearance": {
+        "iconUrl": "https://vineelsai.com/logo-dark.png",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "301",
+          "302",
+          "304",
+          "307",
+          "308"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "https://vineelsai.com/blog"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "04dc64f0-c346-442a-8f0f-47ef4fd766df"
+        }
+      },
+      "shape": {
+        "lg": {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      }
+    }
+  ],
+  "widgets": [
+    {
+      "id": "e22eeba1-48e4-499c-b884-1495770cc0d1",
+      "type": "dns-hole-controls",
+      "properties": {
+        "showToggleAllButtons": true
+      },
+      "area": {
+        "type": "wrapper",
+        "properties": {
+          "id": "default"
+        }
+      },
+      "shape": {
+        "sm": {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "width": 2,
+            "height": 1
+          }
+        },
+        "md": {
+          "location": {
+            "x": 0,
+            "y": 1
+          },
+          "size": {
+            "width": 2,
+            "height": 1
+          }
         },
         "lg": {
           "location": {
-            "x": 6,
-            "y": 1
+            "x": 2,
+            "y": 0
+          },
+          "size": {
+            "width": 2,
+            "height": 2
+          }
+        }
+      }
+    },
+    {
+      "id": "971aa859-8570-49a1-8d34-dd5c7b3638d1",
+      "type": "date",
+      "properties": {
+        "display24HourFormat": false,
+        "dateFormat": "dddd, D MMMM",
+        "enableTimezone": true,
+        "timezoneLocation": {
+          "name": "India",
+          "latitude": 22,
+          "longitude": 79
+        },
+        "titleState": "both"
+      },
+      "area": {
+        "type": "wrapper",
+        "properties": {
+          "id": "default"
+        }
+      },
+      "shape": {
+        "sm": {
+          "location": {
+            "x": 1,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        },
+        "md": {
+          "location": {
+            "x": 4,
+            "y": 0
+          },
+          "size": {
+            "width": 2,
+            "height": 1
+          }
+        },
+        "lg": {
+          "location": {
+            "x": 8,
+            "y": 0
           },
           "size": {
             "width": 2,
@@ -1084,18 +1131,16 @@
       }
     },
     {
-      "id": "971aa859-8570-49a1-8d34-dd5c7b3638d1",
-      "type": "date",
+      "id": "e3004052-6b83-480e-b458-56e8ccdca5f0",
+      "type": "weather",
       "properties": {
-        "display24HourFormat": false,
-        "dateFormat": "dddd, D MMMM",
-        "enableTimezone": true,
-        "timezoneLocation": {
-          "name": "India",
-          "latitude": 22,
-          "longitude": 79
+        "displayInFahrenheit": false,
+        "location": {
+          "name": "Thenali",
+          "latitude": 16.24253,
+          "longitude": 80.63982
         },
-        "titleState": "both"
+        "displayCityName": true
       },
       "area": {
         "type": "wrapper",
@@ -1104,64 +1149,9 @@
         }
       },
       "shape": {
-        "sm": {
-          "location": {
-            "x": 1,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        },
         "md": {
           "location": {
             "x": 4,
-            "y": 0
-          },
-          "size": {
-            "width": 2,
-            "height": 1
-          }
-        },
-        "lg": {
-          "location": {
-            "x": 6,
-            "y": 0
-          },
-          "size": {
-            "width": 2,
-            "height": 1
-          }
-        }
-      }
-    },
-    {
-      "id": "e22eeba1-48e4-499c-b884-1495770cc0d1",
-      "type": "dns-hole-controls",
-      "properties": {
-        "showToggleAllButtons": true
-      },
-      "area": {
-        "type": "wrapper",
-        "properties": {
-          "id": "default"
-        }
-      },
-      "shape": {
-        "sm": {
-          "location": {
-            "x": 0,
-            "y": 0
-          },
-          "size": {
-            "width": 2,
-            "height": 1
-          }
-        },
-        "md": {
-          "location": {
-            "x": 0,
             "y": 1
           },
           "size": {
@@ -1169,45 +1159,9 @@
             "height": 1
           }
         },
-        "lg": {
-          "location": {
-            "x": 2,
-            "y": 0
-          },
-          "size": {
-            "width": 2,
-            "height": 2
-          }
-        }
-      }
-    },
-    {
-      "id": "4b1f9fa3-37c4-484b-a111-2c4d0c1e928b",
-      "type": "smart-home/entity-state",
-      "properties": {
-        "entityId": "switch.pi_hole",
-        "displayName": "Battery"
-      },
-      "area": {
-        "type": "wrapper",
-        "properties": {
-          "id": "default"
-        }
-      },
-      "shape": {
         "sm": {
           "location": {
-            "x": 0,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        },
-        "md": {
-          "location": {
-            "x": 0,
+            "x": 2,
             "y": 0
           },
           "size": {
@@ -1218,10 +1172,10 @@
         "lg": {
           "location": {
             "x": 8,
-            "y": 0
+            "y": 1
           },
           "size": {
-            "width": 1,
+            "width": 2,
             "height": 1
           }
         }
@@ -1269,7 +1223,7 @@
             "y": 0
           },
           "size": {
-            "width": 2,
+            "width": 4,
             "height": 2
           }
         }
