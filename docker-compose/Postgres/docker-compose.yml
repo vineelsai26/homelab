@@ -4,7 +4,7 @@ services:
   postgres_14:
     container_name: postgres_14
     hostname: postgres_14
-    image: postgres:14
+    image: postgres:16
     restart: always
     ports:
       - '5414:5432'
