@@ -65,6 +65,29 @@ services:
       - "traefik.http.services.cadvisor.loadbalancer.server.port=8080"
       - "traefik.docker.network=traefik_proxy"
 
+  influxdb:
+    container_name: influxdb
+    hostname: influxdb
+    image: influxdb:2.7.5-alpine
+    restart: unless-stopped
+    ports:
+      - '8086:8086'
+    volumes:
+      - ./data/influxdb2:/var/lib/influxdb2
+      - /config/influxdb2.yml:/etc/influxdb2/config.yml
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.influxdb.entrypoints=http"
+      - "traefik.http.routers.influxdb.rule=Host(`influxdb.home.vineelsai.com`)"
+      - "traefik.http.middlewares.influxdb-https-redirect.redirectscheme.scheme=https"
+      - "traefik.http.routers.influxdb.middlewares=influxdb-https-redirect"
+      - "traefik.http.routers.influxdb-secure.entrypoints=https"
+      - "traefik.http.routers.influxdb-secure.rule=Host(`influxdb.home.vineelsai.com`)"
+      - "traefik.http.routers.influxdb-secure.tls=true"
+      - "traefik.http.routers.influxdb-secure.service=influxdb"
+      - "traefik.http.services.influxdb.loadbalancer.server.port=8086"
+      - "traefik.docker.network=traefik_proxy"
+
   grafana:
     image: grafana/grafana-oss:10.2.0
     container_name: grafana
