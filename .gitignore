@@ -2,7 +2,7 @@
 /**/letsencrypt/*
 /**/duplicati/*
 /**/syncthing/*
-/**/nextcloud/*
+/*/*/nextcloud/*
 
 ansible*key
 inventory

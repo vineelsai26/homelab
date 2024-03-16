@@ -1,0 +1,47 @@
+version: '3'
+
+services:
+  nextcloud:
+    container_name: nextcloud
+    hostname: nextcloud
+    image: nextcloud:28.0.3
+    restart: always
+    volumes:
+      - ./nextcloud/html:/var/www/html
+      - ./nextcloud/config:/var/www/html/config
+      - ./nextcloud/data:/var/www/html/data
+    env_file:
+      - env/nextcloud.env
+    environment:
+      - REDIS_HOST=redis_nextcloud
+      - REDIS_HOST_PORT=6379
+      - OVERWRITEPROTOCOL=https
+      - NEXTCLOUD_TRUSTED_DOMAINS=nextcloud.home.vineelsai.com nextcloud.vineelsai.com
+      - NEXTCLOUD_INIT_HTACCESS=true
+      - POSTGRES_DB=nextcloud
+      - POSTGRES_USER=postgres
+      - POSTGRES_HOST=postgres_16
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.nextcloud.entrypoints=http"
+      - "traefik.http.routers.nextcloud.rule=Host(`nextcloud.home.vineelsai.com`)||Host(`nextcloud.vineelsai.com`)"
+      - "traefik.http.middlewares.nextcloud-https-redirect.redirectscheme.scheme=https"
+      - "traefik.http.routers.nextcloud.middlewares=nextcloud-https-redirect"
+      - "traefik.http.routers.nextcloud-secure.entrypoints=https"
+      - "traefik.http.routers.nextcloud-secure.rule=Host(`nextcloud.home.vineelsai.com`)||Host(`nextcloud.vineelsai.com`)"
+      - "traefik.http.routers.nextcloud-secure.tls=true"
+      - "traefik.http.routers.nextcloud-secure.service=nextcloud"
+      - "traefik.http.services.nextcloud.loadbalancer.server.port=80"
+      - "traefik.docker.network=traefik_proxy"
+  redis:
+    container_name: redis_nextcloud
+    hostname: redis_nextcloud
+    image: redis:7.2.4
+    restart: unless-stopped
+    volumes:
+      - ./redis/data:/data
+
+networks:
+  default:
+    name: traefik_proxy
+    external: true
