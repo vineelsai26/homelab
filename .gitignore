@@ -3,6 +3,9 @@
 /**/duplicati/*
 /**/syncthing/*
 /*/*/nextcloud/*
+/*/*/jellyfin/*
+/*/*/prowlarr/*
+/*/*/transmission/*
 
 ansible*key
 inventory

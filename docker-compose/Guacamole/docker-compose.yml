@@ -1,0 +1,44 @@
+version: "3"
+services:
+  guacd:
+    image: guacamole/guacd
+    container_name: guacd
+    hostname: guacd
+    ports:
+      - 4822:4822
+    volumes:
+      - /home/vineel/.local/share/fonts:/usr/share/fonts
+    restart: unless-stopped
+
+  guacamole:
+    image: guacamole/guacamole
+    container_name: guacamole
+    hostname: guacamole
+    environment:
+      - GUACD_HOSTNAME=guacd
+    env_file:
+      - .env
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+    links:
+      - guacd:guacd
+    ports:
+      - 8080:8080
+    restart: unless-stopped
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.guacamole.entrypoints=http"
+      - "traefik.http.routers.guacamole.rule=Host(`guacamole.home.vineelsai.com`)"
+      - "traefik.http.middlewares.guacamole-https-redirect.redirectscheme.scheme=https"
+      - "traefik.http.routers.guacamole.middlewares=guacamole-https-redirect"
+      - "traefik.http.routers.guacamole-secure.entrypoints=https"
+      - "traefik.http.routers.guacamole-secure.rule=Host(`guacamole.home.vineelsai.com`)"
+      - "traefik.http.routers.guacamole-secure.tls=true"
+      - "traefik.http.routers.guacamole-secure.service=guacamole"
+      - "traefik.http.services.guacamole.loadbalancer.server.port=8080"
+      - "traefik.docker.network=proxy"
+
+networks:
+  default:
+    name: traefik_proxy
+    external: true
