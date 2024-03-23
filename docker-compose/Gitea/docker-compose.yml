@@ -4,7 +4,7 @@ services:
   gitea:
     container_name: gitea
     hostname: gitea
-    image: gitea/gitea:1.21.8
+    image: gitea/gitea:1.21.9
     restart: unless-stopped
     environment:
       - USER_UID=1000
