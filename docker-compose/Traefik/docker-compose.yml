@@ -1,6 +1,6 @@
 services:
   traefik:
-    image: traefik:v2.11
+    image: traefik:3.0
     container_name: traefik
     hostname: traefik
     ports:
