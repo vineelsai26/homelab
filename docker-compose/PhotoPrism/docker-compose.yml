@@ -1,0 +1,44 @@
+version: '3.5'
+services:
+  photoprism:
+    image: photoprism/photoprism:latest
+    restart: unless-stopped
+    hostname: photoprism
+    container_name: photoprism
+    stop_grace_period: 10s
+    security_opt:
+      - seccomp:unconfined
+      - apparmor:unconfined
+    ports:
+      - "2342:2342"
+    ## Before you start the service, please check the following config options (and change them as needed):
+    ## https://docs.photoprism.app/getting-started/config-options/
+    env_file:
+      - photoprism/.env
+    environment:
+      PHOTOPRISM_ADMIN_USER: "vineelsai"
+      PHOTOPRISM_AUTH_MODE: "password"               # authentication mode (public, password)
+      PHOTOPRISM_SITE_URL: "https://photoprism.home.vineelsai.com"  # server URL in the format "http(s)://domain.name(:port)/(path)"
+      PHOTOPRISM_DATABASE_DRIVER: "sqlite"         # SQLite is an embedded database that doesn't require a server
+      # PHOTOPRISM_UID: 1000
+      # PHOTOPRISM_GID: 1000
+    volumes:
+      - "../Nextcloud/nextcloud/data/vineelsai/files/Photos:/photoprism/originals"
+      - "./photoprism/storage:/photoprism/storage"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.photoprism.entrypoints=http"
+      - "traefik.http.routers.photoprism.rule=Host(`photoprism.home.vineelsai.com`)||Host(`photoprism.vineelsai.com`)"
+      - "traefik.http.middlewares.photoprism-https-redirect.redirectscheme.scheme=https"
+      - "traefik.http.routers.photoprism.middlewares=photoprism-https-redirect"
+      - "traefik.http.routers.photoprism-secure.entrypoints=https"
+      - "traefik.http.routers.photoprism-secure.rule=Host(`photoprism.home.vineelsai.com`)||Host(`photoprism.vineelsai.com`)"
+      - "traefik.http.routers.photoprism-secure.tls=true"
+      - "traefik.http.routers.photoprism-secure.service=photoprism"
+      - "traefik.http.services.photoprism.loadbalancer.server.port=2342"
+      - "traefik.docker.network=traefik_proxy"
+
+networks:
+  default:
+    name: traefik_proxy
+    external: true

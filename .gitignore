@@ -6,6 +6,7 @@
 /*/*/jellyfin/*
 /*/*/prowlarr/*
 /*/*/transmission/*
+/*/*/photoprism/*
 
 ansible*key
 inventory

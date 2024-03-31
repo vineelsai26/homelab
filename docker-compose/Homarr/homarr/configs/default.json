@@ -40,6 +40,195 @@
   ],
   "apps": [
     {
+      "id": "3d5dc8e5-dcf7-42f6-a475-17464a97d76a",
+      "name": "Shortify",
+      "url": "https://shortify.home.vineelsai.com",
+      "appearance": {
+        "iconUrl": "https://unpkg.com/@tabler/icons-png@2.0.0-beta/icons/external-link.png",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "301",
+          "302",
+          "304",
+          "307",
+          "308"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "https://shortify.home.vineelsai.com"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "b06667e9-f7fa-4158-ac30-095ef08604fc"
+        }
+      },
+      "shape": {
+        "lg": {
+          "location": {
+            "x": 0,
+            "y": 1
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        },
+        "md": {
+          "location": {
+            "x": 1,
+            "y": 2
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      }
+    },
+    {
+      "id": "49a84b0e-137b-418b-a157-c7766f9630df",
+      "name": "Radarr",
+      "url": "https://radarr.home.vineelsai.com",
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/radarr.svg",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "301",
+          "302",
+          "304",
+          "307",
+          "308"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "https://radarr.home.vineelsai.com/"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "b06667e9-f7fa-4158-ac30-095ef08604fc"
+        }
+      },
+      "shape": {
+        "lg": {
+          "location": {
+            "x": 9,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        },
+        "md": {
+          "location": {
+            "x": 2,
+            "y": 1
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": "radarr",
+        "properties": [
+          {
+            "field": "apiKey",
+            "type": "private",
+            "value": "946b249451054d56a8ca9ec989e7959d"
+          }
+        ]
+      }
+    },
+    {
+      "id": "d9526153-298c-4d77-ae05-a4413d2e0836",
+      "name": "Prowlarr",
+      "url": "https://prowlarr.home.vineelsai.com",
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/prowlarr.svg",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "301",
+          "302",
+          "304",
+          "307",
+          "308"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "https://prowlarr.home.vineelsai.com/"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "b06667e9-f7fa-4158-ac30-095ef08604fc"
+        }
+      },
+      "shape": {
+        "lg": {
+          "location": {
+            "x": 8,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        },
+        "md": {
+          "location": {
+            "x": 3,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": "prowlarr",
+        "properties": [
+          {
+            "field": "apiKey",
+            "type": "private",
+            "value": "ba601790bfec44d5a9eff97cccadfe4e"
+          }
+        ]
+      }
+    },
+    {
       "id": "47cdd95a-4763-4ca7-b576-4b552b035ce3",
       "name": "Portainer",
       "url": "https://portainer.home.vineelsai.com",
@@ -74,7 +263,7 @@
       "shape": {
         "lg": {
           "location": {
-            "x": 5,
+            "x": 7,
             "y": 0
           },
           "size": {
@@ -133,7 +322,7 @@
       "shape": {
         "lg": {
           "location": {
-            "x": 4,
+            "x": 6,
             "y": 0
           },
           "size": {
@@ -187,7 +376,7 @@
       },
       "behaviour": {
         "isOpeningNewTab": true,
-        "externalUrl": "https://nextcloud.vineelsai.com"
+        "externalUrl": "https://nextcloud.home.vineelsai.com"
       },
       "area": {
         "type": "category",
@@ -198,7 +387,7 @@
       "shape": {
         "lg": {
           "location": {
-            "x": 3,
+            "x": 5,
             "y": 0
           },
           "size": {
@@ -220,6 +409,76 @@
       "integration": {
         "type": null,
         "properties": []
+      }
+    },
+    {
+      "id": "3d3464a8-c48d-4ac5-b47b-a9ae47b70a1c",
+      "name": "Jellyfin",
+      "url": "https://jellyfin.home.vineelsai.com",
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/jellyfin.svg",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "301",
+          "302",
+          "304",
+          "307",
+          "308"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "https://jellyfin.home.vineelsai.com"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "b06667e9-f7fa-4158-ac30-095ef08604fc"
+        }
+      },
+      "shape": {
+        "lg": {
+          "location": {
+            "x": 4,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        },
+        "md": {
+          "location": {
+            "x": 4,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": "jellyfin",
+        "properties": [
+          {
+            "field": "username",
+            "type": "public",
+            "value": "vineelsai"
+          },
+          {
+            "field": "password",
+            "type": "private",
+            "value": "wyn1WYA-zbx.kuj6ecg"
+          }
+        ]
       }
     },
     {
@@ -257,7 +516,17 @@
       "shape": {
         "lg": {
           "location": {
-            "x": 2,
+            "x": 3,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        },
+        "md": {
+          "location": {
+            "x": 5,
             "y": 0
           },
           "size": {
@@ -275,6 +544,65 @@
             "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJlOGM2MmVjOWY4ZjY0NWQzODljNjI1ZDBmNjYzZTljNSIsImlhdCI6MTcwNDYzNjExNywiZXhwIjoyMDE5OTk2MTE3fQ.W5KPGic0TgrQCjTHMxrbGXHKMKGs8wgXlQaYl1j4d-U"
           }
         ]
+      }
+    },
+    {
+      "id": "025420a6-5103-4317-8c41-bddd1c387b47",
+      "name": "Gitea",
+      "url": "https://gitea.home.vineelsai.com",
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/gitea.svg",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "301",
+          "302",
+          "304",
+          "307",
+          "308"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "https://gitea.home.vineelsai.com"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "b06667e9-f7fa-4158-ac30-095ef08604fc"
+        }
+      },
+      "shape": {
+        "lg": {
+          "location": {
+            "x": 1,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        },
+        "md": {
+          "location": {
+            "x": 4,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": null,
+        "properties": []
       }
     },
     {
@@ -337,11 +665,11 @@
       }
     },
     {
-      "id": "025420a6-5103-4317-8c41-bddd1c387b47",
-      "name": "Gitea",
-      "url": "https://gitea.home.vineelsai.com",
+      "id": "2c12b827-2a24-4453-be4f-7e2917a52aee",
+      "name": "Guacamole",
+      "url": "https://guacamole.home.vineelsai.com/guacamole",
       "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/gitea.svg",
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/guacamole.svg",
         "appNameStatus": "normal",
         "positionAppName": "column",
         "lineClampAppName": 1,
@@ -360,7 +688,7 @@
       },
       "behaviour": {
         "isOpeningNewTab": true,
-        "externalUrl": "https://gitea.vineelsai.com"
+        "externalUrl": "https://guacamole.home.vineelsai.com/guacamole"
       },
       "area": {
         "type": "category",
@@ -371,8 +699,57 @@
       "shape": {
         "lg": {
           "location": {
-            "x": 1,
+            "x": 2,
             "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      }
+    },
+    {
+      "id": "d7b322de-8e22-4d25-9216-856aef2b501e",
+      "name": "Uptime Kuma",
+      "url": "https://uptime.home.vineelsai.com",
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/uptime-kuma.svg",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "301",
+          "302",
+          "304",
+          "307",
+          "308"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "https://uptime.home.vineelsai.com"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "b06667e9-f7fa-4158-ac30-095ef08604fc"
+        }
+      },
+      "shape": {
+        "lg": {
+          "location": {
+            "x": 5,
+            "y": 1
           },
           "size": {
             "width": 1,
@@ -381,7 +758,7 @@
         },
         "md": {
           "location": {
-            "x": 4,
+            "x": 3,
             "y": 0
           },
           "size": {
@@ -437,6 +814,16 @@
             "width": 1,
             "height": 1
           }
+        },
+        "md": {
+          "location": {
+            "x": 1,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
         }
       },
       "integration": {
@@ -445,11 +832,11 @@
       }
     },
     {
-      "id": "d7b322de-8e22-4d25-9216-856aef2b501e",
-      "name": "Uptime Kuma",
-      "url": "https://uptime.home.vineelsai.com",
+      "id": "9e09d116-5d23-4d27-8244-818fb654434c",
+      "name": "Traefik",
+      "url": "https://traefik.home.vineelsai.com",
       "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/uptime-kuma.svg",
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/traefik.svg",
         "appNameStatus": "normal",
         "positionAppName": "column",
         "lineClampAppName": 1,
@@ -468,7 +855,7 @@
       },
       "behaviour": {
         "isOpeningNewTab": true,
-        "externalUrl": "https://uptime.home.vineelsai.com"
+        "externalUrl": "https://traefik.home.vineelsai.com"
       },
       "area": {
         "type": "category",
@@ -479,8 +866,8 @@
       "shape": {
         "lg": {
           "location": {
-            "x": 9,
-            "y": 0
+            "x": 3,
+            "y": 1
           },
           "size": {
             "width": 1,
@@ -489,8 +876,8 @@
         },
         "md": {
           "location": {
-            "x": 3,
-            "y": 0
+            "x": 0,
+            "y": 1
           },
           "size": {
             "width": 1,
@@ -539,6 +926,16 @@
         "lg": {
           "location": {
             "x": 3,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        },
+        "md": {
+          "location": {
+            "x": 2,
             "y": 0
           },
           "size": {
@@ -594,6 +991,16 @@
             "width": 1,
             "height": 1
           }
+        },
+        "md": {
+          "location": {
+            "x": 1,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
         }
       },
       "integration": {
@@ -602,11 +1009,11 @@
       }
     },
     {
-      "id": "9e09d116-5d23-4d27-8244-818fb654434c",
-      "name": "Traefik",
-      "url": "https://traefik.home.vineelsai.com",
+      "id": "aae8292d-22f6-4848-a78c-603014018eaa",
+      "name": "Syncthing",
+      "url": "https://syncthing.home.vineelsai.com",
       "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/traefik.svg",
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/syncthing.svg",
         "appNameStatus": "normal",
         "positionAppName": "column",
         "lineClampAppName": 1,
@@ -625,7 +1032,7 @@
       },
       "behaviour": {
         "isOpeningNewTab": true,
-        "externalUrl": "https://traefik.home.vineelsai.com"
+        "externalUrl": "https://syncthing.home.vineelsai.com"
       },
       "area": {
         "type": "category",
@@ -636,8 +1043,8 @@
       "shape": {
         "lg": {
           "location": {
-            "x": 8,
-            "y": 0
+            "x": 2,
+            "y": 1
           },
           "size": {
             "width": 1,
@@ -647,7 +1054,7 @@
         "md": {
           "location": {
             "x": 0,
-            "y": 1
+            "y": 2
           },
           "size": {
             "width": 1,
@@ -696,7 +1103,7 @@
         "md": {
           "location": {
             "x": 1,
-            "y": 0
+            "y": 1
           },
           "size": {
             "width": 1,
@@ -779,11 +1186,11 @@
       }
     },
     {
-      "id": "3d5dc8e5-dcf7-42f6-a475-17464a97d76a",
-      "name": "Shortify",
-      "url": "https://shortify.home.vineelsai.com",
+      "id": "6774972b-cd79-498a-9014-22581d27c22a",
+      "name": "Transmission",
+      "url": "https://vineelsai:TKU1fgz-ywh!zjp6duv@transmission.home.vineelsai.com",
       "appearance": {
-        "iconUrl": "https://unpkg.com/@tabler/icons-png@2.0.0-beta/icons/external-link.png",
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/transmission.svg",
         "appNameStatus": "normal",
         "positionAppName": "column",
         "lineClampAppName": 1,
@@ -802,7 +1209,7 @@
       },
       "behaviour": {
         "isOpeningNewTab": true,
-        "externalUrl": "https://shortify.home.vineelsai.com"
+        "externalUrl": "https://transmission.home.vineelsai.com/"
       },
       "area": {
         "type": "category",
@@ -813,8 +1220,8 @@
       "shape": {
         "lg": {
           "location": {
-            "x": 6,
-            "y": 0
+            "x": 4,
+            "y": 1
           },
           "size": {
             "width": 1,
@@ -823,7 +1230,7 @@
         },
         "md": {
           "location": {
-            "x": 1,
+            "x": 4,
             "y": 1
           },
           "size": {
@@ -833,16 +1240,27 @@
         }
       },
       "integration": {
-        "type": null,
-        "properties": []
+        "type": "transmission",
+        "properties": [
+          {
+            "field": "username",
+            "type": "public",
+            "value": "vineelsai"
+          },
+          {
+            "field": "password",
+            "type": "private",
+            "value": "TKU1fgz-ywh!zjp6duv"
+          }
+        ]
       }
     },
     {
-      "id": "aae8292d-22f6-4848-a78c-603014018eaa",
-      "name": "Syncthing",
-      "url": "https://syncthing.home.vineelsai.com",
+      "id": "0a7c32c9-e660-4825-a366-f2d2554629fa",
+      "name": "Sonarr",
+      "url": "https://sonarr.home.vineelsai.com",
       "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/syncthing.svg",
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/sonarr.svg",
         "appNameStatus": "normal",
         "positionAppName": "column",
         "lineClampAppName": 1,
@@ -861,7 +1279,7 @@
       },
       "behaviour": {
         "isOpeningNewTab": true,
-        "externalUrl": "https://syncthing.home.vineelsai.com"
+        "externalUrl": "https://sonarr.home.vineelsai.com/"
       },
       "area": {
         "type": "category",
@@ -872,7 +1290,17 @@
       "shape": {
         "lg": {
           "location": {
-            "x": 7,
+            "x": 1,
+            "y": 1
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        },
+        "md": {
+          "location": {
+            "x": 1,
             "y": 0
           },
           "size": {
@@ -882,8 +1310,14 @@
         }
       },
       "integration": {
-        "type": null,
-        "properties": []
+        "type": "sonarr",
+        "properties": [
+          {
+            "field": "apiKey",
+            "type": "private",
+            "value": "7b795c70c5324cf690d97e66241bd390"
+          }
+        ]
       }
     },
     {
@@ -922,6 +1356,16 @@
         "lg": {
           "location": {
             "x": 2,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        },
+        "md": {
+          "location": {
+            "x": 0,
             "y": 0
           },
           "size": {
@@ -977,6 +1421,16 @@
             "width": 1,
             "height": 1
           }
+        },
+        "md": {
+          "location": {
+            "x": 0,
+            "y": 1
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
         }
       },
       "integration": {
@@ -986,6 +1440,194 @@
     }
   ],
   "widgets": [
+    {
+      "id": "76a058a4-f9dc-4eda-b2f1-ac72fe9e8ff8",
+      "type": "calendar",
+      "properties": {
+        "hideWeekDays": true,
+        "showUnmonitored": false,
+        "radarrReleaseType": "inCinemas",
+        "fontSize": "xs"
+      },
+      "area": {
+        "type": "wrapper",
+        "properties": {
+          "id": "default"
+        }
+      },
+      "shape": {
+        "sm": {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "width": 2,
+            "height": 2
+          }
+        },
+        "md": {
+          "location": {
+            "x": 0,
+            "y": 4
+          },
+          "size": {
+            "width": 2,
+            "height": 2
+          }
+        },
+        "lg": {
+          "location": {
+            "x": 4,
+            "y": 0
+          },
+          "size": {
+            "width": 2,
+            "height": 2
+          }
+        }
+      }
+    },
+    {
+      "id": "3b2931fd-e583-42e8-b767-5668cad3f54c",
+      "type": "dlspeed",
+      "properties": {},
+      "area": {
+        "type": "wrapper",
+        "properties": {
+          "id": "default"
+        }
+      },
+      "shape": {
+        "sm": {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "width": 2,
+            "height": 2
+          }
+        },
+        "md": {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "width": 2,
+            "height": 2
+          }
+        },
+        "lg": {
+          "location": {
+            "x": 6,
+            "y": 0
+          },
+          "size": {
+            "width": 2,
+            "height": 2
+          }
+        }
+      }
+    },
+    {
+      "id": "dd2b15b4-9055-4fa3-8e51-8504461638ae",
+      "type": "dns-hole-summary",
+      "properties": {
+        "usePiHoleColors": true,
+        "layout": "grid"
+      },
+      "area": {
+        "type": "wrapper",
+        "properties": {
+          "id": "default"
+        }
+      },
+      "shape": {
+        "sm": {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "width": 2,
+            "height": 1
+          }
+        },
+        "md": {
+          "location": {
+            "x": 0,
+            "y": 3
+          },
+          "size": {
+            "width": 2,
+            "height": 1
+          }
+        },
+        "lg": {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "width": 2,
+            "height": 2
+          }
+        }
+      }
+    },
+    {
+      "id": "e3004052-6b83-480e-b458-56e8ccdca5f0",
+      "type": "weather",
+      "properties": {
+        "displayInFahrenheit": false,
+        "location": {
+          "name": "Thenali",
+          "latitude": 16.24253,
+          "longitude": 80.63982
+        },
+        "displayCityName": true
+      },
+      "area": {
+        "type": "wrapper",
+        "properties": {
+          "id": "default"
+        }
+      },
+      "shape": {
+        "md": {
+          "location": {
+            "x": 4,
+            "y": 1
+          },
+          "size": {
+            "width": 2,
+            "height": 1
+          }
+        },
+        "sm": {
+          "location": {
+            "x": 2,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        },
+        "lg": {
+          "location": {
+            "x": 8,
+            "y": 1
+          },
+          "size": {
+            "width": 2,
+            "height": 1
+          }
+        }
+      }
+    },
     {
       "id": "e22eeba1-48e4-499c-b884-1495770cc0d1",
       "type": "dns-hole-controls",
@@ -1083,151 +1725,6 @@
           }
         }
       }
-    },
-    {
-      "id": "dd2b15b4-9055-4fa3-8e51-8504461638ae",
-      "type": "dns-hole-summary",
-      "properties": {
-        "usePiHoleColors": true,
-        "layout": "grid"
-      },
-      "area": {
-        "type": "wrapper",
-        "properties": {
-          "id": "default"
-        }
-      },
-      "shape": {
-        "sm": {
-          "location": {
-            "x": 0,
-            "y": 0
-          },
-          "size": {
-            "width": 2,
-            "height": 1
-          }
-        },
-        "md": {
-          "location": {
-            "x": 0,
-            "y": 0
-          },
-          "size": {
-            "width": 2,
-            "height": 1
-          }
-        },
-        "lg": {
-          "location": {
-            "x": 0,
-            "y": 0
-          },
-          "size": {
-            "width": 2,
-            "height": 2
-          }
-        }
-      }
-    },
-    {
-      "id": "e3004052-6b83-480e-b458-56e8ccdca5f0",
-      "type": "weather",
-      "properties": {
-        "displayInFahrenheit": false,
-        "location": {
-          "name": "Thenali",
-          "latitude": 16.24253,
-          "longitude": 80.63982
-        },
-        "displayCityName": true
-      },
-      "area": {
-        "type": "wrapper",
-        "properties": {
-          "id": "default"
-        }
-      },
-      "shape": {
-        "md": {
-          "location": {
-            "x": 4,
-            "y": 1
-          },
-          "size": {
-            "width": 2,
-            "height": 1
-          }
-        },
-        "sm": {
-          "location": {
-            "x": 2,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        },
-        "lg": {
-          "location": {
-            "x": 8,
-            "y": 1
-          },
-          "size": {
-            "width": 2,
-            "height": 1
-          }
-        }
-      }
-    },
-    {
-      "id": "76a058a4-f9dc-4eda-b2f1-ac72fe9e8ff8",
-      "type": "calendar",
-      "properties": {
-        "hideWeekDays": true,
-        "showUnmonitored": false,
-        "radarrReleaseType": "inCinemas",
-        "fontSize": "xs"
-      },
-      "area": {
-        "type": "wrapper",
-        "properties": {
-          "id": "default"
-        }
-      },
-      "shape": {
-        "sm": {
-          "location": {
-            "x": 0,
-            "y": 0
-          },
-          "size": {
-            "width": 2,
-            "height": 2
-          }
-        },
-        "md": {
-          "location": {
-            "x": 0,
-            "y": 0
-          },
-          "size": {
-            "width": 2,
-            "height": 2
-          }
-        },
-        "lg": {
-          "location": {
-            "x": 4,
-            "y": 0
-          },
-          "size": {
-            "width": 4,
-            "height": 2
-          }
-        }
-      }
     }
   ],
   "settings": {
@@ -1251,7 +1748,7 @@
       "backgroundImageUrl": "",
       "customCss": "",
       "colors": {
-        "primary": "red",
+        "primary": "orange",
         "secondary": "yellow",
         "shade": 7
       },
