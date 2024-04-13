@@ -68,7 +68,7 @@ services:
   influxdb:
     container_name: influxdb
     hostname: influxdb
-    image: influxdb:2.7.5-alpine
+    image: influxdb:2.7.6-alpine
     restart: unless-stopped
     ports:
       - '8086:8086'
