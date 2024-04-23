@@ -1,7 +1,4 @@
 version: '3'
-#---------------------------------------------------------------------#
-#     Homarr - A simple, yet powerful dashboard for your server.      #
-#---------------------------------------------------------------------#
 services:
   homarr:
     container_name: homarr

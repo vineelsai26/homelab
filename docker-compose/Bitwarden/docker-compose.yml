@@ -1,16 +1,18 @@
-version: '3'
 services:
-  vaultwarden:
-    container_name: vaultwarden
-    hostname: vaultwarden
-    image: 'vaultwarden/server:1.30.5'
+  bitwarden:
+    container_name: bitwarden
+    hostname: bitwarden
+    image: ${REGISTRY:-bitwarden}/self-host:${TAG:-beta}
     restart: unless-stopped
     ports:
-      - '2080:80'
+      - '2080:2080'
+      - '2443:2443'
     volumes:
-      - ./data/:/data/
+      - ./bitwarden/data:/etc/bitwarden
+      - ./bitwarden/logs:/var/log/bitwarden
     env_file:
-      - .env
+      - env/creds.env
+      - env/settings.env
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.bitwarden.entrypoints=http"
@@ -21,7 +23,7 @@ services:
       - "traefik.http.routers.bitwarden-secure.rule=Host(`bitwarden.home.vineelsai.com`)||Host(`bitwarden.vineelsai.com`)"
       - "traefik.http.routers.bitwarden-secure.tls=true"
       - "traefik.http.routers.bitwarden-secure.service=bitwarden"
-      - "traefik.http.services.bitwarden.loadbalancer.server.port=80"
+      - "traefik.http.services.bitwarden.loadbalancer.server.port=2080"
       - "traefik.docker.network=traefik_proxy"
 
 networks:

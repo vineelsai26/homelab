@@ -1,4 +1,3 @@
-version: '3'
 services:
   shortify:
     container_name: shortify

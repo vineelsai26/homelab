@@ -1,4 +1,3 @@
-version: '3'
 services:
   uptime_kuma:
     container_name: uptime-kuma
