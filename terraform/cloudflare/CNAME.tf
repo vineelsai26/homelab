@@ -70,7 +70,7 @@ resource "cloudflare_record" "material" {
 
 resource "cloudflare_record" "repo" {
   name    = "repo"
-  proxied = false
+  proxied = true
   ttl     = 1
   type    = "CNAME"
   value   = data.terraform_remote_state.aws_prod.outputs.repo_cloudfront_distribution_domain_name
