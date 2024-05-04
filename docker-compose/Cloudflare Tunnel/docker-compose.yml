@@ -1,6 +1,6 @@
 services:
   cloudflare:
-    image: 'cloudflare/cloudflared:2024.4.0'
+    image: 'cloudflare/cloudflared:2024.4.1'
     container_name: cloudflared
     hostname: cloudflared
     command: tunnel --no-autoupdate run
