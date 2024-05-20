@@ -34,7 +34,7 @@ services:
   redis:
     container_name: redis_nextcloud
     hostname: redis_nextcloud
-    image: redis:7.2.4
+    image: redis:7.2.5
     restart: unless-stopped
     volumes:
       - ./redis/data:/data
