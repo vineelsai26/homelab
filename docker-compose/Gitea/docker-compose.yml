@@ -19,11 +19,11 @@ services:
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.gitea.entrypoints=http"
-      - "traefik.http.routers.gitea.rule=Host(`gitea.home.vineelsai.com`)"
+      - "traefik.http.routers.gitea.rule=Host(`gitea.home.vineelsai.com`)||Host(`gitea.vineelsai.com`)"
       - "traefik.http.middlewares.gitea-https-redirect.redirectscheme.scheme=https"
       - "traefik.http.routers.gitea.middlewares=gitea-https-redirect"
       - "traefik.http.routers.gitea-secure.entrypoints=https"
-      - "traefik.http.routers.gitea-secure.rule=Host(`gitea.home.vineelsai.com`)"
+      - "traefik.http.routers.gitea-secure.rule=Host(`gitea.home.vineelsai.com`)||Host(`gitea.vineelsai.com`)"
       - "traefik.http.routers.gitea-secure.tls=true"
       - "traefik.http.routers.gitea-secure.service=gitea"
       - "traefik.http.services.gitea.loadbalancer.server.port=3000"

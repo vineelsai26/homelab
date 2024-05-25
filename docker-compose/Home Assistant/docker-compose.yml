@@ -1,4 +1,3 @@
-version: '3'
 services:
   home_assistant:
     image: ghcr.io/home-assistant/home-assistant:stable
@@ -6,12 +5,8 @@ services:
     hostname: homeassistant
     privileged: true
     volumes:
-      - homeassistant_config:/config
+      - ./config:/config
       - /run/dbus:/run/dbus:ro
       - /etc/localtime:/etc/localtime:ro
     network_mode: host
     restart: unless-stopped
-
-volumes:
-  homeassistant_config:
-    name: homeassistant_config

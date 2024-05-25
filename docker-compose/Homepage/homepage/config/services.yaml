@@ -1,0 +1,60 @@
+---
+- Infrastructure and Data:
+    - Proxmox:
+        href: https://pve.home.vineelsai.com
+        icon: proxmox.png
+        description: pve
+        siteMonitor: pve.home.vineelsai.com
+        widget:
+            type: proxmox
+            url: https://pve.home.vineelsai.com
+            username: {{HOMEPAGE_VAR_PROXMOX_USERNAME}}
+            password: {{HOMEPAGE_VAR_PROXMOX_PASSWORD}}
+
+- Management:
+    - Portainer:
+        href: https://portainer.home.vineelsai.com
+        icon: portainer.png
+        description: portainer
+        widget:
+            type: portainer
+            url: https://portainer.home.vineelsai.com
+            env: 2
+            key: {{HOMEPAGE_VAR_PORTAINER_KEY}}
+    - Pi-Hole:
+        href: https://pihole.home.vineelsai.com
+        icon: pi-hole.png
+        description: pihole
+        widget:
+            type: pihole
+            url: https://pihole.home.vineelsai.com
+            # version: 6 # required if running v6 or higher, defaults to 5
+            key: {{HOMEPAGE_VAR_PIHOLE_API_TOKEN}} # optional
+    - Traefik:
+        href: https://traefik.home.vineelsai.com
+        icon: traefik.png
+        description: traefik
+        widget:
+          type: traefik
+          url: https://traefik.home.vineelsai.com
+
+- Monitoring:
+    - Uptime Kuma:
+        href: https://uptime.home.vineelsai.com
+        icon: uptime-kuma.png
+        description: uptime kuma
+        widget:
+            type: uptimekuma
+            url: https://uptime.home.vineelsai.com
+            slug: home
+
+- IoT and Smarthome:
+    - Home Assistant:
+        href: https://homeassistant.home.vineelsai.com
+        icon: home-assistant.png
+        description: homeassistant
+        widget:
+            type: homeassistant
+            url: https://homeassistant.home.vineelsai.com
+            key: {{HOMEPAGE_VAR_HOMEASSISTANT_KEY}}
+            custom:

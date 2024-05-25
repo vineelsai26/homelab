@@ -9,6 +9,8 @@
 /*/*/transmission/*
 /*/*/photoprism/*
 /*/*/bitwarden/*
+/*/Home Assistant/config/*
+/**/logs/
 
 ansible*key
 inventory
