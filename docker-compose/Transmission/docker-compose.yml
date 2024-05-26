@@ -1,6 +1,6 @@
 services:
   transmission:
-    image: lscr.io/linuxserver/transmission:latest
+    image: lscr.io/linuxserver/transmission:4.0.5-r2-ls237
     container_name: transmission
     hostname: transmission
     environment:

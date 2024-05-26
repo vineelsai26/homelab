@@ -1,6 +1,6 @@
 services:
   radarr:
-    image: lscr.io/linuxserver/radarr:latest
+    image: lscr.io/linuxserver/radarr:5.6.0.8846-ls220
     container_name: radarr
     hostname: radarr
     environment:

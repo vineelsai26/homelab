@@ -1,7 +1,6 @@
-version: "2.1"
 services:
   duplicati:
-    image: lscr.io/linuxserver/duplicati:latest
+    image: lscr.io/linuxserver/duplicati:2.0.8
     container_name: duplicati
     hostname: duplicati
     environment:
