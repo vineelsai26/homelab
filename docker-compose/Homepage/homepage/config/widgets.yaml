@@ -5,7 +5,9 @@
 - resources:
     cpu: true
     memory: true
-    disk: /
+    disk:
+      - /
+      - /homelab_data
 
 - search:
     provider: duckduckgo

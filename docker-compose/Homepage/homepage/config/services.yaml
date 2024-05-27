@@ -1,21 +1,74 @@
 ---
+- Genral:
+  - Calendar:
+      widget:
+        type: calendar
+        firstDayInWeek: monday # optional - defaults to monday
+        view: agenda # optional - possible values monthly, agenda
+        maxEvents: 15 # optional - defaults to 10
+        showTime: true # optional - show time for event happening today - defaults to falsemaxEvents: 10 # optional - defaults to 10
+        # previousDays: 0
+        timezone: Asia/Kolkata # optional and only when timezone is not detected properly (slightly slower performance) - force timezone for ical events (if it's the same - no change, if missing or different in ical - will be converted to this timezone)
+        integrations: # optional
+          - type: sonarr # active widget type that is currently enabled on homepage - possible values: radarr, sonarr, lidarr, readarr, ical
+            service_group: Media # group name where widget exists
+            service_name: Sonarr # service name for that widget
+            color: teal # optional - defaults to pre-defined color for the service (teal for sonarr)
+            params: # optional - additional params for the service
+              unmonitored: true # optional - defaults to false, used with *arr stack
+          - type: ical # Show calendar events from another service
+            url: {{HOMEPAGE_VAR_GCAL_PRIVATE_URL_1}} # URL with calendar events
+            name: Personal # required - name for these calendar events
+            color: orange # optional - defaults to pre-defined color for the service (zinc for ical)
+            params: # optional - additional params for the service
+              showName: true # optional - show name before event title in event line - defaults to false
+          - type: ical # Show calendar events from another service
+            url: {{HOMEPAGE_VAR_GCAL_PRIVATE_URL_2}} # URL with calendar events
+            name: Projects # required - name for these calendar events
+            color: blue # optional - defaults to pre-defined color for the service (zinc for ical)
+            params: # optional - additional params for the service
+              showName: true # optional - show name before event title in event line - defaults to false
+          - type: ical # Show calendar events from another service
+            url: {{HOMEPAGE_VAR_GCAL_PRIVATE_URL_3}} # URL with calendar events
+            name: Routine # required - name for these calendar events
+            color: green # optional - defaults to pre-defined color for the service (zinc for ical)
+            params: # optional - additional params for the service
+              showName: true # optional - show name before event title in event line - defaults to false
+          - type: ical # Show calendar events from another service
+            url: {{HOMEPAGE_VAR_GCAL_PRIVATE_URL_4}} # URL with calendar events
+            name: Work # required - name for these calendar events
+            color: purple # optional - defaults to pre-defined color for the service (zinc for ical)
+            params: # optional - additional params for the service
+              showName: true # optional - show name before event title in event line - defaults to false
+
+
 - Infrastructure and Data:
     - Proxmox:
         href: https://pve.home.vineelsai.com
         icon: proxmox.png
         description: pve
-        siteMonitor: pve.home.vineelsai.com
+        siteMonitor: https://pve.home.vineelsai.com
         widget:
             type: proxmox
             url: https://pve.home.vineelsai.com
             username: {{HOMEPAGE_VAR_PROXMOX_USERNAME}}
             password: {{HOMEPAGE_VAR_PROXMOX_PASSWORD}}
+    - Gitea:
+        href: https://gitea.home.vineelsai.com
+        icon: gitea.png
+        description: gitea
+        siteMonitor: https://gitea.home.vineelsai.com
+        widget:
+            type: gitea
+            url: https://gitea.home.vineelsai.com
+            key: {{HOMEPAGE_VAR_GITEA_TOKEN}}
 
 - Management:
     - Portainer:
         href: https://portainer.home.vineelsai.com
         icon: portainer.png
         description: portainer
+        siteMonitor: https://portainer.home.vineelsai.com
         widget:
             type: portainer
             url: https://portainer.home.vineelsai.com
@@ -25,15 +78,17 @@
         href: https://pihole.home.vineelsai.com
         icon: pi-hole.png
         description: pihole
+        siteMonitor: https://pihole.home.vineelsai.com
         widget:
             type: pihole
-            url: https://pihole.home.vineelsai.com
+            url: http://10.0.10.53
             # version: 6 # required if running v6 or higher, defaults to 5
             key: {{HOMEPAGE_VAR_PIHOLE_API_TOKEN}} # optional
     - Traefik:
         href: https://traefik.home.vineelsai.com
         icon: traefik.png
         description: traefik
+        siteMonitor: https://traefik.home.vineelsai.com
         widget:
           type: traefik
           url: https://traefik.home.vineelsai.com
@@ -43,18 +98,110 @@
         href: https://uptime.home.vineelsai.com
         icon: uptime-kuma.png
         description: uptime kuma
+        siteMonitor: https://uptime.home.vineelsai.com
         widget:
             type: uptimekuma
             url: https://uptime.home.vineelsai.com
             slug: home
+    - Grafana:
+        href: https://grafana.home.vineelsai.com
+        icon: grafana.png
+        description: grafana
+        siteMonitor: https://grafana.home.vineelsai.com
+        widget:
+            type: grafana
+            url: https://grafana.home.vineelsai.com
+            username: {{HOMEPAGE_VAR_GRAFANA_USERNAME}}
+            password: {{HOMEPAGE_VAR_GRAFANA_PASSWORD}}
+    - Prometheus:
+        href: https://prometheus.home.vineelsai.com
+        icon: prometheus.png
+        description: prometheus
+        siteMonitor: https://prometheus.home.vineelsai.com
+        widget:
+            type: prometheus
+            url: https://prometheus.home.vineelsai.com
+
+- Media:
+    - Jellyfin:
+        href: https://jellyfin.home.vineelsai.com
+        icon: jellyfin.png
+        description: jellyfin
+        siteMonitor: https://jellyfin.home.vineelsai.com
+        widget:
+            type: jellyfin
+            url: https://jellyfin.home.vineelsai.com
+            key: {{HOMEPAGE_VAR_JELLYFIN_API_KEY}}
+            enableBlocks: true # optional, defaults to false
+            enableNowPlaying: true # optional, defaults to true
+            enableUser: true # optional, defaults to false
+            showEpisodeNumber: true # optional, defaults to false
+            expandOneStreamToTwoRows: false # optional, defaults to true
+    - Sonarr:
+        href: https://sonarr.home.vineelsai.com
+        icon: sonarr.png
+        description: sonarr
+        siteMonitor: https://sonarr.home.vineelsai.com
+        widget:
+            type: sonarr
+            url: https://sonarr.home.vineelsai.com
+            key: {{HOMEPAGE_VAR_SONARR_API_KEY}}
+            enableQueue: false # optional, defaults to false
+    - Radarr:
+        href: https://radarr.home.vineelsai.com
+        icon: radarr.png
+        description: radarr
+        siteMonitor: https://radarr.home.vineelsai.com
+        widget:
+            type: radarr
+            url: https://radarr.home.vineelsai.com
+            key: {{HOMEPAGE_VAR_RADARR_API_KEY}}
+            enableQueue: false # optional, defaults to false
+    - Prowlarr:
+        href: https://prowlarr.home.vineelsai.com
+        icon: prowlarr.png
+        description: prowlarr
+        siteMonitor: https://prowlarr.home.vineelsai.com
+        widget:
+            type: prowlarr
+            url: https://prowlarr.home.vineelsai.com
+            key: {{HOMEPAGE_VAR_PROWLARR_API_KEY}}
+    - Transmission:
+        href: https://transmission.home.vineelsai.com
+        icon: transmission.png
+        description: transmission
+        siteMonitor: https://transmission.home.vineelsai.com
+        widget:
+            type: transmission
+            url: https://transmission.home.vineelsai.com
+            username: {{HOMEPAGE_VAR_TRANSMISSION_USERNAME}}
+            password: {{HOMEPAGE_VAR_TRANSMISSION_PASSWORD}}
 
 - IoT and Smarthome:
     - Home Assistant:
         href: https://homeassistant.home.vineelsai.com
         icon: home-assistant.png
         description: homeassistant
+        siteMonitor: https://homeassistant.home.vineelsai.com
         widget:
             type: homeassistant
             url: https://homeassistant.home.vineelsai.com
             key: {{HOMEPAGE_VAR_HOMEASSISTANT_KEY}}
             custom:
+
+- My Apps:
+    - Blog:
+        href: https://vineelsai.com
+        icon: blogger.png
+        description: blog
+        siteMonitor: https://vineelsai.com
+    - Shortify:
+        href: https://shortify.home.vineelsai.com
+        icon: linkding.png
+        description: shortify
+        siteMonitor: https://shortify.home.vineelsai.com
+    - Collab:
+        href: https://collab.vineelsai.com
+        icon: google-docs.png
+        description: collab
+        siteMonitor: https://collab.vineelsai.com
