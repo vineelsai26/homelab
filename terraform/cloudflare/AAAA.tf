@@ -4,7 +4,7 @@ resource "cloudflare_record" "ip" {
   ttl     = 1
   type    = "AAAA"
   value   = "100::"
-  zone_id = var.zone_id
+  zone_id = var.zone_id_vineelsai_com
   comment = var.default_comment
 }
 
@@ -14,7 +14,7 @@ resource "cloudflare_record" "link" {
   ttl     = 1
   type    = "AAAA"
   value   = "100::"
-  zone_id = var.zone_id
+  zone_id = var.zone_id_vineelsai_com
   comment = var.default_comment
 }
 
@@ -24,6 +24,6 @@ resource "cloudflare_record" "static" {
   ttl     = 1
   type    = "AAAA"
   value   = "100::"
-  zone_id = var.zone_id
+  zone_id = var.zone_id_vineelsai_com
   comment = var.default_comment
 }
