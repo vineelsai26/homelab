@@ -80,7 +80,7 @@ resource "cloudflare_record" "balance" {
 
 resource "cloudflare_record" "collab" {
   name    = "collab"
-  proxied = true
+  proxied = false
   ttl     = 1
   type    = "CNAME"
   value   = "cname.vercel-dns.com"

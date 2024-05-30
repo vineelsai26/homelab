@@ -37,3 +37,13 @@ resource "cloudflare_record" "github_vineelsai26_domain_verification" {
   zone_id = var.zone_id_vineelsai_com
   comment = var.default_comment
 }
+
+resource "cloudflare_record" "google_site_verification_dev" {
+  name    = "vineelsai.dev"
+  proxied = false
+  ttl     = 1
+  type    = "TXT"
+  value   = "google-site-verification=8O9kGPab1FiXFwnsIjet7GLaAUHkhP9s6YTPlfUjWRk"
+  zone_id = var.zone_id_vineelsai_dev
+  comment = var.default_comment
+}

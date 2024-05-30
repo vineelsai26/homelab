@@ -12,7 +12,7 @@ jobs:
     strategy:
       matrix:
         path:
-          ["terraform/AWS/Prod", "terraform/AWS/Backup", "terraform/cloudflare"]
+          ["terraform/AWS/Prod", "terraform/AWS/Backup", "terraform/cloudflare", "terraform/vercel"]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -34,9 +34,9 @@ jobs:
     strategy:
       matrix:
         path:
-          ["terraform/AWS/Prod", "terraform/AWS/Backup", "terraform/cloudflare"]
+          ["terraform/AWS/Prod", "terraform/AWS/Backup", "terraform/cloudflare", "terraform/vercel"]
     runs-on: ubuntu-latest
-    environment: terraform_apply
+    environment: apply_${{ matrix.path }}
     needs: plan
     steps:
       - name: Checkout

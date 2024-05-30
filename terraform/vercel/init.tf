@@ -23,14 +23,3 @@ provider "vercel" {
   # Optional default team for all resources
   team = "vineel"
 }
-
-data "terraform_remote_state" "cloudflare" {
-  backend = "remote"
-
-  config = {
-    organization = "vineelsai"
-    workspaces = {
-      name = "Cloudflare"
-    }
-  }
-}
