@@ -98,16 +98,6 @@ resource "cloudflare_record" "collab_dev" {
   comment = var.default_comment
 }
 
-resource "cloudflare_record" "collab_api_dev" {
-  name    = "api.collab"
-  proxied = false
-  ttl     = 1
-  type    = "CNAME"
-  value   = "api-collab.vineelsai.com"
-  zone_id = var.zone_id_vineelsai_dev
-  comment = var.default_comment
-}
-
 resource "cloudflare_record" "material" {
   name    = "material"
   proxied = true
