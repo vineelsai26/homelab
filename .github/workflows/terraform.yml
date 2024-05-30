@@ -5,7 +5,7 @@ on:
     branches: ["main"]
     paths:
       - "terraform/**"
-      - ".github/workflows/**"
+      - ".github/workflows/terraform.yml"
 
 jobs:
   plan:
