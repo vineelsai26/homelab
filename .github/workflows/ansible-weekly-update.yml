@@ -5,7 +5,7 @@ on:
     branches: ["main"]
     paths:
       - "ansible/**"
-      - ".github/workflows/**"
+      - ".github/workflows/ansible-weekly-update.yml"
   schedule:
     - cron: "0 0 * * 6"
 
