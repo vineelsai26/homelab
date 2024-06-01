@@ -92,6 +92,11 @@
         widget:
           type: traefik
           url: https://traefik.home.vineelsai.com
+    - Ansible Semaphore:
+        href: https://semaphore.home.vineelsai.com
+        icon: ansible.png
+        description: ansible semaphore
+        siteMonitor: https://semaphore.home.vineelsai.com
 
 - Monitoring:
     - Uptime Kuma:
@@ -190,18 +195,23 @@
             custom:
 
 - My Apps:
+    - Algo:
+        href: https://algo.vineelsai.dev
+        icon: thunderhub.png
+        description: algo
+        siteMonitor: https://algo.vineelsai.dev
     - Blog:
         href: https://vineelsai.com
         icon: blogger.png
         description: blog
         siteMonitor: https://vineelsai.com
+    - Collab:
+        href: https://collab.vineelsai.dev
+        icon: google-docs.png
+        description: collab
+        siteMonitor: https://collab.vineelsai.dev
     - Shortify:
         href: https://shortify.home.vineelsai.com
         icon: linkding.png
         description: shortify
         siteMonitor: https://shortify.home.vineelsai.com
-    - Collab:
-        href: https://collab.vineelsai.com
-        icon: google-docs.png
-        description: collab
-        siteMonitor: https://collab.vineelsai.com

@@ -43,7 +43,7 @@ http:
     pihole:
       loadBalancer:
         servers:
-          - url: "http://10.0.10.53"
+          - url: "http://10.0.10.53:80"
         passHostHeader: true
     homeassistant:
       loadBalancer:
