@@ -2,7 +2,7 @@ services:
   semaphore:
     container_name: ansiblesemaphore
     hostname: ansiblesemaphore
-    image: semaphoreui/semaphore:v2.9.75
+    image: semaphoreui/semaphore:v2.9.112
     ports:
       - 3011:3000
     env_file:
