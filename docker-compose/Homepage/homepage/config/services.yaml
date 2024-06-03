@@ -4,7 +4,7 @@
       widget:
         type: calendar
         firstDayInWeek: monday # optional - defaults to monday
-        view: agenda # optional - possible values monthly, agenda
+        view: monthly # optional - possible values monthly, agenda
         maxEvents: 15 # optional - defaults to 10
         showTime: true # optional - show time for event happening today - defaults to falsemaxEvents: 10 # optional - defaults to 10
         # previousDays: 0
@@ -16,31 +16,30 @@
             color: teal # optional - defaults to pre-defined color for the service (teal for sonarr)
             params: # optional - additional params for the service
               unmonitored: true # optional - defaults to false, used with *arr stack
-          - type: ical # Show calendar events from another service
-            url: {{HOMEPAGE_VAR_GCAL_PRIVATE_URL_1}} # URL with calendar events
-            name: Personal # required - name for these calendar events
-            color: orange # optional - defaults to pre-defined color for the service (zinc for ical)
-            params: # optional - additional params for the service
-              showName: true # optional - show name before event title in event line - defaults to false
-          - type: ical # Show calendar events from another service
-            url: {{HOMEPAGE_VAR_GCAL_PRIVATE_URL_2}} # URL with calendar events
-            name: Projects # required - name for these calendar events
-            color: blue # optional - defaults to pre-defined color for the service (zinc for ical)
-            params: # optional - additional params for the service
-              showName: true # optional - show name before event title in event line - defaults to false
-          - type: ical # Show calendar events from another service
-            url: {{HOMEPAGE_VAR_GCAL_PRIVATE_URL_3}} # URL with calendar events
-            name: Routine # required - name for these calendar events
-            color: green # optional - defaults to pre-defined color for the service (zinc for ical)
-            params: # optional - additional params for the service
-              showName: true # optional - show name before event title in event line - defaults to false
-          - type: ical # Show calendar events from another service
-            url: {{HOMEPAGE_VAR_GCAL_PRIVATE_URL_4}} # URL with calendar events
-            name: Work # required - name for these calendar events
-            color: purple # optional - defaults to pre-defined color for the service (zinc for ical)
-            params: # optional - additional params for the service
-              showName: true # optional - show name before event title in event line - defaults to false
-
+          # - type: ical # Show calendar events from another service
+          #   url: {{HOMEPAGE_VAR_GCAL_PRIVATE_URL_1}} # URL with calendar events
+          #   name: Personal # required - name for these calendar events
+          #   color: orange # optional - defaults to pre-defined color for the service (zinc for ical)
+          #   params: # optional - additional params for the service
+          #     showName: true # optional - show name before event title in event line - defaults to false
+          # - type: ical # Show calendar events from another service
+          #   url: {{HOMEPAGE_VAR_GCAL_PRIVATE_URL_2}} # URL with calendar events
+          #   name: Projects # required - name for these calendar events
+          #   color: blue # optional - defaults to pre-defined color for the service (zinc for ical)
+          #   params: # optional - additional params for the service
+          #     showName: true # optional - show name before event title in event line - defaults to false
+          # - type: ical # Show calendar events from another service
+          #   url: {{HOMEPAGE_VAR_GCAL_PRIVATE_URL_3}} # URL with calendar events
+          #   name: Routine # required - name for these calendar events
+          #   color: green # optional - defaults to pre-defined color for the service (zinc for ical)
+          #   params: # optional - additional params for the service
+          #     showName: true # optional - show name before event title in event line - defaults to false
+          # - type: ical # Show calendar events from another service
+          #   url: {{HOMEPAGE_VAR_GCAL_PRIVATE_URL_4}} # URL with calendar events
+          #   name: Work # required - name for these calendar events
+          #   color: purple # optional - defaults to pre-defined color for the service (zinc for ical)
+          #   params: # optional - additional params for the service
+          #     showName: true # optional - show name before event title in event line - defaults to false
 
 - Infrastructure and Data:
     - Proxmox:

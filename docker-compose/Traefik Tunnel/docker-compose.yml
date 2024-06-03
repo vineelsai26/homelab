@@ -1,0 +1,25 @@
+services:
+  traefik:
+    image: traefik:v3.0
+    container_name: traefik
+    hostname: traefik
+    ports:
+      - 80:80
+      - 443:443
+      - 8090:8080
+    env_file:
+      - env/traefik.env
+    volumes:
+      - ./config:/etc/traefik
+      - cert_storage:/cert_storage
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /etc/localtime:/etc/localtime:ro
+    restart: unless-stopped
+
+networks:
+  default:
+    name: traefik_proxy
+
+volumes:
+  cert_storage:
+    name: cert_storage
