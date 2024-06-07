@@ -64,13 +64,13 @@
 
 - Management:
     - Portainer:
-        href: https://portainer.home.vineelsai.com
+        href: https://portainer.local.vineelsai.com
         icon: portainer.png
         description: portainer
-        siteMonitor: https://portainer.home.vineelsai.com
+        siteMonitor: https://portainer.local.vineelsai.com
         widget:
             type: portainer
-            url: https://portainer.home.vineelsai.com
+            url: https://portainer.local.vineelsai.com
             env: 2
             key: {{HOMEPAGE_VAR_PORTAINER_KEY}}
     - Pi-Hole:
@@ -96,17 +96,22 @@
         icon: ansible.png
         description: ansible semaphore
         siteMonitor: https://semaphore.home.vineelsai.com
+    - Jio Fiber:
+        href: http://10.0.10.1
+        icon: router.png
+        description: jio fiber
+        siteMonitor: http://10.0.10.1
 
 - Monitoring:
     - Uptime Kuma:
-        href: https://uptime.home.vineelsai.com
+        href: https://uptime.local.vineelsai.com
         icon: uptime-kuma.png
         description: uptime kuma
-        siteMonitor: https://uptime.home.vineelsai.com
+        siteMonitor: https://uptime.local.vineelsai.com
         widget:
             type: uptimekuma
-            url: https://uptime.home.vineelsai.com
-            slug: home
+            url: https://uptime.local.vineelsai.com
+            slug: local
     - Grafana:
         href: https://grafana.home.vineelsai.com
         icon: grafana.png
@@ -210,7 +215,7 @@
         description: collab
         siteMonitor: https://collab.vineelsai.dev
     - Shortify:
-        href: https://shortify.home.vineelsai.com
+        href: https://shortify.local.vineelsai.com
         icon: linkding.png
         description: shortify
-        siteMonitor: https://shortify.home.vineelsai.com
+        siteMonitor: https://shortify.local.vineelsai.com
