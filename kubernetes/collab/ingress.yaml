@@ -1,0 +1,21 @@
+---
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: collab
+  namespace: default
+  annotations:
+    kubernetes.io/ingress.class: traefik-external
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`collab.local.vineelsai.com`)||Host(`api-collab.vineelsai.com`)
+      kind: Rule
+      services:
+        - name: collab
+          port: 4000
+      middlewares:
+        - name: default-headers
+  tls:
+    secretName: local-vineelsai-com-tls

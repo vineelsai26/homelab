@@ -1,0 +1,44 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: shortify
+spec:
+  selector:
+    matchLabels:
+      app: shortify
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: shortify
+    spec:
+      dnsPolicy: None
+      dnsConfig:
+        nameservers:
+          - 1.1.1.1
+          - 1.0.0.1
+        searches: []
+      containers:
+        - name: shortify
+          image: vineelsai/shortify:local
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "100m"
+            limits:
+              memory: "512Mi"
+              cpu: "250m"
+          ports:
+            - containerPort: 3000
+          env:
+            - name: TURSO_DATABASE
+              valueFrom:
+                secretKeyRef:
+                  name: shortify-secret
+                  key: TURSO_DATABASE
+            - name: TURSO_AUTH_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: shortify-secret
+                  key: TURSO_AUTH_TOKEN

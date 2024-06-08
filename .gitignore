@@ -19,3 +19,4 @@ inventory
 .DS_Store
 plan.out
 *.auto.tfvars
+secret*.y*ml

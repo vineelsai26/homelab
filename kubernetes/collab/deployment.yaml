@@ -1,0 +1,48 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: collab
+spec:
+  selector:
+    matchLabels:
+      app: collab
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: collab
+    spec:
+      dnsPolicy: None
+      dnsConfig:
+        nameservers:
+          - 1.1.1.1
+          - 1.0.0.1
+        searches: []
+      containers:
+        - name: collab
+          image: vineelsai/collab-server:latest
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "100m"
+            limits:
+              memory: "512Mi"
+              cpu: "250m"
+          ports:
+            - containerPort: 4000
+          env:
+            - name: MONGODB_DOCS
+              valueFrom:
+                secretKeyRef:
+                  name: collab-secret
+                  key: MONGODB_DOCS
+            - name: JWT_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: collab-secret
+                  key: JWT_SECRET
+            - name: CLIENT_URL
+              value: "https://collab.vineelsai.dev"
+            - name: GOOGLE_CLIENT_ID
+              value: "1079705324063-bf6i4hi0iimc4nmvsge2rc8s4iuc5sik.apps.googleusercontent.com"

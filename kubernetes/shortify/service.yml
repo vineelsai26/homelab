@@ -1,0 +1,15 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: shortify
+  annotations:
+    metallb.universe.tf/loadBalancerIPs: 10.0.10.113
+spec:
+  ipFamilyPolicy: PreferDualStack
+  selector:
+    app: shortify
+  ports:
+    - port: 3000
+      targetPort: 3000
+  type: LoadBalancer

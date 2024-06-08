@@ -1,0 +1,8 @@
+service:
+  type: LoadBalancer
+
+tls:
+  force: true
+
+image:
+  tag: 2.20.3

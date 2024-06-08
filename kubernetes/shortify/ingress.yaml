@@ -1,0 +1,21 @@
+---
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: shortify
+  namespace: default
+  annotations:
+    kubernetes.io/ingress.class: traefik-external
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`shortify.local.vineelsai.com`)||Host(`shortify.vineelsai.com`)
+      kind: Rule
+      services:
+        - name: shortify
+          port: 3000
+      middlewares:
+        - name: default-headers
+  tls:
+    secretName: local-vineelsai-com-tls
