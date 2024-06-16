@@ -52,6 +52,16 @@
             url: https://pve.home.vineelsai.com
             username: {{HOMEPAGE_VAR_PROXMOX_USERNAME}}
             password: {{HOMEPAGE_VAR_PROXMOX_PASSWORD}}
+    - TrueNAS:
+        href: https://truenas.home.vineelsai.com
+        icon: truenas.png
+        description: truenas
+        siteMonitor: https://truenas.home.vineelsai.com
+        widget:
+            type: truenas
+            url: https://truenas.home.vineelsai.com
+            enablePools: true
+            key: {{HOMEPAGE_VAR_TRUENAS_API_KEY}}
     - Gitea:
         href: https://gitea.home.vineelsai.com
         icon: gitea.png
@@ -63,6 +73,11 @@
             key: {{HOMEPAGE_VAR_GITEA_TOKEN}}
 
 - Management:
+    - Rancher:
+        href: https://rancher.local.vineelsai.com
+        icon: rancher.png
+        description: rancher
+        siteMonitor: https://rancher.local.vineelsai.com
     - Portainer:
         href: https://portainer.local.vineelsai.com
         icon: portainer.png
@@ -130,61 +145,6 @@
         widget:
             type: prometheus
             url: https://prometheus.home.vineelsai.com
-
-- Media:
-    - Jellyfin:
-        href: https://jellyfin.home.vineelsai.com
-        icon: jellyfin.png
-        description: jellyfin
-        siteMonitor: https://jellyfin.home.vineelsai.com
-        widget:
-            type: jellyfin
-            url: https://jellyfin.home.vineelsai.com
-            key: {{HOMEPAGE_VAR_JELLYFIN_API_KEY}}
-            enableBlocks: true # optional, defaults to false
-            enableNowPlaying: true # optional, defaults to true
-            enableUser: true # optional, defaults to false
-            showEpisodeNumber: true # optional, defaults to false
-            expandOneStreamToTwoRows: false # optional, defaults to true
-    - Sonarr:
-        href: https://sonarr.home.vineelsai.com
-        icon: sonarr.png
-        description: sonarr
-        siteMonitor: https://sonarr.home.vineelsai.com
-        widget:
-            type: sonarr
-            url: https://sonarr.home.vineelsai.com
-            key: {{HOMEPAGE_VAR_SONARR_API_KEY}}
-            enableQueue: false # optional, defaults to false
-    - Radarr:
-        href: https://radarr.home.vineelsai.com
-        icon: radarr.png
-        description: radarr
-        siteMonitor: https://radarr.home.vineelsai.com
-        widget:
-            type: radarr
-            url: https://radarr.home.vineelsai.com
-            key: {{HOMEPAGE_VAR_RADARR_API_KEY}}
-            enableQueue: false # optional, defaults to false
-    - Prowlarr:
-        href: https://prowlarr.home.vineelsai.com
-        icon: prowlarr.png
-        description: prowlarr
-        siteMonitor: https://prowlarr.home.vineelsai.com
-        widget:
-            type: prowlarr
-            url: https://prowlarr.home.vineelsai.com
-            key: {{HOMEPAGE_VAR_PROWLARR_API_KEY}}
-    - Transmission:
-        href: https://transmission.home.vineelsai.com
-        icon: transmission.png
-        description: transmission
-        siteMonitor: https://transmission.home.vineelsai.com
-        widget:
-            type: transmission
-            url: https://transmission.home.vineelsai.com
-            username: {{HOMEPAGE_VAR_TRANSMISSION_USERNAME}}
-            password: {{HOMEPAGE_VAR_TRANSMISSION_PASSWORD}}
 
 - IoT and Smarthome:
     - Home Assistant:

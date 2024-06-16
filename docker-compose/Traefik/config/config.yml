@@ -20,6 +20,15 @@ http:
         - https-redirectscheme
       tls: {}
       service: pve
+    truenas:
+      entryPoints:
+        - "https"
+      rule: "Host(`truenas.home.vineelsai.com`)"
+      middlewares:
+        - default-headers
+        - https-redirectscheme
+      tls: {}
+      service: truenas
     homeassistant:
       entryPoints:
         - "https"
@@ -48,7 +57,7 @@ http:
     homeassistant:
       loadBalancer:
         servers:
-          - url: "http://10.0.10.80:8123"
+          - url: "http://10.0.10.4:8123"
         passHostHeader: true
     pve:
       loadBalancer:
