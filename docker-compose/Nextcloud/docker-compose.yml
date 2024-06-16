@@ -2,7 +2,7 @@ services:
   nextcloud:
     container_name: nextcloud
     hostname: nextcloud
-    image: nextcloud:29.0.0
+    image: nextcloud:29.0.1
     restart: always
     volumes:
       - ./nextcloud/html:/var/www/html
