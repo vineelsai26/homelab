@@ -7,7 +7,6 @@
     memory: true
     disk:
       - /
-      - /homelab_data
 
 - search:
     provider: duckduckgo
