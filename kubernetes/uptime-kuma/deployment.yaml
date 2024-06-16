@@ -39,8 +39,8 @@ spec:
               value: "3001"
           volumeMounts:
             - mountPath: /app/data
-              name: uptime-kuma-content
+              name: uptime-kuma
       volumes:
-        - name: uptime-kuma-content
-          hostPath:
-            path: /home/vineel/homelab/kubernetes/uptime-kuma/data
+        - name: uptime-kuma
+          persistentVolumeClaim:
+            claimName: uptime-kuma-claim
