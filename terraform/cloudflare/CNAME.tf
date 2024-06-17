@@ -1,13 +1,3 @@
-resource "cloudflare_record" "root" {
-  name    = "vineelsai.com"
-  proxied = false
-  ttl     = 1
-  type    = "CNAME"
-  value   = "dafq8yfz95f8.cloudfront.net"
-  zone_id = var.zone_id_vineelsai_com
-  comment = var.default_comment
-}
-
 resource "cloudflare_record" "algo" {
   name    = "algo"
   proxied = true
@@ -150,10 +140,10 @@ resource "cloudflare_record" "tictactoe" {
 
 resource "cloudflare_record" "www" {
   name    = "www"
-  proxied = true
+  proxied = false
   ttl     = 1
   type    = "CNAME"
-  value   = "dafq8yfz95f8.cloudfront.net"
+  value   = "cname.vercel-dns.com"
   zone_id = var.zone_id_vineelsai_com
   comment = var.default_comment
 }

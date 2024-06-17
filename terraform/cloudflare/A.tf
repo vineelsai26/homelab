@@ -1,20 +1,20 @@
-resource "cloudflare_record" "blog_1" {
-  name    = "blog"
-  proxied = true
+resource "cloudflare_record" "root" {
+  name    = "vineelsai.com"
+  proxied = false
   ttl     = 1
   type    = "A"
-  value   = "162.159.153.4"
+  value   = "76.76.21.21"
   zone_id = var.zone_id_vineelsai_com
   comment = var.default_comment
 }
 
-resource "cloudflare_record" "blog_2" {
-  name    = "blog"
-  proxied = true
+resource "cloudflare_record" "root_dev" {
+  name    = "vineelsai.dev"
+  proxied = false
   ttl     = 1
   type    = "A"
-  value   = "162.159.152.4"
-  zone_id = var.zone_id_vineelsai_com
+  value   = "76.76.21.21"
+  zone_id = var.zone_id_vineelsai_dev
   comment = var.default_comment
 }
 
