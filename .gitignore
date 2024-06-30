@@ -11,6 +11,7 @@
 /*/*/bitwarden/*
 /*/Home Assistant/config/*
 /**/logs/
+/*/*/immich/*
 
 ansible*key
 inventory
