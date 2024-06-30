@@ -4,7 +4,7 @@ kind: Service
 metadata:
   name: uptime-kuma
   annotations:
-    metallb.universe.tf/loadBalancerIPs: 10.0.10.112
+    metallb.universe.tf/loadBalancerIPs: 10.0.0.112
 spec:
   ipFamilyPolicy: PreferDualStack
   selector:

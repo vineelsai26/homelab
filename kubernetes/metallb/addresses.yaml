@@ -1,0 +1,24 @@
+apiVersion: metallb.io/v1beta1
+kind: IPAddressPool
+metadata:
+  name: first-pool
+  namespace: metallb-system
+spec:
+  addresses:
+    - 10.0.0.111/24
+    - 10.0.0.112/24
+    - 10.0.0.113/24
+    - 10.0.0.114/24
+    - 10.0.0.115/24
+    - 10.0.0.116/24
+    - 10.0.0.117/24
+    - 10.0.0.118/24
+    - 10.0.0.119/24
+    - 10.0.0.120/24
+
+---
+apiVersion: metallb.io/v1beta1
+kind: L2Advertisement
+metadata:
+  name: default
+  namespace: metallb-system

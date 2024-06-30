@@ -23,7 +23,7 @@ resource "cloudflare_record" "home" {
   proxied = false
   ttl     = 1
   type    = "A"
-  value   = "10.0.10.80"
+  value   = "10.0.0.80"
   zone_id = var.zone_id_vineelsai_com
   comment = var.default_comment
 }

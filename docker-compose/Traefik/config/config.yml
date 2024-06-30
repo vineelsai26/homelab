@@ -52,27 +52,27 @@ http:
     pihole:
       loadBalancer:
         servers:
-          - url: "http://10.0.10.53:80"
+          - url: "http://10.0.0.53:80"
         passHostHeader: true
     homeassistant:
       loadBalancer:
         servers:
-          - url: "http://10.0.10.4:8123"
+          - url: "http://10.0.0.4:8123"
         passHostHeader: true
     pve:
       loadBalancer:
         servers:
-          - url: "https://10.0.10.10:8006"
+          - url: "https://10.0.0.10:8006"
         passHostHeader: true
     truenas:
       loadBalancer:
         servers:
-          - url: "https://10.0.10.20"
+          - url: "https://10.0.0.20"
         passHostHeader: true
     pi4:
       loadBalancer:
         servers:
-          - url: "https://10.0.10.4:9090"
+          - url: "https://10.0.0.4:9090"
         passHostHeader: true
 
   middlewares:

@@ -4,7 +4,7 @@ kind: Service
 metadata:
   name: collab
   annotations:
-    metallb.universe.tf/loadBalancerIPs: 10.0.10.114
+    metallb.universe.tf/loadBalancerIPs: 10.0.0.114
 spec:
   ipFamilyPolicy: PreferDualStack
   selector:

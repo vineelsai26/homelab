@@ -54,6 +54,6 @@ service:
   annotations: {}
   labels: {}
   spec:
-    loadBalancerIP: 10.0.10.111
+    loadBalancerIP: 10.0.0.111
   loadBalancerSourceRanges: []
   externalIPs: []
