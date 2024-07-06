@@ -10,7 +10,7 @@ spec:
   entryPoints:
     - websecure
   routes:
-    - match: Host(`collab.local.vineelsai.com`)||Host(`api-collab.vineelsai.com`)
+    - match: Host(`collab.local.vineelsai.com`)||Host(`api.collab.vineelsai.com`)
       kind: Rule
       services:
         - name: collab
