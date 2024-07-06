@@ -47,6 +47,15 @@ http:
         - https-redirectscheme
       tls: {}
       service: pi4
+    pfsense:
+      entryPoints:
+        - "https"
+      rule: "Host(`pfsense.home.vineelsai.com`)"
+      middlewares:
+        - default-headers
+        - https-redirectscheme
+      tls: {}
+      service: pfsense
 
   services:
     pihole:
@@ -73,6 +82,11 @@ http:
       loadBalancer:
         servers:
           - url: "https://10.0.0.4:9090"
+        passHostHeader: true
+    pfsense:
+      loadBalancer:
+        servers:
+          - url: "https://10.0.0.1"
         passHostHeader: true
 
   middlewares:

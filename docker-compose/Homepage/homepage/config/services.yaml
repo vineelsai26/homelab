@@ -10,6 +10,17 @@
             url: https://pve.home.vineelsai.com
             username: {{HOMEPAGE_VAR_PROXMOX_USERNAME}}
             password: {{HOMEPAGE_VAR_PROXMOX_PASSWORD}}
+    - pfSense:
+        href: https://10.0.0.1
+        icon: pfsense.png
+        description: pfSense
+        siteMonitor: https://10.0.0.1
+        widget:
+            type: pfsense
+            url: https://10.0.0.1
+            username: {{HOMEPAGE_VAR_PFSENSE_USERNAME}}
+            password: {{HOMEPAGE_VAR_PFSENSE_PASSWORD}}
+            wan: igb0
     - TrueNAS:
         href: https://truenas.home.vineelsai.com
         icon: truenas.png
@@ -44,7 +55,7 @@
         widget:
             type: portainer
             url: https://portainer.local.vineelsai.com
-            env: 2
+            env: 1
             key: {{HOMEPAGE_VAR_PORTAINER_KEY}}
     - Pi-Hole:
         href: https://pihole.home.vineelsai.com
