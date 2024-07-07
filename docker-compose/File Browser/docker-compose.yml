@@ -15,11 +15,11 @@ services:
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.filebrowser.entrypoints=http"
-      - "traefik.http.routers.filebrowser.rule=Host(`files.home.vineelsai.com`)||Host(`files.vineelsai.com`)"
+      - "traefik.http.routers.filebrowser.rule=Host(`files.home.vineelsai.com`)"
       - "traefik.http.middlewares.filebrowser-https-redirect.redirectscheme.scheme=https"
       - "traefik.http.routers.filebrowser.middlewares=filebrowser-https-redirect"
       - "traefik.http.routers.filebrowser-secure.entrypoints=https"
-      - "traefik.http.routers.filebrowser-secure.rule=Host(`files.home.vineelsai.com`)||Host(`files.vineelsai.com`)"
+      - "traefik.http.routers.filebrowser-secure.rule=Host(`files.home.vineelsai.com`)"
       - "traefik.http.routers.filebrowser-secure.tls=true"
       - "traefik.http.routers.filebrowser-secure.service=filebrowser"
       - "traefik.http.services.filebrowser.loadbalancer.server.port=80"

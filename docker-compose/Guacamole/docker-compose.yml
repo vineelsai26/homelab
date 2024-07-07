@@ -1,7 +1,6 @@
-version: "3"
 services:
   guacd:
-    image: guacamole/guacd
+    image: guacamole/guacd:1.5.5
     container_name: guacd
     hostname: guacd
     ports:
@@ -11,7 +10,7 @@ services:
     restart: unless-stopped
 
   guacamole:
-    image: guacamole/guacamole
+    image: guacamole/guacamole:1.5.5
     container_name: guacamole
     hostname: guacamole
     environment:
@@ -35,6 +34,8 @@ services:
       - "traefik.http.routers.guacamole-secure.rule=Host(`guacamole.home.vineelsai.com`)"
       - "traefik.http.routers.guacamole-secure.tls=true"
       - "traefik.http.routers.guacamole-secure.service=guacamole"
+      - "traefik.http.middlewares.add-prefix.addPrefix.prefix=/guacamole"
+      - "traefik.http.routers.guacamole-secure.middlewares=add-prefix"
       - "traefik.http.services.guacamole.loadbalancer.server.port=8080"
       - "traefik.docker.network=proxy"
 

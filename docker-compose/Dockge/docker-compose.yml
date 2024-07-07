@@ -19,11 +19,11 @@ services:
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.dockge.entrypoints=http"
-      - "traefik.http.routers.dockge.rule=Host(`dockge.home.vineelsai.com`)||Host(`dockge.vineelsai.com`)"
+      - "traefik.http.routers.dockge.rule=Host(`dockge.home.vineelsai.com`)"
       - "traefik.http.middlewares.dockge-https-redirect.redirectscheme.scheme=https"
       - "traefik.http.routers.dockge.middlewares=dockge-https-redirect"
       - "traefik.http.routers.dockge-secure.entrypoints=https"
-      - "traefik.http.routers.dockge-secure.rule=Host(`dockge.home.vineelsai.com`)||Host(`dockge.vineelsai.com`)"
+      - "traefik.http.routers.dockge-secure.rule=Host(`dockge.home.vineelsai.com`)"
       - "traefik.http.routers.dockge-secure.tls=true"
       - "traefik.http.routers.dockge-secure.service=dockge"
       - "traefik.http.services.dockge.loadbalancer.server.port=5001"

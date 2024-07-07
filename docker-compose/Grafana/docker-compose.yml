@@ -49,7 +49,7 @@ services:
       - /dev/kmsg
     command:
       - "--docker_only=true"
-      - "--housekeeping_interval=30s"
+      - "--housekeeping_interval=5s"
     privileged: true
     restart: unless-stopped
     labels:

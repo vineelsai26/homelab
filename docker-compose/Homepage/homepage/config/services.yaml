@@ -55,7 +55,7 @@
         widget:
             type: portainer
             url: https://portainer.local.vineelsai.com
-            env: 1
+            env: 2
             key: {{HOMEPAGE_VAR_PORTAINER_KEY}}
     - Pi-Hole:
         href: https://pihole.home.vineelsai.com
@@ -64,7 +64,7 @@
         siteMonitor: https://pihole.home.vineelsai.com
         widget:
             type: pihole
-            url: http://10.0.10.53
+            url: http://10.0.0.53
             # version: 6 # required if running v6 or higher, defaults to 5
             key: {{HOMEPAGE_VAR_PIHOLE_API_TOKEN}} # optional
     - Traefik:
