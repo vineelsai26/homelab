@@ -21,7 +21,7 @@ spec:
         searches: []
       containers:
         - name: shortify
-          image: vineelsai/shortify:local
+          image: vineelsai/shortify:v0.2.1
           resources:
             requests:
               memory: "256Mi"
