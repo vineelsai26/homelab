@@ -1,18 +1,29 @@
-version: "3"
 services:
   syncthing:
-    image: syncthing/syncthing
+    image: syncthing/syncthing:1.27.9
     container_name: syncthing
     hostname: syncthing
     environment:
-      - PUID=0
-      - PGID=0
+      - PUID=1000
+      - PGID=1000
       - DOMAIN=syncthing.home.vineelsai.com
       - HOME=/var/syncthing
       - STGUIADDRESS=0.0.0.0:8384
     volumes:
       - ./syncthing/config:/var/syncthing/config
       - ./syncthing:/var/syncthing
-      - /home/vineel:/var/syncthing/vineel:ro
+      # - /home/vineel:/var/syncthing/vineel:ro
     network_mode: host
     restart: unless-stopped
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.syncthing.entrypoints=http"
+      - "traefik.http.routers.syncthing.rule=Host(`syncthing.home.vineelsai.com`)"
+      - "traefik.http.middlewares.syncthing-https-redirect.redirectscheme.scheme=https"
+      - "traefik.http.routers.syncthing.middlewares=syncthing-https-redirect"
+      - "traefik.http.routers.syncthing-secure.entrypoints=https"
+      - "traefik.http.routers.syncthing-secure.rule=Host(`syncthing.home.vineelsai.com`)"
+      - "traefik.http.routers.syncthing-secure.tls=true"
+      - "traefik.http.routers.syncthing-secure.service=syncthing"
+      - "traefik.http.services.syncthing.loadbalancer.server.port=8384"
+      - "traefik.docker.network=traefik_proxy"
