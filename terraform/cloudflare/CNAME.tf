@@ -18,6 +18,26 @@ resource "cloudflare_record" "algo_dev" {
   comment = var.default_comment
 }
 
+resource "cloudflare_record" "api_collab_dev" {
+  name    = "api.collab"
+  proxied = false
+  ttl     = 1
+  type    = "CNAME"
+  value   = "collab-server.fly.dev"
+  zone_id = var.zone_id_vineelsai_dev
+  comment = var.default_comment
+}
+
+resource "cloudflare_record" "api_rce_dev" {
+  name    = "api.rce"
+  proxied = false
+  ttl     = 1
+  type    = "CNAME"
+  value   = "rce.fly.dev"
+  zone_id = var.zone_id_vineelsai_dev
+  comment = var.default_comment
+}
+
 resource "cloudflare_record" "archive1" {
   name    = "archive1"
   proxied = true
@@ -88,6 +108,16 @@ resource "cloudflare_record" "collab_dev" {
   comment = var.default_comment
 }
 
+resource "cloudflare_record" "icons" {
+  name    = "icons"
+  proxied = true
+  ttl     = 1
+  type    = "CNAME"
+  value   = "skill-icons.pages.dev"
+  zone_id = var.zone_id_vineelsai_com
+  comment = var.default_comment
+}
+
 resource "cloudflare_record" "material" {
   name    = "material"
   proxied = true
@@ -118,6 +148,16 @@ resource "cloudflare_record" "stats_github" {
   comment = var.default_comment
 }
 
+resource "cloudflare_record" "shortify_dev" {
+  name    = "shortify"
+  proxied = false
+  ttl     = 1
+  type    = "CNAME"
+  value   = "shortify.fly.dev"
+  zone_id = var.zone_id_vineelsai_dev
+  comment = var.default_comment
+}
+
 resource "cloudflare_record" "sudoku" {
   name    = "sudoku"
   proxied = true
@@ -144,16 +184,6 @@ resource "cloudflare_record" "www" {
   ttl     = 1
   type    = "CNAME"
   value   = "cname.vercel-dns.com"
-  zone_id = var.zone_id_vineelsai_com
-  comment = var.default_comment
-}
-
-resource "cloudflare_record" "icons" {
-  name    = "icons"
-  proxied = true
-  ttl     = 1
-  type    = "CNAME"
-  value   = "skill-icons.pages.dev"
   zone_id = var.zone_id_vineelsai_com
   comment = var.default_comment
 }

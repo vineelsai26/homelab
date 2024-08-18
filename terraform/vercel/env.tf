@@ -1,7 +1,7 @@
 resource "vercel_project_environment_variable" "collab_vite_backend_url" {
   project_id = vercel_project.collab.id
   key        = "VITE_BACKEND_URL"
-  value      = "https://api-collab.vineelsai.com"
+  value      = "https://api.collab.vineelsai.dev"
   target     = ["production", "preview", "development"]
 }
 
