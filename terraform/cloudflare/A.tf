@@ -28,12 +28,12 @@ resource "cloudflare_record" "home" {
   comment = var.default_comment
 }
 
-resource "cloudflare_record" "oc" {
-  name    = "*.oc"
+resource "cloudflare_record" "local" {
+  name    = "*.local"
   proxied = false
   ttl     = 1
   type    = "A"
-  value   = "100.84.60.101"
+  value   = "10.0.0.111"
   zone_id = var.zone_id_vineelsai_com
   comment = var.default_comment
 }
