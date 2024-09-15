@@ -5,4 +5,4 @@ tls:
   force: true
 
 image:
-  tag: 2.20.3
+  tag: 2.21.1
