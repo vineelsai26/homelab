@@ -1,0 +1,8 @@
+name: AWS
+runtime: go
+description: pulumi project for Prod AWS account
+config:
+  aws:region: ap-south-1
+  pulumi:tags:
+    value:
+      pulumi:template: aws-go
