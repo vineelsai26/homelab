@@ -1,4 +1,4 @@
-package main
+package modules
 
 import (
 	"fmt"
@@ -32,6 +32,7 @@ func NewLambdaPermission(
 	if err != nil {
 		return nil, err
 	}
+
 	_, err = lambda.NewPermission(ctx, fmt.Sprintf("%s-default_cloudfront_lambda", name), &lambda.PermissionArgs{
 		StatementId: args.StatementId,
 		Action:      args.Action,
@@ -43,9 +44,11 @@ func NewLambdaPermission(
 	if err != nil {
 		return nil, err
 	}
+
 	err = ctx.RegisterResourceOutputs(&componentResource, pulumi.Map{})
 	if err != nil {
 		return nil, err
 	}
+
 	return &componentResource, nil
 }

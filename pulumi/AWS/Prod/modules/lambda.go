@@ -1,4 +1,4 @@
-package main
+package modules
 
 import (
 	"github.com/pulumi/pulumi-aws/sdk/v6/go/aws/lambda"
@@ -35,6 +35,7 @@ func NewLambda(
 	if err != nil {
 		return nil, err
 	}
+
 	lambda, err := lambda.NewFunction(ctx, name, &lambda.FunctionArgs{
 		Code:           pulumi.NewFileArchive(args.Filename),
 		Name:           args.FunctionName,
@@ -50,6 +51,7 @@ func NewLambda(
 	if err != nil {
 		return nil, err
 	}
+
 	err = ctx.RegisterResourceOutputs(&componentResource, pulumi.Map{
 		"arn":          lambda.Arn,
 		"qualifiedArn": lambda.QualifiedArn,
@@ -59,6 +61,7 @@ func NewLambda(
 	if err != nil {
 		return nil, err
 	}
+
 	componentResource.Arn = lambda.Arn
 	componentResource.QualifiedArn = lambda.QualifiedArn
 	componentResource.FunctionName = lambda.Name
