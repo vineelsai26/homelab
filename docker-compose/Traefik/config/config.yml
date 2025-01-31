@@ -11,24 +11,6 @@ http:
         - https-redirectscheme
       tls: {}
       service: pihole
-    pve:
-      entryPoints:
-        - "https"
-      rule: "Host(`pve.home.vineelsai.com`)"
-      middlewares:
-        - default-headers
-        - https-redirectscheme
-      tls: {}
-      service: pve
-    truenas:
-      entryPoints:
-        - "https"
-      rule: "Host(`truenas.home.vineelsai.com`)"
-      middlewares:
-        - default-headers
-        - https-redirectscheme
-      tls: {}
-      service: truenas
     homeassistant:
       entryPoints:
         - "https"
@@ -38,30 +20,12 @@ http:
         - https-redirectscheme
       tls: {}
       service: homeassistant
-    pi4:
-      entryPoints:
-        - "https"
-      rule: "Host(`pi4.home.vineelsai.com`)"
-      middlewares:
-        - default-headers
-        - https-redirectscheme
-      tls: {}
-      service: pi4
-    pfsense:
-      entryPoints:
-        - "https"
-      rule: "Host(`pfsense.home.vineelsai.com`)"
-      middlewares:
-        - default-headers
-        - https-redirectscheme
-      tls: {}
-      service: pfsense
 
   services:
     pihole:
       loadBalancer:
         servers:
-          - url: "http://10.0.0.53:80"
+          - url: "http://10.0.10.53:80"
         passHostHeader: true
     homeassistant:
       loadBalancer:
@@ -71,22 +35,22 @@ http:
     pve:
       loadBalancer:
         servers:
-          - url: "https://10.0.0.10:8006"
+          - url: "https://10.0.10.10:8006"
         passHostHeader: true
     truenas:
       loadBalancer:
         servers:
-          - url: "https://10.0.0.20"
+          - url: "https://10.0.10.20"
         passHostHeader: true
     pi4:
       loadBalancer:
         servers:
-          - url: "https://10.0.0.4:9090"
+          - url: "https://10.0.10.4:9090"
         passHostHeader: true
     pfsense:
       loadBalancer:
         servers:
-          - url: "https://10.0.0.1"
+          - url: "https://10.0.10.1"
         passHostHeader: true
 
   middlewares:

@@ -1,6 +1,6 @@
 services:
   homepage:
-    image: ghcr.io/gethomepage/homepage:v0.9.6
+    image: ghcr.io/gethomepage/homepage:v0.10.7
     container_name: homepage
     hostname: homepage
     environment:
@@ -8,11 +8,11 @@ services:
       PGID: 1000
       TZ: Asia/Kolkata
     env_file:
-      - ./homepage/env/vars.env
+      - ./env/vars.env
     ports:
       - 33000:3000
     volumes:
-      - ./homepage/config:/app/config # Make sure your local config directory exists
+      - ./config:/app/config # Make sure your local config directory exists
       - /var/run/docker.sock:/var/run/docker.sock:ro # optional, for docker integrations
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
