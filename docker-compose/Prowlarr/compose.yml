@@ -26,7 +26,7 @@ services:
       - "traefik.docker.network=proxy"
 
   flaresolverr:
-    image: ghcr.io/flaresolverr/flaresolverr:v3.3.19
+    image: ghcr.io/flaresolverr/flaresolverr:v3.3.21
     container_name: flaresolverr
     hostname: flaresolverr
     environment:
