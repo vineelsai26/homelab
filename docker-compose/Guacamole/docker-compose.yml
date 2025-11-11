@@ -10,7 +10,7 @@ services:
     restart: unless-stopped
 
   guacamole:
-    image: guacamole/guacamole:1.5.5
+    image: guacamole/guacamole:1.6.0
     container_name: guacamole
     hostname: guacamole
     environment:
