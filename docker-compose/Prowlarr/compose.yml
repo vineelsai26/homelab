@@ -1,6 +1,6 @@
 services:
   prowlarr:
-    image: lscr.io/linuxserver/prowlarr:1.29.1-develop
+    image: lscr.io/linuxserver/prowlarr:1.37.0-develop
     container_name: prowlarr
     hostname: prowlarr
     environment:
