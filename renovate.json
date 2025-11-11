@@ -3,7 +3,9 @@
 	"extends": [
 		"config:recommended"
 	],
-    "kubernetes": {
-        "fileMatch": ["\\.yaml$"]
-    }
+	"kubernetes": {
+		"managerFilePatterns": [
+			"/\\.yaml$/"
+		]
+	}
 }
