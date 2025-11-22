@@ -2,7 +2,7 @@ services:
   portainer:
     container_name: portainer
     hostname: portainer
-    image: 'portainer/portainer-ce:2.21.5'
+    image: 'portainer/portainer-ce:2.35.0'
     restart: unless-stopped
     ports:
       - '9443:9443'
