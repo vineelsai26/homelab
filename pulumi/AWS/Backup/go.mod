@@ -2,7 +2,7 @@ module aws_backup
 
 go 1.21
 
-toolchain go1.23.1
+toolchain go1.25.5
 
 require (
 	github.com/pulumi/pulumi-aws/sdk/v6 v6.37.1

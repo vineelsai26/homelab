@@ -2,7 +2,7 @@ module Prod
 
 go 1.21.12
 
-toolchain go1.23.1
+toolchain go1.25.5
 
 require (
 	github.com/pulumi/pulumi-archive/sdk v0.2.0
