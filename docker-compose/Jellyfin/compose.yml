@@ -1,6 +1,6 @@
 services:
   jellyfin:
-    image: jellyfin/jellyfin:10.9.6
+    image: jellyfin/jellyfin:10.11.5
     container_name: jellyfin
     hostname: jellyfin
     environment:
