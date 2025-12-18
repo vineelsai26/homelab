@@ -2,7 +2,7 @@ services:
   semaphore:
     container_name: semaphore
     hostname: semaphore
-    image: semaphoreui/semaphore:v2.10.22
+    image: semaphoreui/semaphore:v2.16.47
     ports:
       - 3011:3000
     env_file:
